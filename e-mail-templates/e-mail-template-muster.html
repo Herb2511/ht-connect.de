@@ -1,0 +1,38 @@
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-Mail Template</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css?family=Fira+Sans&display=swap');
+
+        body {
+            font-family: 'Fira Sans', sans-serif;
+            font-size: 14px;
+            color: rgb(0, 50, 100);
+        }
+    </style>
+</head>
+
+<!-- Inhalt Html -->
+
+<body>
+    <!-- Text -->
+    Hallo {$Kunde->cVorname} {$Kunde->cNachname},<br><br>
+
+    vielen Dank für Ihre Bestellung bei {$Einstellungen.global.global_shopname}. <br><br>
+
+
+
+    Mit freundlichem Gruß,<br><br>
+
+    Ihr Team von {$Firma->cName}<br><br><br>
+
+    <!-- Logo -->
+    <img src="img/ht-connect-logo-145x75.png" />
+</body>
+
+</html>
+
+<!-- Inhalt Text -->

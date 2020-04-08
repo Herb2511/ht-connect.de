@@ -1,2 +1,103 @@
 # ht-connect.de
-Neuer Online-Shop für HT-CONNECT
+
+Neuer Online-Shop für HT-CONNECT übernommen von dem Test Repository
+
+# ht-connect.de-v-0.0.1
+
+- Testen von Content auf Hauptseite, Sechserboxen, Team Mitgliedern usw.
+- team.html --> FlexBox Quinto Box 1 - 5
+- Anlegen neuer Farben und Testen von Schriften
+
+# ht-connect.de-v-0.0.2 changelog
+
+- Hauptseite neue Farben + Mockups für mobile Ansicht
+- Ihre Ansprechpartner fertig und mobile optimiert
+
+# ht-connect.de-v-0.0.3 changelog
+
+- FAQ Seite mit eigenem CSS in der Datei erstellt und Beispiel Fragen und Antworten eingebaut, sodass man sie im Text bearbeiten kann. Siehe https://www.ht-connect.de/faq Anleitung von https://www.quackit.com/bootstrap/bootstrap_3/tutorial/bootstrap_collapse.cfm Inspiration von https://www.homematic-ip.com/service/faq.html
+
+# ht-connect.de-v-0.0.4 changelog
+
+- Mockups für Startseite für nicht editierbare Bereiche erstellen (vor allem mobile Ansicht)
+- Neue Farbedefinition für Header/Footer
+- Neue Bilder Hauptkategorien fertig
+- Footer Icons farblich angepasst und Schriften eingebettet
+- Buttons neu gefärbt
+
+# ht-connect.de-v-0.0.5 changelog
+
+- Mockups für mobile Ansicht fertig gestellt
+- Styleguide fertig gestellt
+- CSS Farbanpassungen der Boxen in faq.html in rgb(0, 136, 195);
+- CSS Farbanpassungen der Dreierboxen Hintergründe in rgb(226, 237, 249);
+- Jira Ticket für Solution 360 für Mockups und weitere Umsetzungen erstellt
+- Business Advantages Seite fertig
+
+# ht-connect.de-v-0.0.6 changelog
+
+- Business Advantages alt-Tags Korrekturen der letzten beiden images
+- Team Seite: Bild mit Text Erreichbarkeit + FAQ Bild + Link
+- Verlinkung der beiden ersten Kategorien aus der Viererbox von der Hauptseite
+- Bildertausch und Neuverlinkung auf /ueber-uns der Viererboxen auf der Hauptseite
+
+# ht-connect.de-v-0.0.7 changelog
+
+- USP Leiste Vorteile (Header) finalisiert und verlinkt
+- Suchmaschinennamen aller Seiten im Footer unter Eigene Seiten klein geschrieben
+- Tests mit Business Advantages Zweierbox
+- Überschriften und Texte für Hauptkategorien finalisiert
+- Textkorrekturen in den Hauptkategorie Boxen und Viererboxen
+- Fehlende Icons wiederhergestellt und Text Korrektur in ihre-ansprechpartner.html
+- Neue Überseite hilfecenter.html gebaut und Verlinkung auf hilfecenter-faq.html und hilfecenter-kundenservice.html
+- Seiten hilfecenter-faq.html und hilfecenter-kundenservice.html in die Linkgruppe hidden verschoben, so nicht sichtbar im Footer
+- FAQ alle bisher nicht gepflegten Bereiche vorerst ausblenden mit einem neuen div mit der Klasse .display-later
+- faq.html: Löschen des paddings padding: 0 0 0 5px; von Fragen der Klasse .a-border-no-box-blue
+
+# ht-connect.de-v-0.0.8 changelog
+
+- Mobile Navigation im Backend mit Icons und Vorteilen fertig gestellt
+- Mobile Navigation: Unter-Unterkategorien ausgeblendet
+- Business Advantages über neues Bild und zweites Widget für Mobile gelöst
+- Business Advantages Alternative von S360 übernommen
+- Content für Viererboxen (HT-CONNECT 3X2 BOX Hauptkategorien Test) wieder eingefügt und als Datei ht-connect-3x2-box.html angelegt
+- Höhen für HT-CONNECT 3X2 BOX und Hauptkategorien Test + Viererboxenalle für alle Geräte in html-plain-stylesheets.html in media queries angepasst
+- Neue Checkboxen für Kundengruppen Endkunde und Gewerbekunden
+- Testbestellungen über Shop und manuell in der WAWI angelegt + Dokumentation aller Schritte unter T:\x-Herbert\01_Dokumentation
+- Test einer Gewerbekunden Registrierung und Gruppenzuordnung in der WAWI
+
+# ht-connect.de-v-0.0.9 changelog
+
+- FAQ Akkordeon S360 Widget Styling in eigener Seite
+- Text Block Trennlinie h1 und hr in html-plain-stylesheets.html übernommen
+- Generelle Layout Korrekturen von Elementen in media queries in in html-plain-stylesheets.html
+- Schriftformatierung von HT-Connect 3x2 Box (Hauptkategorie Test) an Viererbox anpassen
+- Media query Korrektur in hilfecenter.html für sauberen Umbruch der Boxen
+- Entfernen der Trennlinie im mobilen Menü durch Trennen des Textes
+- AGB und Datenschutz Checkboxen Inhalte zusammengefasst
+- Checkboxen Text Korrektur
+- Checkboxen Links unterstrichen
+- E-Mail Templates: E-Mail Ausgangsadresse und Absendername aktualisiert
+- FAQ Schriftformatierung der Überschriften h2 im CSS
+- Header USP Leiste Vorteile ausgeblendet
+- hilfecenter.html text-align justify von p-tag entfernt, da der Footer so nicht zentriert wurde
+- Eigene Seite ueber-uns.html Layout- + Farb-Optimierung und neuer Header für Desktop und Mobile
+- viererboxen.html erstellt und alle Daten von live gesichert
+- Eigene Seite unser-lager.html erstellt. Texte formuliert und Platzhalter Bilder eingefügt. Warte auf finale Bilder und Texte
+- html-plain-usp-verkuerzt.html Adresse des zweiten Links korrigiert
+- unser-lager.html CSS-Klasse .htc-text-justify hinzugefügt, um Layout des Footers nicht zu verändern
+- Bildtausch für Teaser und im Content unser-lager.html
+- Fotoaufnahmen und Bearbeitung für unser-lager.html
+- Textübernahme von Horst und neue Bilder in unser-lager-neu.html eingebaut
+- Shipping Timer Texte und Verlinkung korrigiert
+- Zur Button Klasse .cta-standard.v1 Eigenschaft margin-top 20px; hinzufügt
+- Button Klasse .s360-viererbox_button:hover überschrieben und Eingeschaften color: rgb(255, 255, 255) !important;
+  text-decoration: none !important; hinzugefügt für korrektes Einfärben beim Hovern
+- Der Klasse .s360-viererbox_button die Eigenschaftwidth: 180px !important; für eine einheitliche Buttongröße hinzugefügt
+- Zum Testen der E-Mail Templates Master-Emailadresse und Master-Email Absendernamen geändert unter https://www.ht-connect.de/admin/einstellungen.php von info@ht-connect.de, info@ht-connect.de auf hhaida@ht-connect.de, Herbert Haida. Bitte bei Liveschaltung des Shops wieder umstellen
+- Nach mehreren Tests kann man weder eine Grafik als jpg. png anhängen, noch werden Elemente über den Header, Footer oder das jeweilige Template integrierte CSS angesprochen.
+  <!-- Logo -->
+  <img src="/bilder/intern/ht-connect-logo-145x75.png" /> wird in der E-Mail als nicht anzeigbare Grafik dargestellt.
+- Beschluss: E-Mail Templates werden erst nach dem Relaunch des Shops angegangen
+
+# ht-connect.de-v-0.1.0 todo

@@ -1,0 +1,430 @@
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-Mail Template und Einstellungen - Bestellbestätigung</title>
+
+    <style>
+        .textarea-subject {
+            width: 30%;
+            height: 3%;
+        }
+
+        .textarea-content {
+            width: 50%;
+            height: 20%;
+        }
+    </style>
+
+
+
+</head>
+
+<body>
+    <!-- E-Mail Template Einstellungen -->
+    <h1>Einstellungen</h1>
+
+    <label>E-Mail versenden</label>
+    <select>
+        <option>Ja</option>
+        <option>Nein</option>
+    </select>
+    <br />
+    <label>E-Mail Ausgangsadresse</label>
+    <input value="info@ht-connect.de">
+    <br />
+    <label>E-Mail Absendername</label>
+    <input value="HT-CONNECT">
+    <br />
+    <label>E-Mail Kopieadresse</label>
+    <input value="order@ht-connect.de">
+    <br />
+    <label>Diese E-Mailart versenden als</label>
+    <select>
+        <option>text/html</option>
+        <option>text</option>
+    </select>
+    <br />
+    <label>Dieser E-Mailart Ihre Anbieterkennzeichnung anhängen</label>
+    <select>
+        <option>Ja</option>
+        <option>Nein</option>
+    </select>
+    <br />
+    <label>Dieser E-Mailart Ihre AGB anhängen</label>
+    <select>
+        <option>Ja</option>
+        <option>Nein</option>
+    </select>
+    <br />
+    <label>Dieser E-Mailart Ihre WRB anhängen</label>
+    <select>
+        <option>Ja</option>
+        <option>Nein</option>
+    </select>
+    <br />
+    <label>Dieser E-Mailart Ihre WRB anhängen</label>
+    <select>
+        <option>Nein</option>
+        <option>Ja</option>
+    </select>
+
+    <!-- Inhalt-->
+    <h1>Inhalt Deutsch</h1>
+
+    <p>Betreff</p>
+    <textarea class="textarea-subject">Ihre Bestellung  #bestellung.bestellnr# bei #firma.name#</textarea>
+
+    <!-- Inhalt Html -->
+    <p>Inhalt Html</p>
+    <textarea class="textarea-content">
+
+        Hallo {$Kunde->cVorname} {$Kunde->cNachname},<br><br>
+
+        vielen Dank für Ihre Bestellung bei {$Einstellungen.global.global_shopname}. <br><br>
+        
+        {if $Verfuegbarkeit_arr.cArtikelName_arr|@count > 0}
+        {$Verfuegbarkeit_arr.cHinweis}
+        <ul>
+        {foreach from=$Verfuegbarkeit_arr.cArtikelName_arr item=cArtikelname}
+        <li>{$cArtikelname}</li>
+        {/foreach}
+        </ul>
+        <br /><br />
+        {/if}
+        
+        Ihre Bestellung mit Bestellnummer {$Bestellung->cBestellNr} umfasst folgende Positionen: <br><br>
+        
+        {foreach name=pos from=$Bestellung->Positionen item=Position}
+                                        <table width="600" border="0" cellspacing="0" cellpadding="0" style="padding-top:11px;border-color:#929292;border-width:1px; border-style:dotted;border-top-width:0px;border-right-width:0px;border-left-width:0px;">
+                                        <tr>
+                                                <td valign="top" style="padding-bottom:5px;">
+                {if $Position->nPosTyp==1}
+                                                        {if $Position->kKonfigitem > 0}• {/if}<b>{$Position->cName}</b> {if $Position->cArtNr}({$Position->Artikel->cArtNr}){/if}
+                {if $Position->Artikel->nErscheinendesProdukt}
+                  <br>Verfügbar ab: <strong>{$Position->Artikel->Erscheinungsdatum_de}</strong>
+                {/if}
+                {if $Einstellungen.kaufabwicklung.bestellvorgang_lieferstatus_anzeigen=="Y" && $Position->cLieferstatus}
+                                    <br><span class="small">Lieferzeit: {$Position->cLieferstatus}</span>
+                {/if}<br>
+                        {foreach name=variationen from=$Position->WarenkorbPosEigenschaftArr item=WKPosEigenschaft}
+                                                        <br><span class="standard"><b>{$WKPosEigenschaft->cEigenschaftName}</b>: {$WKPosEigenschaft->cEigenschaftWertName}
+                                                        </span>
+                        {/foreach}
+                {else}
+                                                        <span class="bluenormal">{$Position->cName}</span>
+                {/if}
+                                                </td>
+                                                <td width="50" style="padding-left:2px;" valign="top">
+                                                        <span class="standard">{$Position->nAnzahl}</span>
+                                                </td>
+                {if $Einstellungen.kaufabwicklung.bestellvorgang_einzelpreise_anzeigen=="Y"}
+                                               <td width="90" style="padding-left:2px;" align="right" valign="top">
+                                                  <span class="standard">{$Position->cEinzelpreisLocalized[$NettoPreise]}</span>
+                                               </td>
+                {/if}
+                                                <td width="90" style="padding-left:2px;" align="right" valign="top">
+                                                        <span class="standard">{$Position->cGesamtpreisLocalized[$NettoPreise]}</span>
+                                                </td>
+                                        </tr>
+                                        </table>
+        {/foreach}
+                                        <table width="600" border="0" cellspacing="0" cellpadding="0" style="padding-top:11px;border-color:#929292;border-width:1px; border-style:dotted;border-top-width:0px;border-right-width:0px;border-left-width:0px;">
+        {if $Einstellungen.global.global_steuerpos_anzeigen!="N"}
+        {foreach name=steuerpositionen from=$Bestellung->Steuerpositionen item=Steuerposition}
+                                        <tr>
+                                                <td valign="top" align="right" style="padding-bottom:5px;padding-top:4px;padding-right:8px;">
+                                                        <span class="standard">{$Steuerposition->cName}:</span></a>
+                                                </td>
+                                                <td width="90"  style="padding-bottom:5px;padding-top:4px;padding-right:8px;" align="right" valign="top">
+                                                        <span class="standard">{$Steuerposition->cPreisLocalized}</span>
+                                                </td>
+                                        </tr>
+        {/foreach}
+        {/if}
+        {if $Bestellung->GuthabenNutzen==1}
+                                        <tr>
+                                                <td valign="top" align="right" style="padding-bottom:5px;padding-top:11px;">
+                                                        <span class="standard"><b>Gutschein:</b></span></a>
+                                                </td>
+                                                <td width="90" style="padding-bottom:5px;padding-top:11px;" align="right" valign="top">
+                                                        <span class="standard"><b>-{$Bestellung->GutscheinLocalized}</b></span>
+                                                </td>
+                                        </tr>
+        {/if}
+                                        <tr>
+                                                <td valign="top" align="right"  style="padding-bottom:5px;padding-top:4px;padding-right:8px;font-size: 18px;">
+                                                        <span class="standard"><b>Gesamtsumme:</b></span></a>
+                                                </td>
+                                                <td width="90" style="padding-bottom:5px;padding-top:4px;padding-right:8px; font-size: 18px;" align="right" valign="top">
+                                                        <span class="standard"><b>{$Bestellung->WarensummeLocalized[0]}</b></span>
+                                                </td>
+                                        </tr>
+                                        </table><br><br>
+        
+        {if $Bestellung->cKommentar}
+        Folgenden Kommentar haben Sie uns mit dieser Bestellung übermittelt: <i>"{$Bestellung->cKommentar}"</i>
+        <br><br>
+        {/if}
+        
+        Ihre Rechnungsadresse:<br>
+        {if $Kunde->cFirma}{$Kunde->cFirma}<br />{/if}
+        {$Kunde->cVorname} {$Kunde->cNachname}<br>
+        {$Kunde->cStrasse} {$Kunde->cHausnummer}<br>
+        {if $Kunde->cAdressZusatz}{$Kunde->cAdressZusatz}<br>
+        {/if}{$Kunde->cPLZ} {$Kunde->cOrt}<br>
+        {if $Kunde->cBundesland}{$Kunde->cBundesland}<br>
+        {/if}{$Kunde->cLand}<br>
+        {if $Kunde->cTel}Tel: {$Kunde->cTel}<br>
+        {/if}{if $Kunde->cMobil}Mobil: {$Kunde->cMobil}<br>
+        {/if}{if $Kunde->cFax}Interne Bestellnummer: {$Kunde->cFax}<br>
+        {/if}<br>
+        Email: {$Kunde->cMail}<br>
+        {if $Kunde->cUSTID}UstID: {$Kunde->cUSTID}<br>
+        {/if}
+        <br><br>
+        
+        {if $Bestellung->Lieferadresse->kLieferadresse>0} 
+        Ihre Lieferadresse: <br><br>
+        {if $Bestellung->Lieferadresse->cFirma}
+        {$Bestellung->Lieferadresse->cFirma}<br />
+        {/if}
+        {$Bestellung->Lieferadresse->cVorname} {$Bestellung->Lieferadresse->cNachname}<br>
+        {$Bestellung->Lieferadresse->cStrasse} {$Bestellung->Lieferadresse->cHausnummer}<br>
+        {if $Bestellung->Lieferadresse->cAdressZusatz}{$Bestellung->Lieferadresse->cAdressZusatz}<br>
+        {/if}{$Bestellung->Lieferadresse->cPLZ} {$Bestellung->Lieferadresse->cOrt}<br>
+        {if $Bestellung->Lieferadresse->cBundesland}{$Bestellung->Lieferadresse->cBundesland}<br>
+        {/if}{$Bestellung->Lieferadresse->cLand}<br>
+        {if $Bestellung->Lieferadresse->cTel}Tel: {$Bestellung->Lieferadresse->cTel}<br>
+        {/if}{if $Bestellung->Lieferadresse->cMobil}Mobil: {$Bestellung->Lieferadresse->cMobil}<br>
+        {/if}{if $Bestellung->Lieferadresse->cMail}Email: {$Bestellung->Lieferadresse->cMail}<br>
+        {/if}<br>
+        {else} 
+        Lieferadresse ist gleich Rechnungsadresse. 
+        {/if}
+        
+        <br><br>
+        Sie haben folgende Zahlungsart gewählt: {$Bestellung->cZahlungsartName}<br><br>
+        
+        {if $Bestellung->Zahlungsart->cModulId=="za_ueberweisung_jtl"}
+        Bitte führen Sie die folgende Überweisung durch:<br>
+            <table width="400" cellpadding="0" cellspacing="0">
+                <tr><td>Kontoinhaber:</td><td>{$Firma->cKontoinhaber}</td></tr>
+                <tr><td>Bankinstitut:</td><td>{$Firma->cBank}</td></tr>
+                <tr><td>Kontonummer.:</td><td>{$Firma->cKontoNr}</td></tr>
+                <tr><td>BLZ:</td><td>{$Firma->cBLZ}</td></tr>
+                <tr><td> </td><td></td></tr>
+                <tr><td>IBAN</td><td>{$Firma->cIBAN}</td></tr>
+                <tr><td>BIC</td><td>{$Firma->cBIC}</td></tr>
+                <tr><td><strong>Verwendungszweck</strong>:</td><td><strong>{$Bestellung->cBestellNr}</strong></td></tr>
+                <tr><td><strong>Gesamtsumme</strong>:</td><td><strong>{$Bestellung->WarensummeLocalized[0]}</strong></td></tr>
+            </table><br>
+        {elseif $Bestellung->Zahlungsart->cModulId=="za_nachnahme_jtl"}
+        {elseif $Bestellung->Zahlungsart->cModulId=="za_kreditkarte_jtl"}
+        {elseif $Bestellung->Zahlungsart->cModulId=="za_rechnung_jtl"}
+        {elseif $Bestellung->Zahlungsart->cModulId=="za_lastschrift_jtl"}
+        {elseif $Bestellung->Zahlungsart->cModulId=="za_barzahlung_jtl"}
+        {elseif $Bestellung->Zahlungsart->cModulId=="za_paypal_jtl"}
+        {elseif $Bestellung->Zahlungsart->cModulId=="za_moneybookers_jtl"}
+        {/if}
+        
+        {if isset($Zahlungsart->cHinweisText) && $Zahlungsart->cHinweisText|count_characters > 0}
+          {$Zahlungsart->cHinweisText}<br><br>
+        {/if}
+        
+        {if $Bestellung->Zahlungsart->cModulId=="za_rechnung_jtl"}
+        {elseif $Bestellung->Zahlungsart->cModulId=="za_lastschrift_jtl"}
+        Wir belasten in Kürze folgendes Bankkonto um die fällige Summe:<br><br>
+        
+        Kontoinhaber: {$Bestellung->Zahlungsinfo->cInhaber}<br>
+        KontoNr: {$Bestellung->Zahlungsinfo->cKontoNr}<br>
+        BLZ: {$Bestellung->Zahlungsinfo->cBLZ}<br>
+        Bank: {$Bestellung->Zahlungsinfo->cBankName}<br><br>
+        
+        {elseif $Bestellung->Zahlungsart->cModulId=="za_barzahlung_jtl"}
+        {elseif $Bestellung->Zahlungsart->cModulId=="za_paypal_jtl"}
+        Falls Sie Ihre Zahlung per PayPal noch nicht durchgeführt haben, nutzen Sie folgende Emailadresse als Empfänger: {$Einstellungen.zahlungsarten.zahlungsart_paypal_empfaengermail}
+        {elseif $Bestellung->Zahlungsart->cModulId=="za_moneybookers_jtl"}
+        {elseif $Bestellung->Zahlungsart->cModulId=="za_billpay_jtl"}
+        {if $Bestellung->nZahlungsTyp == 1}
+        <b>Bitte überweisen Sie den Gesamtbetrag auf folgendes Konto:</b><br><br>
+        Kontoinhaber: {$Bestellung->Zahlungsinfo->cInhaber}<br>
+        Bankinstitut: {$Bestellung->Zahlungsinfo->cBankName}<br>
+        BLZ: {$Bestellung->Zahlungsinfo->cBLZ}<br>
+        Konto-Nr: {$Bestellung->Zahlungsinfo->cKontoNr}<br>
+        IBAN: {$Bestellung->Zahlungsinfo->cIBAN}<br>
+        BIC: {$Bestellung->Zahlungsinfo->cBIC}<br>
+        Verwendungszweck: {$Bestellung->cBestellNr}<br>
+        <br>
+        {/if}
+        {/if}
+        {if $Bestellung->Zahlungsart->cModulId!="za_nachnahme_jtl" && $Bestellung->Zahlungsart->cModulId!="za_barzahlung_jtl" && $Bestellung->Zahlungsart->cModulId!="za_rechnung_jtl"}
+        Ihre Bestellung paketversandfähiger Waren wird in der Regel bei Zahlungseingang an einem Werktag (außer Sa.) bis 14Uhr versandt. Bei Sperrgut-, Speditionslieferungen bzw. Bestellungen, welche auf Grund Gewicht oder Volumen durch uns per Spedition versendet werden, ist mit einer Laufzeit von 3 -5 Werktagen zu rechnen, nachdem die Anlieferangaben geprüft und von Ihnen bestätigt wurden.<br>
+        {/if}
+        
+        Über den weiteren Verlauf Ihrer Bestellung werden wir Sie jeweils gesondert informieren. <br><br>
+        
+        {if $oTrustedShopsBewertenButton->cURL|count_characters > 0}
+        Waren Sie mit Ihrer Bestellung zufrieden? Dann würden wir uns über eine Empfehlung freuen ... es dauert auch nur eine Minute.<br>
+        <a href="{$oTrustedShopsBewertenButton->cURL}"><img src="{$oTrustedShopsBewertenButton->cPicURL}" alt="Bewerten Sie uns!"></a><br><br>
+        {/if}
+        
+        Mit freundlichem Gruß <br><br>
+        
+        Ihr Team von {$Firma->cName}
+    
+    </textarea>
+
+
+    <!-- Inhalt Text -->
+    <p>Inhalt Text</p>
+    <textarea class="textarea-content">
+
+        Hallo {$Kunde->cVorname} {$Kunde->cNachname},
+
+        vielen Dank für Ihre Bestellung bei {$Einstellungen.global.global_shopname}.
+        
+        {if $Verfuegbarkeit_arr.cArtikelName_arr|@count > 0}
+        {$Verfuegbarkeit_arr.cHinweis}
+        {foreach from=$Verfuegbarkeit_arr.cArtikelName_arr item=cArtikelname}
+        {$cArtikelname}
+        {/foreach}
+        {/if}
+        
+        Ihre Bestellung mit Bestellnummer {$Bestellung->cBestellNr} umfasst folgende Positionen: 
+        
+        {foreach name=pos from=$Bestellung->Positionen item=Position}
+        
+        {if $Position->nPosTyp==1}
+        {if $Position->kKonfigitem > 0} * {/if}{$Position->nAnzahl}x {$Position->cName} - {$Position->cGesamtpreisLocalized[$NettoPreise]}{if $Position->Artikel->nErscheinendesProdukt}
+        Verfügbar ab: {$Position->Artikel->Erscheinungsdatum_de}{/if}{if $Einstellungen.kaufabwicklung.bestellvorgang_lieferstatus_anzeigen=="Y" && $Position->cLieferstatus}
+        
+        Lieferzeit: {$Position->cLieferstatus}{/if}
+        {foreach name=variationen from=$Position->WarenkorbPosEigenschaftArr item=WKPosEigenschaft}
+        
+        {$WKPosEigenschaft->cEigenschaftName}: {$WKPosEigenschaft->cEigenschaftWertName}{/foreach}
+        {else}
+        {$Position->nAnzahl}x {$Position->cName} - {$Position->cGesamtpreisLocalized[$NettoPreise]}{/if}
+        {/foreach}
+        
+        {if $Einstellungen.global.global_steuerpos_anzeigen!="N"}{foreach name=steuerpositionen from=$Bestellung->Steuerpositionen item=Steuerposition}
+        {$Steuerposition->cName}: {$Steuerposition->cPreisLocalized}
+        {/foreach}{/if}
+        {if $Bestellung->GuthabenNutzen==1}
+        Gutschein: -{$Bestellung->GutscheinLocalized}
+        {/if}
+        
+        Gesamtsumme: {$Bestellung->WarensummeLocalized[0]}
+        
+        {if $Bestellung->cKommentar}
+        Folgenden Kommentar haben Sie uns mit dieser Bestellung übermittelt: "{$Bestellung->cKommentar}"
+        {/if}
+        
+        Ihre Rechnungsadresse:
+        
+        {if $Kunde->cFirma}{$Kunde->cFirma}<br />{/if}
+        {$Kunde->cVorname} {$Kunde->cNachname}
+        {$Kunde->cStrasse} {$Kunde->cHausnummer}
+        {if $Kunde->cAdressZusatz}{$Kunde->cAdressZusatz}
+        {/if}{$Kunde->cPLZ} {$Kunde->cOrt}
+        {if $Kunde->cBundesland}{$Kunde->cBundesland}
+        {/if}{$Kunde->cLand}
+        {if $Kunde->cTel}Tel: {$Kunde->cTel}
+        {/if}{if $Kunde->cMobil}Mobil: {$Kunde->cMobil}
+        {/if}{if $Kunde->cFax}Interne Bestellnummer: {$Kunde->cFax}
+        {/if}
+        Email: {$Kunde->cMail}
+        {if $Kunde->cUSTID}UstID: {$Kunde->cUSTID}
+        {/if}
+        
+        {if $Bestellung->Lieferadresse->kLieferadresse>0} 
+        Ihre Lieferadresse: 
+        
+        {if $Bestellung->Lieferadresse->cFirma}{$Bestellung->Lieferadresse->cFirma}<br />{/if}
+        {$Bestellung->Lieferadresse->cVorname} {$Bestellung->Lieferadresse->cNachname}
+        {$Bestellung->Lieferadresse->cStrasse} {$Bestellung->Lieferadresse->cHausnummer}
+        {if $Bestellung->Lieferadresse->cAdressZusatz}{$Bestellung->Lieferadresse->cAdressZusatz}
+        {/if}{$Bestellung->Lieferadresse->cPLZ} {$Bestellung->Lieferadresse->cOrt}
+        {if $Bestellung->Lieferadresse->cBundesland}{$Bestellung->Lieferadresse->cBundesland}
+        {/if}{$Bestellung->Lieferadresse->cLand}
+        {if $Bestellung->Lieferadresse->cTel}Tel: {$Bestellung->Lieferadresse->cTel}
+        {/if}{if $Bestellung->Lieferadresse->cMobil}Mobil: {$Bestellung->Lieferadresse->cMobil}
+        {/if}{if $Bestellung->Lieferadresse->cMail}Email: {$Bestellung->Lieferadresse->cMail}
+        {/if}
+        {else} 
+        Lieferadresse ist gleich Rechnungsadresse. 
+        {/if}
+        
+        Sie haben folgende Zahlungsart gewählt: {$Bestellung->cZahlungsartName}
+        
+        {if $Bestellung->Zahlungsart->cModulId=="za_ueberweisung_jtl"}
+        Bitte führen Sie die folgende Überweisung durch:
+        Kontoinhaber:{$Firma->cKontoinhaber}
+        Bankinstitut:{$Firma->cBank}
+        Kontonummer.:{$Firma->cKontoNr}
+        BLZ:{$Firma->cBLZ}
+        IBAN: {$Firma->cIBAN}
+        BIC: {$Firma->cBIC}
+        
+        Verwendungszweck:{$Bestellung->cBestellNr}
+        Gesamtsumme:{$Bestellung->WarensummeLocalized[0]}
+        
+        {elseif $Bestellung->Zahlungsart->cModulId=="za_nachnahme_jtl"}
+        {elseif $Bestellung->Zahlungsart->cModulId=="za_kreditkarte_jtl"}
+        {elseif $Bestellung->Zahlungsart->cModulId=="za_rechnung_jtl"}
+        {elseif $Bestellung->Zahlungsart->cModulId=="za_lastschrift_jtl"}
+        {elseif $Bestellung->Zahlungsart->cModulId=="za_barzahlung_jtl"}
+        {elseif $Bestellung->Zahlungsart->cModulId=="za_paypal_jtl"}
+        {elseif $Bestellung->Zahlungsart->cModulId=="za_moneybookers_jtl"}
+        {/if}
+        
+        {if isset($Zahlungsart->cHinweisText) && $Zahlungsart->cHinweisText|count_characters > 0}  {$Zahlungsart->cHinweisText}
+        
+        
+        {/if}
+        
+        {if $Bestellung->Zahlungsart->cModulId=="za_rechnung_jtl"}
+        {elseif $Bestellung->Zahlungsart->cModulId=="za_lastschrift_jtl"}
+        Wir belasten in Kürze folgendes Bankkonto um die fällige Summe:
+        
+        Kontoinhaber: {$Bestellung->Zahlungsinfo->cInhaber}
+        KontoNr: {$Bestellung->Zahlungsinfo->cKontoNr}
+        BLZ: {$Bestellung->Zahlungsinfo->cBLZ}
+        Bank: {$Bestellung->Zahlungsinfo->cBankName}
+        
+        {elseif $Bestellung->Zahlungsart->cModulId=="za_barzahlung_jtl"}
+        {elseif $Bestellung->Zahlungsart->cModulId=="za_paypal_jtl"}
+        Falls Sie Ihre Zahlung per PayPal noch nicht durchgeführt haben, nutzen Sie folgende Emailadresse als Empfänger: {$Einstellungen.zahlungsarten.zahlungsart_paypal_empfaengermail}
+        {elseif $Bestellung->Zahlungsart->cModulId=="za_moneybookers_jtl"}
+        {elseif $Bestellung->Zahlungsart->cModulId=="za_billpay_jtl"}
+        {if $Bestellung->nZahlungsTyp == 1}
+        Bitte überweisen Sie den Gesamtbetrag auf folgendes Konto:
+        Kontoinhaber: {$Bestellung->Zahlungsinfo->cInhaber}
+        Bankinstitut: {$Bestellung->Zahlungsinfo->cBankName}
+        BLZ: {$Bestellung->Zahlungsinfo->cBLZ}
+        KontoNr: {$Bestellung->Zahlungsinfo->cKontoNr}
+        Verwendungszweck: {$Bestellung->cBestellNr}
+        {/if}
+        {/if}
+        {if $Bestellung->Zahlungsart->cModulId!="za_nachnahme_jtl" && $Bestellung->Zahlungsart->cModulId!="za_barzahlung_jtl" && $Bestellung->Zahlungsart->cModulId!="za_rechnung_jtl"}
+        Ihre Bestellung paketversandfähiger Waren wird in der Regel bei Zahlungseingang bis 14Uhr versandt. Bei Sperrgut-, Speditionslieferungen bzw. Bestellungen welche auf Grund Gewicht oder Volumen durch uns per Spedition versendet werden ist mit einer Laufzeit von 3 -5 Werktagen zu rechnen, nachdem die Anlieferangaben geprüft und von Ihnen bestätigt wurden.  {/if}
+        
+        Über den weiteren Verlauf Ihrer Bestellung werden wir Sie jeweils gesondert informieren.
+        
+        {if $oTrustedShopsBewertenButton->cURL|count_characters > 0}
+        Waren Sie mit Ihrer Bestellung zufrieden? Dann würden wir uns über eine Empfehlung freuen ... es dauert auch nur eine Minute.
+        {$oTrustedShopsBewertenButton->cURL}
+        {/if} 
+        
+        Mit freundlichem Gruß 
+        
+        Ihr Team von {$Firma->cName}
+    
+    </textarea>
+
+
+
+</body>
+
+</html>

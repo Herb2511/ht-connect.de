@@ -100,4 +100,23 @@ Neuer Online-Shop für HT-CONNECT übernommen von dem Test Repository
   <img src="/bilder/intern/ht-connect-logo-145x75.png" /> wird in der E-Mail als nicht anzeigbare Grafik dargestellt.
 - Beschluss: E-Mail Templates werden erst nach dem Relaunch des Shops angegangen
 
-# ht-connect.de-v-0.1.0 todo
+# ht-connect.de-v-0.1.0 changelog
+
+- Sprachvariable productNotinStock angepasst in "Verfügbarkeit anfragen"
+- Neue Checkbox für E-Mail Benachrichtigung bei Verfügbarkeit angelegt
+- Checkboxen für verfuegbarkeitsanfrage.html + datenschutz-kontakt.html optimiert
+- Tests Verfügbarkeitsanfrage + Kontaktformular + ReCaptcha
+- Tests Preisrangesliders
+- Cookiebot Einrichtung und Plugin Installation
+- Attribute Logo Erstellung und Verwaltung
+- Verfügbarkeitsanfrage: Text der Sprachvariablen wieder geändert auf "Wann verfügbar?" Hinweis in der der Checkbox zur E-Mail Benachrichtigung eingebaut
+
+# ht-connect.de-v-0.1.1 todo
+
+- Drei Icons bauen und auf dem FTP-Server unter /bilder/qualitaet/ speichern:
+- ECO (Blauer Tropfen, Welle)
+- htc (industriequalität, Logo ohne Claim)
+- DVGW (Industriequaliät + Zertifizierung)
+
+- Legende mit Beschreibung im Artikel/Content --> HTML oder Grafik Snippet
+- Bsp. Seite siehe https://www.ht-connect.de/PVC-U-Klebemuffe-ECO_1

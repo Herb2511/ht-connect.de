@@ -116,3 +116,4 @@ Neuer Online-Shop für HT-CONNECT übernommen von dem Test Repository
 - Sprachauswahl: Neue Datei html-plain-header.html angelegt und Klasse .language-dropdown auf display: none anstatt inline-block !important gesetzt, um Sprachauswahl vorerst auszublenden
 - Kategorie-Icons in blau angelegt und auf den FTP-Server hochgeladen. Warte auf Rückmeldung aus dem Task https://jira.solution360.de/servicedesk/customer/portal/4/S360SD-2964
 - Sprachauswahlmenü im Header unter html-plain-header.html ein- und ausblendbar
+- Artikel AD0112 WAWI HTML-Backup angelegt

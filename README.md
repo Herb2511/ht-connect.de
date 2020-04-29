@@ -108,15 +108,11 @@ Neuer Online-Shop für HT-CONNECT übernommen von dem Test Repository
 - Tests Verfügbarkeitsanfrage + Kontaktformular + ReCaptcha
 - Tests Preisrangesliders
 - Cookiebot Einrichtung und Plugin Installation
-- Attribute Logo Erstellung und Verwaltung
+
+# ht-connect.de-v-0.1.1 changelog
+
 - Verfügbarkeitsanfrage: Text der Sprachvariablen wieder geändert auf "Wann verfügbar?" Hinweis in der der Checkbox zur E-Mail Benachrichtigung eingebaut
-
-# ht-connect.de-v-0.1.1 todo
-
-- Drei Icons bauen und auf dem FTP-Server unter /bilder/qualitaet/ speichern:
-- ECO (Blauer Tropfen, Welle)
-- htc (industriequalität, Logo ohne Claim)
-- DVGW (Industriequaliät + Zertifizierung)
-
-- Legende mit Beschreibung im Artikel/Content --> HTML oder Grafik Snippet
-- Bsp. Seite siehe https://www.ht-connect.de/PVC-U-Klebemuffe-ECO_1
+- Attribute Logo Erstellung und Verwaltung: In der WAWI wurde das Attribut "Dimension_9911_Qualität" angelegt. In den Kinderartikeln wird das jeweilige Bild mit dem kompletten img-tag angelegt z.B. <img src="/bilder/qualitaet/logo-dvgw-50x50.png" alt="DVGW Qualitätslogo" title="DVGW zertifiziert" /> Warte auf Finalisierung von S360
+- Sprachauswahl: Neue Datei html-plain-header.html angelegt und Klasse .language-dropdown auf display: none anstatt inline-block !important gesetzt, um Sprachauswahl vorerst auszublenden
+- Kategorie-Icons in blau angelegt und auf den FTP-Server hochgeladen. Warte auf Rückmeldung aus dem Task https://jira.solution360.de/servicedesk/customer/portal/4/S360SD-2964
+- Sprachauswahlmenü im Header unter html-plain-header.html ein- und ausblendbar

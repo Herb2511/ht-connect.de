@@ -155,9 +155,7 @@ Neuer Online-Shop für HT-CONNECT übernommen von dem Test Repository
 
 - Attributsmerkmal "Dimension_9911_Qualität" optimiert und im Task unter https://jira.solution360.de/servicedesk/customer/portal/4/S360SD-3112 besprochen
 - Neue Ordner- und Datei-Struktur im aktuellen Repository
+- Artikel CU001 https://www.pvc-welt.de/Messing-Wandwinkel-Klemme-x-Innengewinde_1 optimierte Darstellung von Bild und Text sowie Korrektur des alt-tags
+- Backup der Navigation im Hauptmenü für Desktop unter hauptmenu-kacheln-desktop.html
 
 ### ToDo:
-
-- Artikel CU001 https://www.pvc-welt.de/Messing-Wandwinkel-Klemme-x-Innengewinde_1 WAWI HTML-Backup optimierte Darstellung von Bild und Text
-- Broken Image Mobile Menu in hauptmenu-kacheln-icons.html: korrekte Verlinkung der Icons nach Austausch für die Hauptkategorien im Mobile Menü
-- Vorlage für Bildbearbeitung für alle Artikel mit Einstellungsebenen in PS erstellt unter T:\Artikel\00_VORLAGE-BILDBEARBEITUNG-ARTIKEL

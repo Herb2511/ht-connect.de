@@ -157,5 +157,6 @@ Neuer Online-Shop für HT-CONNECT übernommen von dem Test Repository
 - Neue Ordner- und Datei-Struktur im aktuellen Repository
 - Artikel CU001 https://www.pvc-welt.de/Messing-Wandwinkel-Klemme-x-Innengewinde_1 optimierte Darstellung von Bild und Text sowie Korrektur des alt-tags
 - Backup der Navigation im Hauptmenü für Desktop unter hauptmenu-kacheln-desktop.html
+- Artikel AD0112 https://www.pvc-welt.de/PVC-U-Klebestutzen-DVGW Textkorrekturen von Horst übernommen
 
 ### ToDo:

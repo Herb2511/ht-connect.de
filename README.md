@@ -148,3 +148,16 @@ Neuer Online-Shop für HT-CONNECT übernommen von dem Test Repository
 - Artikel CU001 https://www.pvc-welt.de/Messing-Wandwinkel-Klemme-x-Innengewinde_1 WAWI HTML-Backup angelegt für Bearbeitung in v-0.1.3
 - Broken Image Mobile Menu in hauptmenu-kacheln-icons.html: korrekte Verlinkung der Icons nach Austausch für die Hauptkategorien im Mobile Menü
 - Vorlage für Bildbearbeitung für alle Artikel mit Einstellungsebenen in PS erstellt unter T:\Artikel\00_VORLAGE-BILDBEARBEITUNG-ARTIKEL
+
+## ht-connect.de-v-0.1.3
+
+### Changelog:
+
+- Attributsmerkmal "Dimension_9911_Qualität" optimiert und im Task unter https://jira.solution360.de/servicedesk/customer/portal/4/S360SD-3112 besprochen
+- Neue Ordner- und Datei-Struktur im aktuellen Repository
+
+### ToDo:
+
+- Artikel CU001 https://www.pvc-welt.de/Messing-Wandwinkel-Klemme-x-Innengewinde_1 WAWI HTML-Backup optimierte Darstellung von Bild und Text
+- Broken Image Mobile Menu in hauptmenu-kacheln-icons.html: korrekte Verlinkung der Icons nach Austausch für die Hauptkategorien im Mobile Menü
+- Vorlage für Bildbearbeitung für alle Artikel mit Einstellungsebenen in PS erstellt unter T:\Artikel\00_VORLAGE-BILDBEARBEITUNG-ARTIKEL

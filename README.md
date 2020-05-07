@@ -154,9 +154,16 @@ Neuer Online-Shop für HT-CONNECT übernommen von dem Test Repository
 ### Changelog:
 
 - Attributsmerkmal "Dimension_9911_Qualität" optimiert und im Task unter https://jira.solution360.de/servicedesk/customer/portal/4/S360SD-3112 besprochen
+- Warte auf Live-Schaltung des Funktionsattributs für Artikel https://jira.solution360.de/servicedesk/customer/portal/4/S360SD-2861 unter https://jira.solution360.de/servicedesk/
 - Neue Ordner- und Datei-Struktur im aktuellen Repository
 - Artikel CU001 https://www.pvc-welt.de/Messing-Wandwinkel-Klemme-x-Innengewinde_1 optimierte Darstellung von Bild und Text sowie Korrektur des alt-tags
 - Backup der Navigation im Hauptmenü für Desktop unter hauptmenu-kacheln-desktop.html
 - Artikel AD0112 https://www.pvc-welt.de/PVC-U-Klebestutzen-DVGW Textkorrekturen von Horst übernommen
-
-### ToDo:
+  customer/portal/4/S360SD-2861
+- Backups weiterer relevanter eigenen Seiten angelegt
+- Neue Telefonnumer aus der Telefonanlage auf allen relevanten Seiten in internationaler Schreibweise laut DIN 5005 bzw. E.123 siehe https://www.teltarif.de/festnetz/telefonnummer-schreibweise.html geändert in +49 9241 9109100
+- Neue Telefonnnumer auf allen technischen Datenblättern/.pdfs im Content + Footer ausgetauscht und Upload auf die FTP-Server
+- Alte Backup-Seiten Im Ordner eigene-seiten im aktuellen Repository entfernt und aktuellste Versionen umbenannt
+- Artikel S-002 und S-003 https://www.pvc-welt.de/Saug-Druckschlauch-Schwarz_1 und https://www.pvc-welt.de/Saug-Druckschlauch-Gruen-Transparent_1 Content Anpassungen Bild und Layout unten
+- Sprachauswahl im Header über html-plain-header.html display:none ausgeblendet
+- Mockups für kleiner Desktop + Tablet bzgl. Header Gestaltung <= 1450px unter T:\x-Herbert\02_Projekte\04_Usability-Testing\03_HT-Connect.de-2020-Styleguide-Mockups\02_mockups-final

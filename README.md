@@ -187,6 +187,12 @@ Neuer Online-Shop für HT-CONNECT übernommen von dem Test Repository
 - Backup Farben Einzelfarben + Farbgruppen unter css/
 - Backup der E-Mail Vorlage für die Rechnung aus der WAWI
 
+## ht-connect.de-v-0.1.5 - 2020-05-08
+
+### Changelog:
+
+- E-Mail Vorlage WAWI Rechnung überarbeitet
+
 ### ToDo:
 
 - Installation, Konfiguration, Dokumentation und Testen des Cookiebot Plugins (.htaccess Zugriff hierfür kurzzeitig deaktiveren und Crawling starten)

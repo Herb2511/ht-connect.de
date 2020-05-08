@@ -1,3 +1,50 @@
+{% comment -%}
+JTL-Software Template für E-Mail "Rechnung (HTML-Format)", Stand: 20140317
+--------------------------------------------------------------------------------------------------------------
+Sie können das Template über folgende Variablen steuern:
+--------------------------------------------------------------------------------------------------------------
+{% endcomment -%}
+{% assign FirmenLogoUrl = '' %}{% comment %}Link zum Firmenlogo (600px breit), z.B:
+http://www.jtl-software.de/bilder/intern/shoplogo/jtlshoplogo.png{% endcomment -%}
+{% assign TwitterProfileUrl= '' %}{% comment %}Link zum Twitter-Profil, z.B:
+https://twitter.com/JTLSoftware{% endcomment -%}
+{% assign FacebookProfileUrl= '' %}{% comment %}Link zum Facebook-Profil, z.B:
+https://www.facebook.com/JTLSoftware{% endcomment -%}
+{% assign GoogleProfileUrl= '' %}{% comment %}Link zum Google+-Profil, z.B:
+https://plus.google.com/109750496801379835262{% endcomment -%}
+{% assign UsePositionImages= false %}{% comment %}Gibt an, ob Bilder der Position eingefügt werden sollen. Bitte
+beachten Sie: Diese Bilder werden nicht von allen E-Mail-Clients angezeigt.{% endcomment -%}
+{% assign KonfigurationsKomponentenAnzeigen = true %}{% comment %}Gibt an, ob Komponenten eines Konfigurationsartikels
+aufgelistet werden sollen.{% endcomment -%}
+{% assign StücklistenKomponentenAnzeigen = false %}{% comment %}Gibt an, ob Komponenten eines Stücklistenartikels
+aufgelistet werden sollen.{% endcomment -%}
+{% assign NurAbweichendeLieferadresse = false %}{% comment %}Gibt an, ob die Lieferadresse nur ausgegeben wird, wenn
+diese von der Rechnungsadresse abweicht.{% endcomment -%}
+{% assign IncludeArtikelnummern = false %}{% comment %}Gibt an, ob die Artikelnummern ausgegeben werden{% endcomment -%}
+{% assign IncludeEinzelpreise = false %}{% comment %}Gibt an, ob die Einzelpreise ausgegeben werden{% endcomment -%}
+{% assign NettopreiseAusKundengruppe = false %}{% comment %}Gibt an, ob die Nettopreisanzeige von der Kundengruppe und
+nicht von den globalen Einstellungen gesteuert wird.{% endcomment -%}
+{% comment -%}
+--------------------------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------------------------
+Unterhalb dieses Bereiches sollten nur erfahrene Anwender Änderungen vornehmen. Bei Fragen
+steht Ihnen unser Supportforum unter http://forum.jtl-software.de/formulardesigner-editor-open-beta-phase/
+zur Verfügung. Gerne helfen Ihnen auch unsere Servicepartner weiter. Einen qualifizierten Service-Partner
+finden Sie unter http://www.jtl-software.de/Servicepartner.
+Die mit @editable gekennzeichneten CSS-Eigenschaften sind für das Layout zuständig. Die anderen CSS-Eigenschaften
+dienen teilweise zur Kompatibilität und sollten nur mit großer Vorsicht verändert werden.
+--------------------------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------------------------
+{% endcomment -%}
+{% assign NettoPreiseBenutzen = false -%}
+{% if NettopreiseAusKundengruppe == true and Vorgang.Kunde.IstNettopreisKunde -%}
+{% assign NettoPreiseBenutzen = true -%}
+{% endif -%}
+{% if NettopreiseAusKundengruppe == false and Vorgabe.NettoPreiseBenutzen == true -%}
+{% assign NettoPreiseBenutzen = true -%}
+{% endif -%}
 <!DOCTYPE html
     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -6,7 +53,10 @@
     <!-- Lizenz für dieses Mailtemplate: CC BY-SA 3.0 -->
     <!-- Quelle: https://github.com/mailchimp/Email-Blueprints, angepasst für JTL-Wawi -->
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <title>Ihre Rechnung über "Klemm Übergangsmu..." und 3 weiteren Artikeln bei HT CONNECT GmbH & Co. KG</title>
+    <title>Ihre Rechnung über
+        "{{ Vorgang.Auftrag.Positionen[0].Bezeichnung | Truncate: 20 }}"{% case Vorgang.Auftrag.Positionen.Size %}{% when 0%}{% when 1 %}{% when 2 %}
+        und einem weiteren Artikeln{% else %} und {{ Vorgang.Auftrag.Positionen.Size | Minus: 1 }} weiteren
+        Artikeln{% endcase%} bei {{ Vorgang.Firma.Name }}</title>
     <style type="text/css">
         /* /\/\/\/\/\/\/\/\/ CLIENT-SPECIFIC STYLES /\/\/\/\/\/\/\/\/ */
         #outlook a {
@@ -763,8 +813,7 @@
                                     <tr>
                                         <td valign="top" class="preheaderContent"
                                             style="padding-top:10px; padding-right:20px; padding-bottom:10px; padding-left:20px;">
-                                            Rechnung über "Klemm Übergangsmu..." und 3 weiteren Artikeln von HT CONNECT
-                                            GmbH & Co. KG
+                                            Rechnung zu Ihrem Auftrag {{ Vorgang.Auftragsnummer }} finden Sie anbei.
                                         </td>
                                     </tr>
                                 </table>
@@ -780,11 +829,15 @@
                                             <table border="0" cellpadding="0" cellspacing="0" width="100%">
                                                 <tr>
                                                     <td valign="top" class="headerLogo">
+                                                        {% if FirmenLogoUrl != empty -%}
+                                                        <img src="{{ FirmenLogoUrl }}" style="max-width:600px;"
+                                                            id="headerImage" alt="Firmenlogo" />
+                                                        {% endif -%}
                                                     </td>
                                                     <td valign="top" class="headerSummary">
                                                         <h1>Rechnung</h1>
-                                                        Rechnungsnummer: <em>RE20041342</em><br />
-                                                        Kundennummer: <em>0035743</em><br />
+                                                        Rechnungsnummer: <em>{{ Vorgang.Belegnummer }}</em><br />
+                                                        Kundennummer: <em>{{ Vorgang.Kunde.Kundennummer }}</em><br />
                                                     </td>
                                                 </tr>
                                             </table>
@@ -803,10 +856,24 @@
                                     <tr>
                                         <td valign="top" class="bodyContent">
                                             <!-- BEGIN BODYTEXT // -->
-                                            Sehr geehrter Herr Knipping,
+                                            {% if Vorgang.Auftrag.Rechnungsadresse.Anrede != empty -%}
+                                            {% case Vorgang.Auftrag.Rechnungsadresse.Anrede -%}
+                                            {% when 'Herr' -%}
+                                            Sehr geehrter Herr\
+                                            {% when 'Frau' -%}
+                                            Sehr geehrte Frau\
+                                            {% else -%}
+                                            Sehr geehrte(r) {{ Vorgang.Auftrag.Rechnungsadresse.Anrede }}\
+                                            {% endcase -%}
+                                            {% if Vorgang.Auftrag.Rechnungsadresse.Titel != empty %}
+                                            {{ Vorgang.Auftrag.Rechnungsadresse.Titel }}{% endif %}
+                                            {{ Vorgang.Auftrag.Rechnungsadresse.Name }},
+                                            {% else -%}
+                                            Sehr geehrte Damen und Herren,
+                                            {% endif -%}<br />
                                             <br />
-                                            <br />
-                                            vielen Dank für Ihren Auftrag vom Donnerstag, 7. Mai 2020. Ihr Auftrag wurde
+                                            vielen Dank für Ihren Auftrag vom
+                                            {{ Vorgang.Auftrag.Erstelldatum | Datum: 'D' }}. Ihr Auftrag wurde
                                             bearbeitet und wird nun versendet.<br />
                                             Eine Änderung oder Zusatz ist jetzt weder durch Sie noch durch unser
                                             Servicepersonal mehr möglich.
@@ -822,25 +889,39 @@
                                                 <tr>
                                                     <td valign="top" class="bodyDataLeft" width="50%">
                                                         <h3>Rechnungsadresse:</h3>
-
-
-                                                        Herr Jürgen Knipping<br />
-
-                                                        Zum Venn 3<br />
-                                                        46399 Bocholt<br />
-                                                        Deutschland<br />
+                                                        {% if Vorgang.Auftrag.Rechnungsadresse.Firma != empty %}{{ Vorgang.Auftrag.Rechnungsadresse.Firma }}<br />{% endif %}
+                                                        {% if Vorgang.Auftrag.Rechnungsadresse.Firmenzusatz != empty %}{{ Vorgang.Auftrag.Rechnungsadresse.Firmenzusatz }}<br />{% endif %}
+                                                        {% if Vorgang.Auftrag.Rechnungsadresse.Anrede != empty %}{{ Vorgang.Auftrag.Rechnungsadresse.Anrede }}
+                                                        {% endif %}{% if Vorgang.Auftrag.Rechnungsadresse.Titel != empty %}{{ Vorgang.Auftrag.Rechnungsadresse.Titel }}{% else %}{{ Vorgang.Auftrag.Rechnungsadresse.Vorname }}{% endif %}
+                                                        {%if Vorgang.Auftrag.Rechnungsadresse.Name != empty %}{{ Vorgang.Auftrag.Rechnungsadresse.Name }}{% endif %}<br />
+                                                        {% if Vorgang.Auftrag.Rechnungsadresse.Adresszusatz != empty %}{{ Vorgang.Auftrag.Rechnungsadresse.Adresszusatz }}<br />{% endif %}
+                                                        {{ Vorgang.Auftrag.Rechnungsadresse.Straße }}<br />
+                                                        {{ Vorgang.Auftrag.Rechnungsadresse.PLZ }}
+                                                        {{ Vorgang.Auftrag.Rechnungsadresse.Ort }}<br />
+                                                        {% if Vorgang.Auftrag.Rechnungsadresse.Landname != empty %}{{ Vorgang.Auftrag.Rechnungsadresse.Landname }}<br />{% endif %}
+                                                        {% if Vorgang.Kunde.UStID > 0 -%}
+                                                        <br />
+                                                        USt-IdNr.: {{Vorgang.Kunde.UStID }}<br />
+                                                        {% endif -%}
                                                     </td>
                                                     <td valign="top" class="bodyDataRight" width="50%">
+                                                        {% if Vorgang.Auftrag.AbweichendeAdressen == true or NurAbweichendeLieferadresse == false -%}
                                                         <h3>Lieferung an:</h3>
-
-
-                                                        Herr Jürgen Knipping<br />
-
-                                                        Zum Venn 3<br />
-                                                        46399 Bocholt<br />
-                                                        Deutschland<br />
+                                                        {% if Vorgang.Auftrag.Lieferadresse.Firma != empty %}{{ Vorgang.Auftrag.Lieferadresse.Firma }}<br />{% endif %}
+                                                        {% if Vorgang.Auftrag.Lieferadresse.Firmenzusatz != empty %}{{ Vorgang.Auftrag.Lieferadresse.Firmenzusatz }}<br />{% endif %}
+                                                        {% if Vorgang.Auftrag.Lieferadresse.Anrede != empty %}{{ Vorgang.Auftrag.Lieferadresse.Anrede }}
+                                                        {% endif %}{% if Vorgang.Auftrag.Lieferadresse.Titel != empty %}{{ Vorgang.Auftrag.Lieferadresse.Titel }}{% else %}{{ Vorgang.Auftrag.Lieferadresse.Vorname }}{% endif %}
+                                                        {%if Vorgang.Auftrag.Lieferadresse.Name != empty %}{{ Vorgang.Auftrag.Lieferadresse.Name }}{% endif %}<br />
+                                                        {% if Vorgang.Auftrag.Lieferadresse.Adresszusatz != empty %}{{ Vorgang.Auftrag.Lieferadresse.Adresszusatz }}<br />{% endif %}
+                                                        {{ Vorgang.Auftrag.Lieferadresse.Straße }}<br />
+                                                        {{ Vorgang.Auftrag.Lieferadresse.PLZ }}
+                                                        {{ Vorgang.Auftrag.Lieferadresse.Ort }}<br />
+                                                        {% if Vorgang.Auftrag.Lieferadresse.Landname != empty %}{{ Vorgang.Auftrag.Lieferadresse.Landname }}<br />{% endif %}
+                                                        {% endif -%}
                                                         <br />
-                                                        Versand DE pauschal<br />
+                                                        {% if Vorgang.VersandartText != empty -%}
+                                                        {{ Vorgang.VersandartText }}<br />
+                                                        {% endif -%}
                                                     </td>
                                                 </tr>
                                             </table>
@@ -862,66 +943,216 @@
                                                     </tr>
                                                 </thead>
                                                 <tbody>
-
+                                                    {% assign versandposition = 0 -%}
+                                                    {% for position in Vorgang.Auftrag.Positionen -%}
+                                                    {% if position.IstVersandkostenPosition -%}
+                                                    {% assign versandart = position.Bezeichnung -%}
+                                                    {% if NettoPreiseBenutzen -%}
+                                                    {% assign versandkosten = position.NettopreisGesamt -%}
+                                                    {% else -%}
+                                                    {% assign versandkosten = position.BruttopreisGesamt -%}
+                                                    {% endif -%}
+                                                    {% elsif position.IstKonfiguratorKomponente -%}
+                                                    {% comment %}Konfigurations-Komponeten ignorieren{% endcomment -%}
+                                                    {% else %}
                                                     <tr>
                                                         <td class="PositionImage">
+                                                            {% if position.Bild != empty and UsePositionImages == true -%}
+                                                            <img style="width:50px;height:50px;align:left"
+                                                                src="data:image/jpeg;base64,{{ position.Bild | Resize: 50,50,'jpg' | Base64Encode }}"
+                                                                alt="Positionsbild" />
+                                                            {% endif -%}
                                                         </td>
                                                         <td class="PositionDescription">
-                                                            3&nbsp;Stk.
-                                                            Klemm Übergangsmuffe Messing Klemme x Innengewinde 40mm x 1
-                                                            1/4"<br />
-
-
-
+                                                            {% if position.Artikel.IstTeilbar %}{{ position.Menge | Nummer : 'N2' }}{% else %}{{ position.Menge }}{% endif %}{% if position.Einheit != empty %}&nbsp;{{ Position.Einheit }}{% else %}x{% endif %}
+                                                            {{ position.Bezeichnung }}<br />
+                                                            {% if IncludeArtikelnummern == true -%}
+                                                            <table border="0" cellpadding="0" cellspacing="0"
+                                                                width="100%" class="PositionProperties">
+                                                                <tbody>
+                                                                    <tr class="Artikelnummer">
+                                                                        <td class="spacer">
+                                                                            <div>&nbsp;</div>
+                                                                        </td>
+                                                                        <td class="name">
+                                                                            Artikelnummer:
+                                                                        </td>
+                                                                        <td class="content">
+                                                                            {{ position.Artikelnummer }}
+                                                                        </td>
+                                                                    </tr>
+                                                                </tbody>
+                                                            </table>
+                                                            {% endif -%}
+                                                            {% if IncludeEinzelpreise == true -%}
+                                                            <table border="0" cellpadding="0" cellspacing="0"
+                                                                width="100%" class="PositionProperties">
+                                                                <tbody>
+                                                                    <tr class="Einzelpreis">
+                                                                        <td class="spacer">
+                                                                            <div>&nbsp;</div>
+                                                                        </td>
+                                                                        <td class="name">
+                                                                            Einzelpreis:
+                                                                        </td>
+                                                                        <td class="content">
+                                                                            {% if NettoPreiseBenutzen %}{{ position.NettopreisEinzel | Nummer : 'C', Vorgang.Gebietsschema | AsHtml }}{% else %}{{ position.BruttopreisEinzel | Nummer : 'C', Vorgang.Gebietsschema | AsHtml }}{% endif %}
+                                                                        </td>
+                                                                    </tr>
+                                                                </tbody>
+                                                            </table>
+                                                            {% endif -%}
+                                                            {% if position.Variationen.size > 0 -%}
+                                                            <table border="0" cellpadding="0" cellspacing="0"
+                                                                width="100%" class="PositionProperties">
+                                                                <tbody>
+                                                                    {% for variation in position.Variationen -%}
+                                                                    <tr class="Variation">
+                                                                        <td class="spacer">
+                                                                            <div>&nbsp;</div>
+                                                                        </td>
+                                                                        <td class="name">
+                                                                            {{ variation.Bezeichnung }}:
+                                                                        </td>
+                                                                        <td class="content">
+                                                                            {{ variation.Wert }}
+                                                                        </td>
+                                                                    </tr>
+                                                                    {% endfor -%}
+                                                                </tbody>
+                                                            </table>
+                                                            {% endif -%}
+                                                            {% if position.Seriennummern.size > 0 -%}
+                                                            <table border="0" cellpadding="0" cellspacing="0"
+                                                                width="100%" class="PositionProperties">
+                                                                <tbody>
+                                                                    {% for seriennummer in position.Seriennummern -%}
+                                                                    <tr class="Seriennummer">
+                                                                        <td class="spacer">
+                                                                            <div>&nbsp;</div>
+                                                                        </td>
+                                                                        <td class="name">
+                                                                            Seriennummer:
+                                                                        </td>
+                                                                        <td class="content">
+                                                                            {{ seriennummer.Seriennummer }}{% if seriennummer.Kommentar1 != empty %}
+                                                                            ({{ seriennummer.Kommentar1 }}{% if seriennummer.Kommentar2 != empty %}
+                                                                            {{ seriennummer.Kommentar2 }}{% endif %}){% endif %}
+                                                                        </td>
+                                                                    </tr>
+                                                                    {% endfor -%}
+                                                                </tbody>
+                                                            </table>
+                                                            {% endif -%}
+                                                            {% if StücklistenKomponentenAnzeigen == true and position.Komponenten.size > 0 -%}
+                                                            <table border="0" cellpadding="0" cellspacing="0"
+                                                                width="100%" class="PositionChildren">
+                                                                <tbody>
+                                                                    {% for stkind in position.Komponenten -%}
+                                                                    {% capture menge %}{{ stkind.Menge | Times: position.Menge }}{% endcapture -%}
+                                                                    <tr class="Stuecklistenkomponente">
+                                                                        <td class="spacer">
+                                                                            <div>&nbsp;</div>
+                                                                        </td>
+                                                                        <td class="bullet">&bull;&nbsp;</td>
+                                                                        <td class="content">
+                                                                            <div>
+                                                                                {% if stkind.Artikel.IstTeilbar %}{{ menge | Nummer : 'N2' }}{% else %}{{ menge }}{% endif %}{% if stkind.Artikel.Einheit != empty %}&nbsp;{{ stkind.Artikel.Einheit }}{% else %}x{% endif %}
+                                                                                {{ stkind.Artikel.Bezeichnung }}</div>
+                                                                        </td>
+                                                                    </tr>
+                                                                    {% endfor -%}
+                                                                </tbody>
+                                                            </table>
+                                                            {% endif -%}
+                                                            {% if KonfigurationsKomponentenAnzeigen == true and position.KonfiguratorKomponenten.size > 0 -%}
+                                                            <table border="0" cellpadding="0" cellspacing="0"
+                                                                width="100%" class="PositionChildren">
+                                                                <tbody>
+                                                                    {% for konfikind in position.KonfiguratorKomponenten -%}
+                                                                    <tr class="Konfiguratorkomponente">
+                                                                        <td class="spacer">
+                                                                            <div>&nbsp;</div>
+                                                                        </td>
+                                                                        <td class="bullet">&bull;&nbsp;</td>
+                                                                        <td class="content">
+                                                                            <div>
+                                                                                {% if konfikind.Artikel.IstTeilbar %}{{ konfikind.Menge | Nummer : 'N2' }}{% else %}{{ konfikind.Menge }}{% endif %}{% if konfikind.Einheit != empty %}&nbsp;{{ konfikind.Einheit }}{% else %}x{% endif %}
+                                                                                {{ konfikind.Bezeichnung }}
+                                                                                {% if konfikind.Seriennummern.size > 0 -%}
+                                                                                <table border="0" cellpadding="0"
+                                                                                    cellspacing="0" width="100%"
+                                                                                    class="PositionProperties">
+                                                                                    <tbody>
+                                                                                        {% for seriennummer in konfikind.Seriennummern -%}
+                                                                                        <tr class="Seriennummer">
+                                                                                            <td class="spacer">
+                                                                                                <div>&nbsp;</div>
+                                                                                            </td>
+                                                                                            <td class="name">
+                                                                                                Seriennummer:
+                                                                                            </td>
+                                                                                            <td class="content">
+                                                                                                {{ seriennummer.Seriennummer }}{% if seriennummer.Kommentar1 != empty %}
+                                                                                                ({{ seriennummer.Kommentar1 }}{% if seriennummer.Kommentar2 != empty %}
+                                                                                                {{ seriennummer.Kommentar2 }}{% endif %}){% endif %}
+                                                                                            </td>
+                                                                                        </tr>
+                                                                                        {% endfor -%}
+                                                                                    </tbody>
+                                                                                </table>
+                                                                                {% endif -%}
+                                                                                {% if StücklistenKomponentenAnzeigen == true and konfikind.Komponenten.size > 0 -%}
+                                                                                <table border="0" cellpadding="0"
+                                                                                    cellspacing="0" width="100%"
+                                                                                    class="PositionChildren">
+                                                                                    <tbody>
+                                                                                        {% for stkind in konfikind.Komponenten -%}
+                                                                                        {% capture menge %}{{ stkind.Menge | Times: konfikind.Menge }}{% endcapture -%}
+                                                                                        <tr
+                                                                                            class="Stuecklistenkomponente">
+                                                                                            <td class="spacer">
+                                                                                                <div>&nbsp;</div>
+                                                                                            </td>
+                                                                                            <td class="bullet">
+                                                                                                &bull;&nbsp;</td>
+                                                                                            <td class="content">
+                                                                                                <div>
+                                                                                                    {% if stkind.Artikel.IstTeilbar %}{{ menge | Nummer : 'N2' }}{% else %}{{ menge }}{% endif %}{% if stkind.Artikel.Einheit != empty %}&nbsp;{{ stkind.Artikel.Einheit }}{% else %}x{% endif %}
+                                                                                                    {{ stkind.Artikel.Bezeichnung }}
+                                                                                                </div>
+                                                                                            </td>
+                                                                                        </tr>
+                                                                                        {% endfor -%}
+                                                                                    </tbody>
+                                                                                </table>
+                                                                                {% endif -%}
+                                                                            </div>
+                                                                        </td>
+                                                                        <td class="PositionPrice">
+                                                                            {% if NettoPreiseBenutzen %}
+                                                                            {{ konfikind.NettopreisEinzel | Nummer : 'C', Vorgang.Gebietsschema | AsHtml }}
+                                                                            {% else %}
+                                                                            {{ konfikind.BruttopreisEinzel | Nummer : 'C', Vorgang.Gebietsschema | AsHtml }}
+                                                                            {% endif %}
+                                                                        </td>
+                                                                    </tr>
+                                                                    {% endfor -%}
+                                                                </tbody>
+                                                            </table>
+                                                            {% endif -%}
 
                                                         </td>
                                                         <td class="PositionPrice">
-
-                                                            21,87&nbsp;€
-
+                                                            {% if NettoPreiseBenutzen %}
+                                                            {{ position.NettopreisGesamt | Nummer : 'C', Vorgang.Gebietsschema | AsHtml }}
+                                                            {% else %}
+                                                            {{ position.BruttopreisGesamt | Nummer : 'C', Vorgang.Gebietsschema | AsHtml }}
+                                                            {% endif %}
                                                         </td>
                                                     </tr>
-
-
-                                                    <tr>
-                                                        <td class="PositionImage">
-                                                        </td>
-                                                        <td class="PositionDescription">
-                                                            3&nbsp;Stk.
-                                                            Klemm Übergangsnippel Messing Klemme x Aussengewinde 40mm x
-                                                            1 1/4"<br />
-
-
-
-
-                                                        </td>
-                                                        <td class="PositionPrice">
-
-                                                            20,76&nbsp;€
-
-                                                        </td>
-                                                    </tr>
-
-
-                                                    <tr>
-                                                        <td class="PositionImage">
-                                                        </td>
-                                                        <td class="PositionDescription">
-                                                            3&nbsp;Stk.
-                                                            Klemm Winkel 90° Messing 2fach Klemme 40mm<br />
-
-
-
-
-                                                        </td>
-                                                        <td class="PositionPrice">
-
-                                                            42,06&nbsp;€
-
-                                                        </td>
-                                                    </tr>
-
-
+                                                    {% endif %}
+                                                    {% endfor -%}
                                                 </tbody>
                                             </table>
                                             <!-- END POSITIONS // -->
@@ -930,43 +1161,59 @@
                                                 <tbody>
                                                     <tr>
                                                         <td valign="top" class="SumPosDescription">
-                                                            Verpackung und Versand (Versand DE pauschal):
+                                                            Verpackung und Versand{% if versandart != null %}
+                                                            ({{ versandart }}){% endif %}:
                                                         </td>
                                                         <td valign="top" class="SumPosPrice"
                                                             style="border-bottom: 1px solid black">
-                                                            0,00&nbsp;€
+                                                            {% if versandkosten != empty %}{{ versandkosten | Nummer : 'C', Vorgang.Gebietsschema | AsHtml }}{% else %}{{ 0.00 | Nummer : 'C', Vorgang.Gebietsschema | AsHtml }}{% endif %}
                                                         </td>
                                                     </tr>
-
+                                                    {% if Vorgabe.MwStAusweisen %}
+                                                    {% for summe in Vorgang.Auftrag.Summen -%}
+                                                    {% if summe.Brutto > 0 or Vorgang.Auftrag.Summen.size == 1 -%}
                                                     <tr>
                                                         <td valign="top" class="SumPosDescription">
-                                                            Summe Netto (19,00%):
+                                                            Summe Netto ({{summe.MwStSatz | Nummer : 'N' }}%):
                                                         </td>
                                                         <td valign="top" class="SumPosPrice">
-                                                            84,69&nbsp;€
-
+                                                            {{ summe.Netto | Nummer : 'C', Vorgang.Gebietsschema | AsHtml }}
+                                                            {% if Vorgang.Währung != Vorgang.Versandlandswährung -%}
+                                                            <br />
+                                                            ({{ summe.Netto | DivideBy: Vorgang.Währungsfaktor | Times: Vorgang.Versandlandswährungsfaktor | Nummer : 'C', Vorgang.Versandlandsgebietsschema | AsHtml }})
+                                                            {% endif -%}
                                                         </td>
                                                     </tr>
-
-
+                                                    {% endif -%}
+                                                    {% endfor -%}
+                                                    {% for summe in Vorgang.Auftrag.Summen %}
+                                                    {% if summe.Brutto > 0 or Vorgang.Auftrag.Summen.size == 1 -%}
                                                     <tr>
                                                         <td valign="top" class="SumPosDescription">
-                                                            zzgl. USt. (19,00%):
+                                                            zzgl. USt. ({{summe.MwStSatz | Nummer : 'N' }}%):
                                                         </td>
                                                         <td valign="top" class="SumPosPrice">
-                                                            16,09&nbsp;€
+                                                            {{ summe.MwSt | Nummer : 'C', Vorgang.Gebietsschema | AsHtml }}
+                                                            {% if Vorgang.Währung != Vorgang.Versandlandswährung -%}
+                                                            <br />
+                                                            ({{ summe.MwSt | DivideBy: Vorgang.Währungsfaktor | Times: Vorgang.Versandlandswährungsfaktor | Nummer : 'C', Vorgang.Versandlandsgebietsschema | AsHtml }})
+                                                            {% endif -%}
                                                         </td>
                                                     </tr>
-
-
-
+                                                    {% endif %}
+                                                    {% endfor %}
+                                                    {% endif %}
                                                     <tr>
                                                         <td valign="top" class="SumPosDescription">
                                                             <em><b>Gesamtsumme:</b></em>
                                                         </td>
                                                         <td valign="top" class="SumPosPrice"
                                                             style="border-top: 1px solid black">
-                                                            <em><b>100,78&nbsp;€</b></em>
+                                                            <em><b>{{ Vorgang.Auftrag.Positionen.BruttopreisGesamt05 | Nummer : 'C', Vorgang.Gebietsschema | AsHtml }}</b></em>
+                                                            {% if Vorgang.Währung != Vorgang.Versandlandswährung -%}
+                                                            <br />
+                                                            <em><b>({{ Vorgang.Auftrag.Positionen.BruttopreisGesamt05 | DivideBy: Vorgang.Währungsfaktor | Times: Vorgang.Versandlandswährungsfaktor | Nummer : 'C', Vorgang.Versandlandsgebietsschema | AsHtml }})</b></em>
+                                                            {% endif -%}
                                                         </td>
                                                     </tr>
                                                 </tbody>
@@ -977,44 +1224,78 @@
                                     <tr>
                                         <!-- BEGIN ZAHLUNGEN // -->
                                         <td valign="top" class="bodyContent">
+                                            {% if Vorgang.Auftrag.Rechnungskauftext == empty -%}
                                             <h3>Zahlung</h3>
                                             <table border="0" cellpadding="0" cellspacing="0" width="100%"
                                                 class="Payments">
                                                 <tbody>
+                                                    {% assign zahlungen = false -%}
+                                                    {% for zahlung in Vorgang.Zahlungen -%}
+                                                    {% assign zahlungen = true -%}
                                                     <tr>
                                                         <td valign="top" class="PaymentsDescription">
-                                                            Zahlung (Vorkasse) vom 08.05.2020:
+                                                            Zahlung ({{ zahlung.Zahlungsweise }}) vom
+                                                            {{ zahlung.Zahlungsdatum | Datum: 'd' }}:
                                                         </td>
                                                         <td valign="top" class="PaymentsPrice">
-                                                            100,78&nbsp;€
+                                                            {{ zahlung.Betrag | Nummer : 'C', Vorgang.Gebietsschema | AsHtml }}
                                                         </td>
                                                     </tr>
+                                                    {% endfor -%}
+                                                    {% if zahlungen == true -%}
                                                     <tr>
                                                         <td valign="top" class="PaymentsDescription">
                                                             <em>offener Betrag:</em>
                                                         </td>
                                                         <td valign="top" class="PaymentsPrice"
                                                             style="border-top: 1px solid black">
-                                                            <em>0,00&nbsp;€</em>
+                                                            <em>{{ Vorgang.Auftrag.OffenerBetrag | Nummer : 'C', Vorgang.Gebietsschema | AsHtml }}</em>
                                                         </td>
                                                     </tr>
+                                                    {% endif -%}
                                                 </tbody>
                                             </table>
+                                            {% if Vorgang.Auftrag.Zahlungsartgesetzt == true -%}
                                             <p>
-                                                Der Betrag in Höhe von 100,78 € wurde uns am 08.05.2020 durch Vorkasse
-                                                gutgeschrieben.
-
+                                                {% if Vorgang.Auftrag.IstBezahlt == true -%}
+                                                {{ Vorgang.Auftrag.TextNachZahlungseingangAufRechnung }}
+                                                {% else -%}
+                                                {{ Vorgang.Auftrag.TextVorZahlungseingangAufRechnung }}
+                                                {% endif -%}
                                             </p>
-
-
+                                            {% endif -%}
+                                            {% if Vorgang.Auftrag.IstBezahlt == false and Vorgang.Zahlungsziel > 0 -%}
+                                            <p>
+                                                {{ Vorgang.ZahlungszielText }}
+                                            </p>
+                                            {% endif -%}
+                                            {% else -%}
+                                            {{ Vorgang.Auftrag.Rechnungskauftext | AsHtml }}
+                                            {% endif -%}
                                         </td>
                                         <!-- END ZAHLUNGEN // -->
                                     </tr>
                                     <tr>
                                         <!-- BEGIN ANMERKUNGEN // -->
                                         <td valign="top" class="bodyContent">
-
-                                            Vielen Dank für Ihren Auftrag.<br />
+                                            {% if Vorgang.Auftrag.IstUStFreiNichtEU == true -%}
+                                            {{ Vorgabe.TexteUStFrei }}<br />
+                                            {% endif -%}
+                                            {% if Vorgang.Auftrag.IstIGL == true -%}
+                                            {{ Vorgabe.TexteIGL }}<br />
+                                            {% endif -%}
+                                            {% if Vorgang.Auftrag.IstReverseCharge == true -%}
+                                            {{ Vorgabe.Texte.ReverseCharge }}<br />
+                                            {% endif -%}
+                                            {% if Vorgang.Auftrag.Anmerkung != empty -%}
+                                            {{ Vorgang.Auftrag.Anmerkung }}<br />
+                                            {% endif -%}
+                                            {% if Vorgang.Text != empty -%}
+                                            {{ Vorgang.Text }}<br />
+                                            {% endif -%}
+                                            {% if Vorgang.KundenText != empty -%}
+                                            {{ Vorgang.KundenText }}<br />
+                                            {% endif -%}
                                         </td>
                                         <!-- END ANMERKUNGEN // -->
                                     </tr>
@@ -1022,7 +1303,7 @@
                                         <td valign="top" class="bodyContent">
                                             Mit freundlichen Grüßen<br /><br />
                                             Ihr Team von<br />
-                                            HT CONNECT GmbH & Co. KG
+                                            {{ Vorgang.Firma.Name }}
                                         </td>
                                     </tr>
                                 </table>
@@ -1035,8 +1316,21 @@
                                 <table border="0" cellpadding="0" cellspacing="0" width="100%" id="templateFooter">
                                     <tr>
                                         <td valign="top" class="footerContent">
-                                            Besuchen Sie uns auf unserer Homepage unter <a
-                                                href="www.pvc-welt.de">www.pvc-welt.de</a>.<br />
+                                            {% if Vorgang.Firma.Homepage != empty %}Besuchen Sie uns auf unserer
+                                            Homepage unter <a
+                                                href="{{Vorgang.Firma.Homepage}}">{{Vorgang.Firma.Homepage}}</a>.<br />{% endif %}
+                                            {% if TwitterProfileUrl != empty -%}
+                                            <a href="{{ TwitterProfileUrl }}">Folgen Sie uns auf
+                                                Twitter</a>&nbsp;&nbsp;&nbsp;
+                                            {% endif -%}
+                                            {% if FacebookProfileUrl != empty -%}
+                                            <a href="{{ FacebookProfileUrl }}">Besuchen Sie uns auf
+                                                Facebook</a>&nbsp;&nbsp;&nbsp;
+                                            {% endif -%}
+                                            {% if GoogleProfileUrl != empty -%}
+                                            <a href="{{ GoogleProfileUrl }}">Besuchen Sie uns auf
+                                                Google+</a>&nbsp;&nbsp;&nbsp;
+                                            {% endif -%}
                                         </td>
                                     </tr>
                                     <tr>
@@ -1045,29 +1339,33 @@
                                                 id="footerInfo">
                                                 <tr>
                                                     <td valign="top" class="footerContent" width="33%">
-
+                                                        {% if Vorgang.Auftrag.Rechnungskauftext == empty -%}
                                                         <em>Bankverbindung</em><br />
-                                                        HT CONNECT GmbH & Co. KG<br />
-                                                        Bank: Sparkasse Nürnberg<br />
-                                                        BIC: SSKNDE77XXX<br />
-                                                        IBAN: DE90 7605 0101 0013 2391 08<br />
-
+                                                        {{ Vorgang.Firma.Bankverbindung.Kontoinhaber  }}<br />
+                                                        Bank: {{ Vorgang.Firma.Bankverbindung.Bank }}<br />
+                                                        BIC: {{ Vorgang.Firma.Bankverbindung.BIC  }}<br />
+                                                        IBAN: {{ Vorgang.Firma.Bankverbindung.IBAN  }}<br />
+                                                        {% endif -%}
                                                     </td>
                                                     <td valign="top" class="footerContent" width="33%">
                                                         <em>Anschrift:</em><br />
-                                                        HT CONNECT GmbH & Co. KG<br />
-                                                        HT CONNECT Verwaltungs-GmbH, GF: Horst Toeffels<br />
-                                                        Norisstraße 4<br />
-                                                        91257 Pegnitz<br />
-                                                        Deutschland<br />
-                                                        Tel: +49 9241 9109100<br />
-
+                                                        {{ Vorgang.Firma.Name }}<br />
+                                                        {% if Vorgang.Firma.Unternehmer != empty %}{{ Vorgang.Firma.Unternehmer }}<br />{% endif %}
+                                                        {{ Vorgang.Firma.Straße }}<br />
+                                                        {{ Vorgang.Firma.PLZ }} {{ Vorgang.Firma.Ort }}<br />
+                                                        {% if Vorgang.Firma.Landname != empty %}{{ Vorgang.Firma.Landname }}<br />{% endif %}
+                                                        Tel: {{ Vorgang.Firma.Telefon }}<br />
+                                                        {% if Vorgang.Firma.Fax != empty %}Fax:
+                                                        {{ Vorgang.Firma.Fax }}<br />{% endif %}
                                                     </td>
                                                     <td valign="top" class="footerContent" width="33%">
                                                         <br />
-                                                        USt-IdNr.: DE311534087<br />
-                                                        St.Nr.: 20816353506<br />
-
+                                                        {% if Vorgang.Firma.UstID != empty %}USt-IdNr.:
+                                                        {{ Vorgang.Firma.UstID }}<br />{% endif %}
+                                                        {% if Vorgang.Firma.Steuernummer != empty %}St.Nr.:
+                                                        {{ Vorgang.Firma.Steuernummer }}<br />{% endif %}
+                                                        {% if Vorgang.Firma.GläubigerID != empty %}Gläubiger-IdNr.:
+                                                        {{ Vorgang.Firma.GläubigerID }}<br />{% endif %}
                                                     </td>
                                                 </tr>
                                             </table>

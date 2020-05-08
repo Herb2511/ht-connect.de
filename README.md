@@ -2,7 +2,7 @@
 
 Neuer Online-Shop für HT-CONNECT übernommen von dem Test Repository
 
-## ht-connect.de-v-0.0.1
+## ht-connect.de-v-0.0.1 - 2020-01-23
 
 ### Changelog:
 
@@ -10,20 +10,20 @@ Neuer Online-Shop für HT-CONNECT übernommen von dem Test Repository
 - team.html --> FlexBox Quinto Box 1 - 5
 - Anlegen neuer Farben und Testen von Schriften
 
-## ht-connect.de-v-0.0.2
+## ht-connect.de-v-0.0.2 - 2020-01-31
 
 ### Changelog:
 
 - Hauptseite neue Farben + Mockups für mobile Ansicht
 - Ihre Ansprechpartner fertig und mobile optimiert
 
-## ht-connect.de-v-0.0.3
+## ht-connect.de-v-0.0.3 - 2020-02-05
 
 ### Changelog:
 
 - FAQ Seite mit eigenem CSS in der Datei erstellt und Beispiel Fragen und Antworten eingebaut, sodass man sie im Text bearbeiten kann. Siehe https://www.ht-connect.de/faq Anleitung von https://www.quackit.com/bootstrap/bootstrap_3/tutorial/bootstrap_collapse.cfm Inspiration von https://www.homematic-ip.com/service/faq.html
 
-## ht-connect.de-v-0.0.4
+## ht-connect.de-v-0.0.4 - 2020-02-20
 
 ### Changelog:
 
@@ -33,7 +33,7 @@ Neuer Online-Shop für HT-CONNECT übernommen von dem Test Repository
 - Footer Icons farblich angepasst und Schriften eingebettet
 - Buttons neu gefärbt
 
-## ht-connect.de-v-0.0.5
+## ht-connect.de-v-0.0.5 - 2020-03-05
 
 ### Changelog:
 
@@ -44,7 +44,7 @@ Neuer Online-Shop für HT-CONNECT übernommen von dem Test Repository
 - Jira Ticket für Solution 360 für Mockups und weitere Umsetzungen erstellt
 - Business Advantages Seite fertig
 
-## ht-connect.de-v-0.0.6
+## ht-connect.de-v-0.0.6 - 2020-03-05
 
 ### Changelog:
 
@@ -53,7 +53,7 @@ Neuer Online-Shop für HT-CONNECT übernommen von dem Test Repository
 - Verlinkung der beiden ersten Kategorien aus der Viererbox von der Hauptseite
 - Bildertausch und Neuverlinkung auf /ueber-uns der Viererboxen auf der Hauptseite
 
-## ht-connect.de-v-0.0.7
+## ht-connect.de-v-0.0.7 - 2020-03-19
 
 ### Changelog:
 
@@ -68,7 +68,7 @@ Neuer Online-Shop für HT-CONNECT übernommen von dem Test Repository
 - FAQ alle bisher nicht gepflegten Bereiche vorerst ausblenden mit einem neuen div mit der Klasse .display-later
 - faq.html: Löschen des paddings padding: 0 0 0 5px; von Fragen der Klasse .a-border-no-box-blue
 
-## ht-connect.de-v-0.0.8
+## ht-connect.de-v-0.0.8 - 2020-03-26
 
 ### Changelog:
 
@@ -82,7 +82,7 @@ Neuer Online-Shop für HT-CONNECT übernommen von dem Test Repository
 - Testbestellungen über Shop und manuell in der WAWI angelegt + Dokumentation aller Schritte unter T:\x-Herbert\01_Dokumentation
 - Test einer Gewerbekunden Registrierung und Gruppenzuordnung in der WAWI
 
-## ht-connect.de-v-0.0.9
+## ht-connect.de-v-0.0.9 - 2020-04-06
 
 ### Changelog:
 
@@ -118,7 +118,7 @@ Neuer Online-Shop für HT-CONNECT übernommen von dem Test Repository
   <img src="/bilder/intern/ht-connect-logo-145x75.png" /> wird in der E-Mail als nicht anzeigbare Grafik dargestellt.
 - Beschluss: E-Mail Templates werden erst nach dem Relaunch des Shops angegangen
 
-## ht-connect.de-v-0.1.0
+## ht-connect.de-v-0.1.0 - 2020-04-14
 
 ### Changelog:
 
@@ -129,7 +129,7 @@ Neuer Online-Shop für HT-CONNECT übernommen von dem Test Repository
 - Tests Preisrangesliders
 - Cookiebot Einrichtung und Plugin Installation
 
-## ht-connect.de-v-0.1.1
+## ht-connect.de-v-0.1.1 - 2020-04-29
 
 ### Changelog:
 
@@ -140,7 +140,7 @@ Neuer Online-Shop für HT-CONNECT übernommen von dem Test Repository
 - Sprachauswahlmenü im Header unter html-plain-header.html ein- und ausblendbar
 - Artikel AD0112 https://www.pvc-welt.de/PVC-U-Klebestutzen-DVGW WAWI HTML-Backup angelegt für Bearbeitung in v-0.1.2
 
-## ht-connect.de-v-0.1.2
+## ht-connect.de-v-0.1.2 - 2020-04-30
 
 ### Changelog:
 
@@ -149,7 +149,7 @@ Neuer Online-Shop für HT-CONNECT übernommen von dem Test Repository
 - Broken Image Mobile Menu in hauptmenu-kacheln-icons.html: korrekte Verlinkung der Icons nach Austausch für die Hauptkategorien im Mobile Menü
 - Vorlage für Bildbearbeitung für alle Artikel mit Einstellungsebenen in PS erstellt unter T:\Artikel\00_VORLAGE-BILDBEARBEITUNG-ARTIKEL
 
-## ht-connect.de-v-0.1.3
+## ht-connect.de-v-0.1.3 - 2020-05-07
 
 ### Changelog:
 
@@ -167,3 +167,28 @@ Neuer Online-Shop für HT-CONNECT übernommen von dem Test Repository
 - Artikel S-002 und S-003 https://www.pvc-welt.de/Saug-Druckschlauch-Schwarz_1 und https://www.pvc-welt.de/Saug-Druckschlauch-Gruen-Transparent_1 Content Anpassungen Bild und Layout unten
 - Sprachauswahl im Header über html-plain-header.html display:none ausgeblendet
 - Mockups für kleiner Desktop + Tablet bzgl. Header Gestaltung <= 1450px unter T:\x-Herbert\02_Projekte\04_Usability-Testing\03_HT-Connect.de-2020-Styleguide-Mockups\02_mockups-final
+
+## ht-connect.de-v-0.1.4 - 2020-05-08
+
+### Changelog:
+
+- Sprachvariablen aus https://pvcwelt.solution360.de/ exportiert und auf ht-connect.de importiert um Staffelpreis Variablen (z.B. s360_rangemodal_desc_rabatt) korrekt anzuzeigen
+- Sprachvariablenkorrektur s360_rangemodal_manuelleEingabeLabel von Manuelle Eingabe auf Eingabe und s360_rangemodal_modalTrigger von Klick auf Mengenrabatt
+- Staffelpreis Slider Überprüfung der Fertigstellung von S360 und Testen der Funktionalität (Die Rabatte/Prozente werden dann pro Artikel/Kinderartikel im Attribut als Wert eingegeben)
+- Artikel CU001 https://www.pvc-welt.de/Messing-Wandwinkel-Klemme-x-Innengewinde_1 Verlinkung des Bildes
+- Artikel A-101 https://www.pvc-welt.de/PVC-U-Klebemuffe_1 zwei Trennlinien für optische Trennung des Download Bereichs
+- Kauf der Lizenzen für Cookiebot unter https://www.jtl-software.de/jtl-store/erweiterungen/cookiebot und BM-Suche unter https://www.bm-suche.de
+- Installation, Konfiguration, Dokumentation und Testen des BM-Suche Plugins
+- .gitignore Datei zum Repository hinzugefügt
+- .htaccess, .htpasswd, .htaccess.back Backup der Live Seite und Dateien in die neu erstellte .gitignore Datei eingefügt
+- Aktuelles .htaccess Backup angelegt in der Datei .htaccess2020.back
+- Aktualisierung der Changelog Formatierung inklusive Datum
+- Backup html-plain-business-advantages.html
+- Backup Farben Einzelfarben + Farbgruppen unter css/
+- Backup der E-Mail Vorlage für die Rechnung aus der WAWI
+
+### ToDo:
+
+- Installation, Konfiguration, Dokumentation und Testen des Cookiebot Plugins (.htaccess Zugriff hierfür kurzzeitig deaktiveren und Crawling starten)
+- Weitere fehlerhafte Plugins überprüfen und Lizenzen kaufen: NETZdingeDE Google Codes -> wird benötigt für korrekte Cookiebot Einbindung
+- Lieferzeitangaben im KD Backend nach einer Bestellung entfernen siehe https://www.pvc-welt.de/jtl.php?bestellung=509690

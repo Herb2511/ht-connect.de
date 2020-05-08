@@ -1,0 +1,1282 @@
+global;aaSelectBTN;"ausw&auml;hlen";1
+global;accountCreated;"Ihr Kundenkonto wurde erstellt";1
+global;accountDeleteFailure;"Ihr Kundenkonto konnte nicht gelöscht werden, da Sie noch eine offene Bestellung haben.";1
+global;accountInactive;"Ihr Kundenaccount ist deaktiviert";1
+global;accountLocked;"Ihr Kundenaccount ist gesperrt";1
+global;activateAccountDesc;"Wir werden Ihre Daten prüfen und Ihr Kundenkonto freischalten.";1
+global;active;Aktiv;1
+global;addAllToCart;"Alle in den Warenkorb";1
+global;additionalCharge;Zuschlag;1
+global;addressData;Adressdaten;1
+global;addToCart;"In den Warenkorb";1
+global;adminMaintenanceMode;"Der Wartungsmodus im Shop ist aktiv. Da Sie als Administrator angemeldet sind, können Sie trotzdem alle Funktionen im Shop bedienen.";1
+global;agb;"Allgemeine Geschäftsbedingungen";1
+global;ajaxcheckoutChangemethode;ändern;1
+global;ajaxLoading;"Wird geladen ...";1
+global;ajaxRegNewAccountPassword;"Möchten Sie dieses Konto dauerhaft speichern?";1
+global;allCategories;"Alle Kategorien";1
+global;allDates;"Jedes Datum";1
+global;allManufacturers;"Alle Hersteller";1
+global;allPrices;"Alle Preise";1
+global;AllProductsPerSite;"Alle Artikel";1
+global;allRatings;"Alle Bewertungen";1
+global;alreadyCustomer;"Ich bin bereits Kunde";1
+global;ampelGelb;"knapper Lagerbestand";1
+global;ampelGruen;"sofort verfügbar";1
+global;ampelRot;"momentan nicht verfügbar";1
+global;applyChanges;"Änderungen übernehmen";1
+global;article-table-footer;"Für die fotografische Darstellung verwenden wir eine Artikelgröße sowie Studiolicht. Die Abbildungen, technischen Daten, Maße und Ausführungen sind unverbindlich. Wir behalten uns jederzeit Änderung ohne Ankündigung vor.";0
+global;asc;aufsteigend;1
+global;available;"Verfügbar ab";1
+global;back;Zurück;1
+global;basePrice;Grundpreis;1
+global;basket;Warenkorb;1
+global;basketCustomerWhoBoughtXBoughtAlsoY;"Kunden kauften dazu folgende Produkte";1
+global;bestseller;Bestseller;1
+global;bestsellers;"Unsere Bestseller";1
+global;blockedEmail;"E-Mailadresse ist geblockt";1
+global;boxItems;Artikel;1
+global;BoxPoll;Umfragen;1
+global;business-login-info;"Bitte beachten: Bestellungen für Geschäftskunden sind nur für Unternehmen mit gültiger USt-IdNr. möglich.";0
+global;captchaAddition;plus;1
+global;captchaDivision;"geteilt durch";1
+global;captchaMathQuestion;"Was ergibt";1
+global;captchaMultiplication;"multipliziert mit";1
+global;captchaSubtraction;minus;1
+global;categories;Kategorien;1
+global;category;Kategorie;1
+global;categoryoverview;Kategorieübersicht;1
+global;categoryoverviewSub;"Wählen Sie eine Kategorie";1
+global;characters;"Zeichen bestehen.";1
+global;charge;Charge;1
+global;choosevariation;wählen;1
+global;clickImgToZoom;"Klicken Sie auf das Bild für eine Galerieansicht";1
+global;code;Code;1
+global;compare;vergleichen;1
+global;compareListNoItems;"Sie benötigen mindestens zwei Artikel, um vergleichen zu können.";1
+global;configure;konfigurieren;1
+global;contact;Kontaktdaten;1
+global;copyright;"© 2010";1
+global;copyrightName;JTL-Shop3;1
+global;counter;Besucherstand;1
+global;couponErr1;"Der Kupon ist nicht aktiv.";1
+global;couponErr10;"Der Kupon ist aufgrund der Lieferadresse ungültig.";1
+global;couponErr12;"Der Kupon ist für den aktuellen Warenkorb ungültig (gilt nur für bestimmte Hersteller).";1
+global;couponErr2;"Der Kupon ist nicht mehr gültig.";1
+global;couponErr3;"Der Kupon ist zur Zeit nicht gültig.";1
+global;couponErr4;"Der Kupon-Mindestbestellwert ist nicht erreicht.";1
+global;couponErr5;"Der Kupon ist für die aktuelle Kundengruppe ungültig.";1
+global;couponErr6;"Der Kupon hat die maximal erlaubte Anzahl an Verwendungen überschritten.";1
+global;couponErr7;"Der Kupon ist für den aktuellen Warenkorb ungültig (gilt nur für bestimmte Artikel).";1
+global;couponErr8;"Der Kupon ist für den aktuellen Warenkorb ungültig (gilt nur für bestimmte Kategorien).";1
+global;couponErr9;"Der Kupon ist ungültig für Ihr Kundenkonto.";1
+global;couponErr99;"Leider sind die Voraussetzungen für den Kupon nicht erfüllt.";1
+global;couponSucc1;"Ihr Versandkostenfrei Kupon wurde für folgende Lieferländer freigeschaltet:";1
+global;csrfValidationFailed;"Die Anfrage konnte nicht verarbeitet werden. Dies kann passieren, wenn die Anfrage von einer unbekannten Quelle gestellt wurde oder die Website-Sitzung zwischenzeitlich abgelaufen ist. Versuchen Sie es bitte erneut.";1
+global;currency;Währung;1
+global;customerInformation;Kundendaten;1
+global;dateOfIssue;"Erscheinungsdatum voraussichtlich";1
+global;delete;entfernen;1
+global;deliveryCountry;Lieferland;1
+global;deliveryStatus;Lieferstatus;1
+global;deliverytimeEstimation;"#MINDELIVERYDAYS# - #MAXDELIVERYDAYS# Werktage";1
+global;deliverytimeEstimationSimple;"#DELIVERYDAYS# Werktage";1
+global;desc;absteigend;1
+global;details;"zur Detailansicht";1
+global;differentialPrice;Preisspanne;1
+global;discount;Rabatt;1
+global;dlErrorCustomerNotMatch;"Fehler: Kunde stimmt nicht überein!";1
+global;dlErrorDownloadLimitReached;"Fehler: Das maximale Download Limit wurde erreicht!";1
+global;dlErrorDownloadNotFound;"Fehler: Dieser Download existiert nicht!";1
+global;dlErrorOrderNotFound;"Fehler: Ihre Bestellung konnte nicht gefunden werden!";1
+global;dlErrorValidityReached;"Fehler: Die maximale Gültigkeit wurde überschritten!";1
+global;dlErrorWrongParameter;"Fehler: Falsche Parameter!";1
+global;download;Download;1
+global;downloadFile;Datei;1
+global;downloadLimit;"Download limit";1
+global;downloadPending;"Warte auf Zahlungseingang";1
+global;downloads;Downloads;1
+global;ean;EAN;1
+global;eanNotExist;"Leider existiert in unserem Sortiment kein Produkt mit folgender Artikelnummer / EAN:";1
+global;edit;Editieren;1
+global;else;sonst;1
+global;emailadress;Email-Adresse;1
+global;enterCode;"Code eingeben";1
+global;enterResult;"Lösung eingeben";1
+global;estimateShippingCostsNote;"Die Versandkostenermittlung steht Ihnen nur zur Verfügung, wenn Sie etwas im Warenkorb haben.";1
+global;ExemptFromCharges;kostenfrei;1
+global;expressionHasTo;"Der Suchausdruck muss mindestens aus";1
+global;extendedSearch;"Erweiterte Suche";1
+global;fillOut;"Bitte ausfüllen!";1
+global;filterBy;"Filtern nach";1
+global;filterGo;Los;1
+global;financing;Finanzierung;1
+global;financingAnnualRate;"Effektiver Jahreszins";1
+global;financingBorrowingRate;Sollzinssatz;1
+global;financingDuration;"Laufzeit (monatlich)";1
+global;financingHoldback;"Monatliche Rate";1
+global;financingIncludesProcessingFee;"enthält Bearbeitungsentgelt";0
+global;financingNotice;"Gebundener jährlicher Sollzinssatz 9,14 %, zzgl. Bearbeitungsentgeld.<br  />Effekt. Jahreszins 9,9 %.";1
+global;financingRateFactor;Ratenfaktor;1
+global;financingRateTable;Ratentabelle;1
+global;financingTotal;Gesamtbetrag;1
+global;find;Suchen;1
+global;findProduct;"Produkt suchen";1
+global;firstReview;"Geben Sie die erste Bewertung für diesen Artikel ab und helfen Sie Anderen bei der Kaufenscheidung";1
+global;footnoteExclusiveShipping;", zzgl. <a href=\"%s\">Versand</a>";1
+global;footnoteExclusiveVat;"Alle Preise zzgl. gesetzlicher USt.";1
+global;footnoteInclusiveShipping;", inkl. <a href=\"%s\">Versand</a>";1
+global;footnoteInclusiveVat;"Alle Preise inkl. gesetzlicher USt.";1
+global;for;"Suche nach: ";1
+global;forgotPassword;"Passwort vergessen?";1
+global;found;gefunden;1
+global;freeGiftFrom1;"Bestellwert ab";1
+global;freeGiftFrom2;"und mehr";1
+global;freeGiftFromOrderValue;"Im Warenkorb können Sie aus folgenden Gratisgeschenken wählen, sofern Ihr Warenkorb über den erforderlichen Warenwert kommt.";1
+global;freeGiftFromOrderValueBasket;"Wählen Sie ein Gratisgeschenk";1
+global;freeshipping;versandkostenfrei;1
+global;from;von;1
+global;fromJust;"schon ab";1
+global;fundingAdvice;"Bei einer Laufzeit von %s Monaten.<br />Weitere Laufzeitbeispiele finden Sie hier. Gebundener jährlicher Sollzinssatz %s $##$. Gesamtbetrag %s.<br  />Effekt. Jahreszins 9,9 $##$.<br />Vermittlung erfolgt ausschließlich für die Commerz Finanz GmbH. Diese Angaben stellen zugleich das repräsentative Beispiel im Sinne des § 6a PangV dar.";1
+global;fundingAdviceHtml;"Bei einer Laufzeit von %s Monaten.<br />Weitere Laufzeitbeispiele finden Sie <a href=\"#\" onclick=\"show_popup(\'f%s\'); return false;\">hier</a>. Gebundener jährlicher Sollzinssatz %s $##$. Gesamtbetrag %s.<br  />Effekt. Jahreszins 9,9 $##$.<br  />Vermittlung erfolgt ausschließlich für die Commerz Finanz GmbH. Diese Angaben stellen zugleich das repräsentative Beispiel im Sinne des § 6a PangV dar.";1
+global;fundingAdviceShort;"Bei einer Laufzeit von %s Monaten.";1
+global;globalAttributeFilter;"Globaler Merkmalfilter";1
+global;gotoBasket;"Zum Warenkorb";1
+global;goTop;"Nach oben";1
+global;goToWishlist;"Zum Merkzettel";1
+global;gotToCompare;"Artikel vergleichen";1
+global;gross;Brutto;1
+global;hello;Hallo;1
+global;improveYourSearch;"Suche verfeinern";1
+global;inactive;Inaktiv;1
+global;incorrectEmail;"Es existiert kein Kunde mit der angegebenen E-Mail-Adresse. Bitte versuchen Sie es nocheinmal.";1
+global;incorrectEmailPlz;"Es existiert kein Kunde mit angegebener E-Mail-Adresse und PLZ. Bitte versuchen Sie es noch einmal.";1
+global;incorrectLogin;"Daten stimmen nicht überein, bitte versuchen Sie es erneut.";1
+global;information;Informationen;1
+global;insteadOf;"Unser bisheriger Preis";1
+global;inStock;"auf Lager";1
+global;intoBasket;"In den Warenkorb";1
+global;invalidCode;"Ungültiger Code";1
+global;invalidDate;"ungültiges Datum";1
+global;invalidDateformat;"Geben Sie das Datum so ein TT.MM.JJJJ, z.B. 04.11.1981";1
+global;invalidEmail;"Bitte geben Sie eine gültige E-Mail-Adresse an";1
+global;invalidInteger;"Bitte geben Sie eine Zahl ein";1
+global;invalidResult;"Falsche Lösung";1
+global;invalidTel;"Bitte geben Sie Ihre Nummer nur in Ziffern ein";1
+global;invalidToken;"Ungültiger Sicherheitscode übermittelt";1
+global;language;Language;1
+global;lastaddeditems;"Zuletzt hinzugefügte Artikel";1
+global;lastsearch;"Neueste Suchanfragen";1
+global;lastViewed;"Zuletzt angesehen";1
+global;leaveMobileView;"Mobile Ansicht verlassen";1
+global;lettersDigits;"Buchstaben oder Zahlen bestehen.";1
+global;listOfItems;"Dieser Artikel besteht aus";1
+global;loggedOut;"Sie wurden erfolgreich abgemeldet";1
+global;login;Anmelden;1
+global;loginBasket;Anmelden;1
+global;loginNotActivated;"Ihr Kundenkonto wurde noch nicht freigeschaltet. Bitte versuchen Sie es zu einem späteren Zeitpunkt.";1
+global;logOut;Abmelden;1
+global;lookAtTop;"siehe oben";1
+global;maintainance;Wartung;1
+global;maintenanceModeActive;"Wir führen gerade Wartungsarbeiten durch und sind in Kürze wieder online.";1
+global;mandatoryFields;Pflichtfelder;1
+global;manufacturer;"Hersteller Übersicht";1
+global;manufacturers;Hersteller;1
+global;matches;Treffer;1
+global;maxUploadSize;"Die maximale Dateigröße pro Datei beträgt";1
+global;mdh;Mindesthaltbarkeitsdatum;1
+global;message;Nachricht;1
+global;modifyBillingAdress;"Rechnungsadresse ändern";1
+global;modifyBillingAdressSimple;ändern;1
+global;monthlyPer;monatlich;1
+global;more;mehr;1
+global;morevariations;"Weitere Variationen wählen";1
+global;mr;Herr;1
+global;mrs;Frau;1
+global;myAccount;"Mein Konto";1
+global;name;Name;1
+global;net;Netto;1
+global;newestFirst;"Neueste zuerst";1
+global;newHere;"Neu hier?";1
+global;newProducts;"Neu im Sortiment!";1
+global;news;News;1
+global;newsArchiv;Newsarchiv;1
+global;newsArchivDate;Erstellungsdatum;1
+global;newsArchivDesc;"Alle Newsartikel im Archiv. ";1
+global;newsArchivSubject;Betreff;1
+global;newsArchivText;Text;1
+global;newsBoxCatOverview;"News Kategorieübersicht";1
+global;newsBoxMonthOverview;"News Monatsübersicht";1
+global;newsDesc;;1
+global;newsletterhistory;"Newsletter Archiv";1
+global;newsletterhistoryback;zurück;1
+global;newsletterhistorydate;Versanddatum;1
+global;newsletterhistorysubject;Betreff;1
+global;newsNavi;"News Navigation";1
+global;next;Nächste;1
+global;no;" Nein ";1
+global;noDataAvailable;"Keine Daten verf&uuml;gbar!";1
+global;noDispatchAvailable;"Es steht leider keine Versandart zur Verfügung.";1
+global;noEntriesAvailable;"Keine Einträge vorhanden";1
+global;noShippingcostsTo;"versandfreie Lieferung";1
+global;notAvailableInSelection;"In der Auswahl nicht verfügbar";1
+global;notifyMeWhenProductAvailableAgain;"Benachrichtigen, wenn verfügbar";1
+global;nowOnly;"jetzt nur";1
+global;oldPrice;"Alter Preis";1
+global;only;" ";1
+global;order;Bestellung;1
+global;orderHistory;Bestellhistorie;1
+global;otherCategories;"Andere Kategorien";1
+global;page;Seite;1
+global;pageNotFound;"Entschuldigung, diese Seite wurde leider nicht gefunden.";1
+global;paginationEntriesPerPage;Einträge/Seite;1
+global;paginationEntryPagination;"Einträge %d &ndash; %d von %d";1
+global;paginationOrderByDate;Datum;1
+global;paginationOrderByRating;Bewertung;1
+global;paginationOrderUsefulness;Hilreich;1
+global;paginationTotalEntries;"Eintr&auml;ge gesamt:";1
+global;parseTextNoLinkID;"Ung&uuml;ltiger Link";1
+global;password;Passwort;1
+global;paymentOptions;Zahlungsart;1
+global;payments_and_shipping;"Zahlung & Versand";0
+global;payNow;"Jetzt bezahlen";1
+global;payWithClickpay;"jetzt mit Click&Pay easy bezahlen";1
+global;payWithDresdnercetelem;"Finanzierungsantrag öffnen";1
+global;payWithHeidelpay;"Mit Heidelpay jetzt bezahlen";1
+global;payWithIclear;"Mit iClear jetzt bezahlen";1
+global;payWithIpayment;"Jetzt mit Kreditkarte/iPayment bezahlen";1
+global;payWithMoneybookers;"Mit Moneybookers jetzt bezahlen";1
+global;payWithMoneybookersQc;"Mit Moneybookers QuickCheckout jetzt bezahlen";1
+global;payWithPaymentPartner;"Mit PaymentPartner jetzt bezahlen";1
+global;payWithPaypal;"Mit PayPal jetzt bezahlen";1
+global;payWithPostfinance;"Mit PostFinance jetzt bezahlen";1
+global;payWithSofortueberweisung;"Jetzt mit sofortüberweisung.de bezahlen";1
+global;payWithWirecard;"Mit Wirecard jetzt bezahlen";1
+global;payWithWorldpay;"Mit Worldpay jetzt bezahlen";1
+global;pleaseChoose;"Bitte auswählen";1
+global;position;Position;1
+global;positions;Pos.;1
+global;preferredDeliveryAddress;"Bevorzugte Lieferadresse";1
+global;preorderPossible;"Vorbestellung möglich";1
+global;previous;Vorherige;1
+global;price;Preis;1
+global;priceHidden;"Preise sichtbar nach Anmeldung";1
+global;priceOnApplication;"Preis auf Anfrage";1
+global;pricePrefix;nur;1
+global;priceRadar;Preisradar;1
+global;priceStarting;ab;1
+global;print;Drucken;1
+global;printThisPage;Drucken;1
+global;product;Artikel;1
+global;productAddedToCart;"wurde erfolgreich in den Warenkorb eingefügt!";1
+global;productAvailable;"Artikel verfügbar ab";1
+global;productAvailableFrom;"Verfügbar ab";1
+global;productExtraShippingNotice;"Es fallen zusätzliche Versandkosten in Höhe von %s an.";1
+global;productMHD;"Haltbar bis";1
+global;productMHDTool;Mindesthaltbarkeitsdatum;1
+global;productNo;ArtikelNr.;1
+global;productNoEAN;"ArtikelNr. / EAN";1
+global;productNoExtraShippingNotice;"Keine zusätzlichen Versandkosten.";1
+global;productNotAvailable;"Produkt vergriffen";1
+global;products;Artikel;1
+global;productsFrom;"Produkte von";1
+global;ProductsPerSiteStd;Standard;1
+global;productsTaggedAs;"Produkte getaggt als";1
+global;productsWith;"Produkte mit";1
+global;productWeight;Artikelgewicht;1
+global;quantity;Menge;1
+global;questiontoproduct;"Frage zu:";1
+global;questiontoproductSuccessful;"Ihre Frage wurde erfolgreich übermittelt. In Kürze werden wir Sie per E-Mail kontaktieren.";1
+global;quickBuy;Schnellkauf;1
+global;rangeOfPrices;Preisspanne;1
+global;rating;Bewertungen;1
+global;ratingAverage;Bewertung;1
+global;redirect;"Sie werden nun weitergeleitet...";1
+global;redirectDesc1;"Danach gelangen Sie zurück zur";1
+global;redirectDesc2;Seite;1
+global;registerBasket;"Sie sind Neukunde?";1
+global;registerNow;"Jetzt registrieren";1
+global;removeFilters;"Alle Filter zurücksetzen";1
+global;requestNotification;"Benachrichtigung anfordern";1
+global;resetSelection;"Auswahl zur&uuml;cksetzen";1
+global;rma;Warenrücksendung;1
+global;s360helplink;Service;0
+global;safety;Sicherheit;1
+global;salutationGeneral;Frau/Herr;1
+global;salutationM;Herr;1
+global;salutationW;Frau;1
+global;search;Suchen;1
+global;searchcloud;Suchwolke;1
+global;searchFilter;Suchfilter;1
+global;searchFor;"Suche nach";1
+global;searchLabel;Suche;1
+global;searchText;"Suchbegriff eingeben";1
+global;searchwords;"Suchbegriff eingeben";1
+global;selectCurrency;"Bitte wählen Sie eine Währung";1
+global;selectFilter;Beliebig;1
+global;selectLang;"Bitte wählen Sie eine Sprache";1
+global;selectLanguage;Sprachauswahl;1
+global;selectManufacturer;"Bitte wählen";1
+global;selectStyle;Farbschema;1
+global;selectUpdateFile;"Bitte Datei auswählen";1
+global;serialnumber;Seriennummer;1
+global;settings;Einstellungen;1
+global;shippingMethods;Versandarten;1
+global;shippingNote_1;;0
+global;shippingNote_2;;0
+global;shippingOptions;Versandart;1
+global;shippingTime;Lieferzeit;1
+global;shippingTimeLP;Lieferdauer;1
+global;shippingWeight;Versandgewicht;1
+global;shippingWeightTotal;Gesamt-Versandgewicht;0
+global;showAll;"Alle anzeigen";1
+global;showAllBestsellers;"Zeige alle Bestseller";1
+global;showAllNewProducts;"Zeige alle neuen Produkte";1
+global;showAllProductsTaggedWith;"Zeige alle getaggten Produkte mit";1
+global;showAllSpecialOffers;"Zeige alle Sonderangebote";1
+global;showAllTopOffers;"Zeige alle Top Angebote";1
+global;showAllUpcomingProducts;"Zeige alle in Kürze verfügbaren Produkte";1
+global;showDescription;"Beschreibung anzeigen";1
+global;showProducts;"zeige Artikel";1
+global;sitemap;Sitemap;1
+global;sitemapGlobalAttributes;"Globale Merkmale";1
+global;sitemapKats;"Alle Kategorien";1
+global;sitemapNanufacturer;Hersteller;1
+global;sitemapNews;News;1
+global;sitemapNewsCats;Newskategorien;1
+global;sitemapSites;"Alle Seiten";1
+global;soldout;Ausverkauft;1
+global;sortAvailability;Verfügbarkeit;1
+global;sortDateofissue;Erscheinungsdatum;1
+global;sortEan;EAN;1
+global;sortNameAsc;"Name A-Z";1
+global;sortNameDesc;"Name Z-A";1
+global;sortNewestFirst;"neuste zuerst";1
+global;sortPriceAsc;"Preis aufsteigend";1
+global;sortPriceDesc;"Preis absteigend";1
+global;sortProductno;Artikelnummer;1
+global;sortWeight;Gewicht;1
+global;specialOffer;Sonderangebot;1
+global;specialOffers;Sonderangebote;1
+global;specialPrice;Sonderpreis;1
+global;specificProducts;"Besondere Produkte";1
+global;standard;Standard;1
+global;starPlural;Sterne;1
+global;starSingular;Stern;1
+global;subtotal;Summe;1
+global;sumArticles;Artikel;1
+global;supplierStockNotice;"Muss bestellt werden. Ab Bestellung lieferbereit in %s Tagen.";1
+global;switchToMobileTemplate;"Möchten Sie diese Seite in einer optimierten Version für mobile Endgeräte aufrufen?";1
+global;tagcloud;Tagwolke;1
+global;tagFilter;Tagfilter;1
+global;tags;Tags;1
+global;topOffer;"Top Angebote";1
+global;topOffers;"Top Angebote";1
+global;toprating;"Top bewerteten Produkte";1
+global;topReviews;"Top bewertet";1
+global;topsearch;"Suchanfragen Top ";1
+global;toptags;"Vergebene Tags Top ";1
+global;total;Gesamt;1
+global;totalSum;Gesamtsumme;1
+global;totalSumNetto;"Gesamtsumme Netto";0
+global;trustedShopsBuyerProtection;"Trusted Shops Käuferschutz";1
+global;trustedshopsName;"Trusted Shops Käuferschutz";1
+global;trustedshopsRating;Kundenbewertung;1
+global;trustedShopsRecommended;empfohlen;1
+global;trustedShopsTo;bis;1
+global;ts_boxcomment;"Geprüfter Online-Shop mit Geld-zurück-Garantie von Trusted Shops.";1
+global;ts_classic_text;"tr&auml;gt das Trusted Shops Zertifikat mit K&auml;uferschutz. Mehr...";1
+global;ts_comment;"Als zusätzlichen Service bieten wir Ihnen den Trusted Shops Käuferschutz an. Wir übernehmen alle Kosten dieser Garantie, Sie müssen sich lediglich anmelden.";1
+global;ts_info_classic_title;"Mehr Informationen zu";1
+global;ts_register;"Anmeldung zum Trusted Shops Käuferschutz";1
+global;ts_seal_classic_title;"Klicken Sie auf das G&uuml;tesiegel, um die G&uuml;ltigkeit zu pr&uuml;fen!";1
+global;ts_signtitle;"Trusted Shops Gütesiegel - Bitte hier Gültigkeit prüfen!";1
+global;unlimited;unendlich;1
+global;upcomingProducts;"In Kürze verfügbar";1
+global;uploadAdded;"Hochgeladen am";1
+global;uploadBrowser;Durchsuchen;1
+global;uploadCanceled;"Datei-Upload wurde abgebrochen";1
+global;uploadEmptyFile;"Die ausgewählte Datei ist leer";1
+global;uploadError;"Fehler beim Upload. Bitte erneut versuchen";1
+global;uploadFile;Datei;1
+global;uploadFilesize;Dateigröße;1
+global;uploadHeadline;"Dateien hochladen";1
+global;uploadInvalidFormat;"Die Datei entspricht nicht dem geforderte Format";1
+global;uploadPreview;Bild;1
+global;uploadState;Status;1
+global;ustIDCaseFive;"Die UmsatzsteuerID ist durch Prüfung ungültig";1
+global;ustIDCaseTwo;"UstID ist nicht im richtigen Format";1
+global;ustIDCaseTwoB;"Für Ihr Land sollte die UstID in diesem Format sein";1
+global;validUntil;"Gültig bis";1
+global;view;Anzeigen;1
+global;Votes;Bewertungen;1
+global;voucher;Gutschein;1
+global;vpePer;pro;1
+global;weight;Gewicht;1
+global;weightUnit;Kg;1
+global;wishlist;Merkzettel;1
+global;with;mit;1
+global;wrb;Widerrufsbelehrungen;1
+global;wrbform;Muster-Widerrufsbelehrungsformular;1
+global;yes;" Ja ";1
+global;youAreHere;"Sie sind hier";1
+global;youAreLoggedIn;"Sie sind angemeldet.";1
+global;yourBasket;"Ihr Warenkorb";1
+global;yourConfiguration;"Ihre Konfiguration";1
+global;yourDownloads;"Ihre Downloads";1
+global;yourSearch;"Ihre Suche war";1
+global;yourUploads;"Ihre Uploads";1
+basketpreview;checkout;"Zur Kasse";1
+basketpreview;heading_sitemap;Seitenübersicht;1
+basketpreview;yourBasket;"Zuletzt in den Warenkorb gelegt";1
+productOverview;addAllToCompareList;"Alle Artikel vergleichen";1
+productOverview;addToCompare;"auf die Vergleichsliste";1
+productOverview;addToWishlist;"auf den Merkzettel";1
+productOverview;allCategories;"Alle Kategorien";1
+productOverview;availability;Verfügbarkeit;1
+productOverview;categoryOverview;Kategorieübersicht;1
+productOverview;chooseCategory;"Kategorie wählen";1
+productOverview;from;ab;1
+productOverview;fromDifferential;ab;1
+productOverview;gallery;Galerie;1
+productOverview;go;Los;1
+productOverview;goToPage;"Gehe zu Seite";1
+productOverview;list;Liste;1
+productOverview;manufacturerSingle;Hersteller;1
+productOverview;mosaic;Mosaik;1
+productOverview;next;weiter;1
+productOverview;noResults;"Leider wurde zu Ihrem Suchbegriff nichts gefunden. Bitte versuchen Sie einen anderen Suchbegriff";1
+productOverview;no_products_in_category;"In dieser Kategorie befinden sich keine Artikel. Wählen Sie bitte eine Unterkategorie aus.";1
+productOverview;of;von;1
+productOverview;page;Seite;1
+productOverview;previous;zurück;1
+productOverview;pricePerUnit;Stückpreis;1
+productOverview;productsPerPage;"Artikel pro Seite";1
+productOverview;productsSearchTerm;"Hiervon häufig gesucht";1
+productOverview;productsTaggedAs;"Hiervon häufig getagged";1
+productOverview;purchaseIntervall;Abnahmeintervall;1
+productOverview;search;Finden!;1
+productOverview;searchAgain;"erneut suchen";1
+productOverview;showAs;"Ansicht als";1
+productOverview;sorting;Sortierung;1
+productOverview;variationsIn;"Variationen in";1
+productDetails;addTag;"Tag hinzufügen";1
+productDetails;addToCompare;vergleichen;1
+productDetails;addToWishlist;merken;1
+productDetails;addYourTag;"Ihren Produkttag hinzufügen";1
+productDetails;articledetails;Artikeldetails;1
+productDetails;availability;Verfügbarkeit;1
+productDetails;basketMatrix;"Bitte tragen Sie Ihre gewünschten Mengen ein";1
+productDetails;buyProductBundle;"Kaufen Sie diesen Artikel im Bundle";1
+productDetails;clicktozoom;"Zum Vergrößern klicken";1
+productDetails;comment;Kommentar;1
+productDetails;configChooseMaxComponents;"Bitte wählen Sie maximal %d";1
+productDetails;configChooseMinComponents;"Bitte wählen Sie mindestens %d";1
+productDetails;configChooseNComponents;"Bitte wählen Sie %d";1
+productDetails;configComponent;Komponente;1
+productDetails;configComponents;Komponenten;1
+productDetails;configError;"Es ist ein Fehler bei der Konfiguration aufgetreten";1
+productDetails;content;Inhalt;1
+productDetails;contents;Inhalt;1
+productDetails;customerWhoBoughtXBoughtAlsoY;"Kunden kauften dazu folgende Produkte";1
+productDetails;description;Beschreibung;1
+productDetails;dimensions;Abmessungen(LxBxH);1
+productDetails;dimension_height;Höhe;1
+productDetails;dimension_length;Länge;1
+productDetails;dimension_width;Breite;1
+productDetails;excl;exkl.;1
+productDetails;finalprice;Endpreis*;1
+productDetails;from;ab;1
+productDetails;incl;inkl.;1
+productDetails;inStock;"auf Lager";1
+productDetails;integralQuantities;"Von diesem Produkt können Sie auch ungerade Mengen erwerben";1
+productDetails;invalidCustomer;"Ung&uuml;ltiger Kunde.";1
+productDetails;invalidHash;"Ung&uuml;tiger Hash &uuml;bergeben - Eventuell ist Ihr Link abgelaufen. Versuchen Sie bitte erneut, Ihr Passwort zurückzusetzen.";1
+productDetails;manufacturer;Hersteller;1
+productDetails;maximalPurchase;"Sie können maximal %d %s von diesem Produkt erwerben";1
+productDetails;mbm;Mindestabnahme;1
+productDetails;minimumPurchase;"Bitte beachten Sie die Mindestabnahme von %d %s";1
+productDetails;nextProduct;"nächster Artikel";1
+productDetails;otherProductsFromManufacturer;"Weitere Artikel von";1
+productDetails;ourPrice;"Unser Preis";1
+productDetails;outofstock;ausverkauft;1
+productDetails;packaging;Packeinheit;1
+productDetails;pleaseChooseVariation;"bitte wählen";1
+productDetails;plus;zzgl.;1
+productDetails;previousProduct;"vorheriger Artikel";1
+productDetails;priceAsConfigured;"Preis wie konfiguriert";1
+productDetails;priceFlow;Preisverlauf;1
+productDetails;priceFlowProduct;"Preisverlauf von";1
+productDetails;priceForAll;"Preis für alle";1
+productDetails;pricePerUnit;Stückpreis;1
+productDetails;productInflowing;"%s bestellt, am %s erwartet";1
+productDetails;productInStock;"Artikel auf Lager";1
+productDetails;productOutOfStock;"Artikel zur Zeit vergriffen";1
+productDetails;productQuestion;"Frage zum Produkt";1
+productDetails;productTags;"Produkt Tags";1
+productDetails;productTagsDesc;"Andere Leute markierten dieses Produkt mit diesen Tags";1
+productDetails;productVote;"Bewertungen für dieses Produkt";1
+productDetails;purchaseIntervall;Abnahmeintervall;1
+productDetails;question;"Ihre Frage";1
+productDetails;recommendLogin;"Bitte anmelden";1
+productDetails;recommendProduct;"Artikel weiterempfehlen";1
+productDetails;RelatedProducts;"Ähnliche Artikel";1
+productDetails;selectionNotAvailable;"Die gewählte Kombination ist nicht verfügbar";1
+productDetails;selectVarCombi;"Bitte wählen Sie %s aus.";1
+productDetails;selectVarCombiLink;und;1
+productDetails;sendComment;"Bewertung abschicken";1
+productDetails;sendQuestion;"Frage abschicken";1
+productDetails;sendRecommendation;"Empfehlung abschicken";1
+productDetails;showOriginalPic;"Originalbild anzeigen";1
+productDetails;still;noch;1
+productDetails;suggestedPrice;"UVP des Herstellers";1
+productDetails;suggestedPriceExpl;"** Unverbindliche Preisempfehlung";1
+productDetails;taglogin;anmelden;1
+productDetails;tagloginnow;"Bitte melden Sie sich an, um einen Tag hinzuzufügen.";1
+productDetails;takeHeedOfInterval;"Bitte beachten Sie das Abnahmeintervall von %d %s";1
+productDetails;thatIs;also;1
+productDetails;thisProductIsFrom;"Dieses Produkt ist erhältlich bei";1
+productDetails;units;Einheiten;1
+productDetails;updatingStockInformation;"Lagerinformationen für Variationen werden geladen";1
+productDetails;vat;USt.;1
+productDetails;VotesUser;"Bewertungen von Benutzern";1
+productDetails;youSave;"Sie sparen";1
+checkout;acceptAgb;"Zum Fortfahren müssen Sie unsere AGB akzeptieren.";1
+checkout;accountHolder;Kontoinhaber;1
+checkout;accountNo;Kontonummer;1
+checkout;additionalCharges;"Sofern die Lieferung in das Nicht-EU-Ausland erfolgt, können weitere Zölle, Steuern oder Gebühren vom Kunden zu zahlen sein, jedoch nicht an den Anbieter, sondern an die dort zuständigen Zoll- bzw. Steuerbehörden. Dem Kunden wird empfohlen, die Einzelheiten vor der Bestellung bei den Zoll- bzw. Steuerbehörden zu erfragen.";1
+checkout;additionalPackaging;Zusatzverpackungen;1
+checkout;backToBasket;"Zurück zum Warenkorb";1
+checkout;bank;Bankinstitut;1
+checkout;banktransferDesc;"Wir werden umgehend Ihre Bestellung weiterbearbeiten.";1
+checkout;basket;Warenkorb;1
+checkout;bic;BIC/SWIFT;1
+checkout;billingAdress;Rechnungsadresse;1
+checkout;blz;BLZ;1
+checkout;cancellationPolicyNotice;"Bitte beachten Sie unsere #LINK_WRB#.";1
+checkout;cashOnDeliveryDesc;"Wir werden umgehend Ihre Bestellung versenden.";1
+checkout;cashOnDeliveryFee;"Bitte beachten Sie die zusätzlichen Nachnahme-Gebühren in Höhe von derzeit 2,00 EUR, die der Zusteller vor Ort erhebt.";1
+checkout;cashOnPickupDesc;"Wir freuen uns auf Ihren Besuch.";1
+checkout;checkOrderDetails;"Bitte überprüfen Sie Ihre Eingaben. Sie können einzelne Angaben durch Klicken auf den jeweiligen Bestellschritt korrigieren.";1
+checkout;checkoutDelivery;"[2] Lieferadresse";1
+checkout;checkoutPayment;"[4] Zahlungsart";1
+checkout;checkoutRegister;"[1] Registrieren";1
+checkout;checkoutShipment;"[3] Versandart";1
+checkout;checkoutSummary;"[5] Zusammenfassung";1
+checkout;checkPLZCity;"Bitte überprüfen Sie Ihre PLZ und/oder Ort";1
+checkout;conditionalFillOut;"optionale Angabe";1
+checkout;continueShopping;"Weiter einkaufen";1
+checkout;createNewAccount;"Neues Kundenkonto erstellen";1
+checkout;createNewAccountDesc;"Sie sind Neukunde und möchten ein Kundenkonto bei uns eröffnen.";1
+checkout;creditcardDesc;"Wir werden umgehend Ihre Bestellung weiterbearbeiten.";1
+checkout;currentCoupon;"Bereits eingelöster Kupon: ";1
+checkout;desdnercetelemDesc;"Um die Bestellung weiter bearbeiten zu können, füllen Sie bitte den Finanzierungsantrag der Commerz Finanz aus. Klicken Sie hierzu auf folgenden Link. Der Finanzierungsantrag auf den Seiten der Commerz Finanz öffnet sich in einem neuen Fenster.";1
+checkout;digitalProductsRegisterInfo;"Nur angemeldete Kunden können Download-Artikel bestellen. Bitte erstellen Sie ein Kundenkonto oder melden Sie sich mit Ihren Zugangsdaten an, um mit dem Kauf fortzufahren.";1
+checkout;discountForArticle;"gültig für: ";1
+checkout;doFollowingBanktransfer;"Bitte führen Sie folgende Überweisung durch";1
+checkout;emptybasket;"Es befinden sich keine Artikel im Warenkorb";1
+checkout;eosErrorBack;"Sie haben die Tansaktion abgebrochen und wurden zur Zahlungsauswahl geleitet.";1
+checkout;eosErrorError;"Ihre Transaktion wurde aufgrund eines Fehlers abgebrochen.";1
+checkout;eosErrorFailure;"Die Kreditkartenzahlung war leider nicht erfolgreich. Bitte wählen Sie eine andere Zahlungsmethode. ";1
+checkout;estimateShipping;"Versand ermitteln";1
+checkout;estimateShippingCostsTo;"Versandkostenermittlung nach";1
+checkout;fillPayment;"Bitte wählen Sie eine Zahlungsart aus.";1
+checkout;fillShipping;"Bitte wählen Sie eine Versandart aus.";1
+checkout;fillUnregForm;"Bitte füllen Sie das Formular aus.";1
+checkout;forInternationalBanktransfers;"Für Auslandsüberweisungen";1
+checkout;goOnShopping;"Weitere Produkte ansehen";1
+checkout;goToStartpage;"zur Startseite";1
+checkout;iban;IBAN;1
+checkout;iloxxDesc;"Wir werden umgehend Ihre Bestellung bearbeiten. Sie erhalten von iloxx eine Nachricht, wie der Treuhandservice genutzt werden kann.";1
+checkout;invalidCouponCode;"Der eingegebene Kuponcode ist nicht gültig.";1
+checkout;invalidUserdata;"Der von Ihnen eingegebene Benutzername oder das Passwort ist falsch!";1
+checkout;invoiceDesc;"Wir werden umgehend Ihre Bestellung weiterbearbeiten.";1
+checkout;ipaymentDesc;"Mit einem Klick auf diesen Button werden Sie zu iPayment geleitet und können sofort Ihre Bestellung bezahlen.";1
+checkout;login;Anmelden;1
+checkout;loginForRegisteredCustomers;"Anmelden für registrierte Kunden";1
+checkout;loginForRegisteredCustomersDesc;"Sie haben bereits bei uns bestellt und haben ein Kundenkonto bei uns, dann geben Sie hier Ihre Daten ein.";1
+checkout;merchandiseValue;Warenwert;0
+checkout;minordernotreached;"Unser Mindestbestellwert wurde nicht erreicht. Der Mindestbestellwert beträgt";1
+checkout;missingFilesUpload;"Bitte laden Sie alle notwendigen Dateien hoch";1
+checkout;missingProducts;"Einige Produkte in Ihrem Warenkorb sind bereits vergriffen. Ihr Warenkorb wurde angepasst.";1
+checkout;modifyBasket;"Warenkorb ändern";1
+checkout;modifyPaymentOption;"Zahlungsart ändern";1
+checkout;modifyPaymentOptionSimple;ändern;1
+checkout;modifyShippingAdress;"Lieferadresse ändern";1
+checkout;modifyShippingAdressSimple;ändern;1
+checkout;modifyShippingOption;"Versandart ändern";1
+checkout;modifyShippingOptionSimple;ändern;1
+checkout;moneybookersDesc;"Mit einem Klick auf diesen Button werden Sie zu Moneybookers geleitet und können sofort Ihre Bestellung bezahlen.";1
+checkout;newEstimation;"Neue Versandermittlung";1
+checkout;nextStepCheckout;"Weiter zur Bestellung";1
+checkout;noShippingAvailable;"Für diesen Zielort stehen keine Versandarten zur Verfügung. Bitte kontaktieren Sie uns direkt.";1
+checkout;noShippingMethodsAvailable;"Es steht keine Versandart für Ihre Bestellung zur Verfügung. Bitte kontaktieren Sie uns direkt, um diese Bestellung abzuwickeln.";1
+checkout;noShippingMethodsAvailableItaly;"Ci dispiace, ma purtroppo non possiamo consegnare al tuo indirizzo.";0
+checkout;one-off;"Einmalig enthalten";1
+checkout;orderCompletedPost;"Ihre Bestellung ist bei uns eingegangen";1
+checkout;orderCompletedPre;"Ihre Bestellung";1
+checkout;orderConfirmationPost;"Ihre Bestellung wurde erfolgreich abgeschlossen.<br />Sie erhalten in wenigen Augenblicken eine Bestätigungs-E-Mail mit den Bestelldaten.";1
+checkout;orderConfirmationPre;"Jetzt bezahlen - sicher und einfach.";1
+checkout;orderLiableToPay;"Zahlungspflichtig bestellen";1
+checkout;orderNotPossibleNow;"Sie haben vor kurzem bereits eine Bestellung abgeschickt. Bitte warten Sie etwas, bevor Sie eine weitere Bestellung durchführen können.";1
+checkout;orderStep0Title;Bestellvorgang;1
+checkout;orderStep0Title2;"Wählen Sie die Art, wie Sie bestellen möchten";1
+checkout;orderUnregistered;"Bestellen ohne Registrierung";1
+checkout;orderWithoutRegistration;"Ohne Registrierung bestellen";1
+checkout;orderWithoutRegistrationDesc;"Bestellen Sie schnell und einfach, ohne ein Kundenkonto anzulegen.";1
+checkout;paymentCompletedPayPal;"Vielen Dank für Ihre Zahlung per PayPal.";1
+checkout;paymentMethod;Zahlungsart;1
+checkout;paymentNotNecessary;"Keine Zahlung notwendig";1
+checkout;paypalBtn;"Jetzt mit PayPal bezahlen";1
+checkout;paypalDesc;"Mit einem Klick auf diesen Button werden Sie zu PayPal geleitet und können sofort Ihre Bestellung bezahlen.";1
+checkout;postfinanceDesc;"Mit einem Klick auf diesen Button werden Sie zu PostFinance geleitet und können sofort Ihre Bestellung bezahlen.";1
+checkout;pricePerUnit;Stückpreis;0
+checkout;proceedNewCustomer;"Als Neukunde fortfahren";1
+checkout;product;Produkt;0
+checkout;productShippingDesc;"Gesonderte Versandkosten";1
+checkout;purpose;Verwendungszweck;1
+checkout;quantity;Anzahl;0
+checkout;refresh;"Warenkorb aktualisieren";1
+checkout;refreshBasket;"Bitte aktualisieren Sie den Warenkorb bei Mengenänderungen.";1
+checkout;saferpayDesc;"Mit einem Klick auf diesen Button werden Sie zu Saferpay geleitet und können dort Ihre Bestellung bezahlen.";1
+checkout;shipmentMode;Versandart;1
+checkout;shippingAdress;Lieferadresse;1
+checkout;shippingFor;"Versand für";1
+checkout;sofortueberweisungDesc;"Mit einem Klick auf diesen Button werden Sie zu Sofortüberweisung (Payment Network AG) geleitet und können sofort Ihre Bestellung bezahlen.";1
+checkout;summary;Zusammenfassung;1
+checkout;thankYouForOrder;"Vielen Dank für Ihre Bestellung.";1
+checkout;totalToPay;Gesamtbetrag;1
+checkout;useCoupon;einlösen;1
+checkout;useCredits;"Guthaben nutzen";1
+checkout;worldpayDesc;"Mit einem Klick auf diesen Button werden Sie zu Worldpay geleitet und können sofort Ihre Bestellung bezahlen.";1
+checkout;wrb;Widerrufsbelehrung;1
+checkout;wrongIban;"Die eingegebene IBAN hat ein ung&uuml;ltiges Format";1
+checkout;yourbasketcontains;"Ihr Warenkorb enthält";1
+checkout;yourbasketisempty;"Ihr Warenkorb ist leer.";1
+checkout;yourbasketismutating;"Ihr Warenkorb wurde aufgrund von Preis- oder Lagerbestandsänderungen aktualisiert. Bitte prüfen Sie die Warenkorbpositionen.";1
+checkout;yourChosenPaymentOption;"Ihre gewählte Zahlungsart";1
+checkout;yourordercontains;"Ihre aktuelle Bestellung enthält";1
+checkout;yourOrderId;"Ihre Bestellnummer";1
+checkout;yourpersonalbasket;"Ihr persönlicher Warenkorb";1
+"account data";accountOverview;"Meine persönlichen Daten";1
+"account data";address;Rechnungsadresse;1
+"account data";addresses;"Meine Anschriften";1
+"account data";billingAdress;Rechnungsadresse;1
+"account data";billingAndDeliveryAddress;"Rechnungs- und Lieferadresse";1
+"account data";birthday;Geburtstag;1
+"account data";birthdayFormat;TT.MM.JJJJ;1
+"account data";changeBillingAddress;"Rechnungsadresse ändern";1
+"account data";city;Ort;1
+"account data";cityNotNumeric;"Der Ort darf keine Zahlen enthalten.";1
+"account data";contactInformation;Kontaktdaten;1
+"account data";continueOrder;"Mit Bestellung fortfahren";1
+"account data";country;Land;1
+"account data";coupon;"Kupon einlösen";1
+"account data";couponCode;Gutschein;1
+"account data";couponDesc;"Falls Sie einen Kupon haben und einlösen möchten, geben Sie diesen bitte hier ein.";1
+"account data";createNewAccount;"Neues Kundenkonto erstellen";1
+"account data";createNewShippingAdress;"Neue Lieferadresse erstellen";1
+"account data";credit;"Guthaben verrechnen";1
+"account data";creditDesc;"Sie haben noch Guthaben auf Ihrem Kundenkonto. Möchten Sie es mit dieser Bestellung verrechnen, so klicken Sie bitte auf nachfolgende Schaltfläche. ";1
+"account data";deviatingDeliveryAddress;"Abweichende Lieferadresse";1
+"account data";editAddressData;"Adressdaten ändern";1
+"account data";editBillingAdress;"Rechnungsadresse ändern";1
+"account data";email;E-Mail;1
+"account data";emailAlreadyExists;"Diese E-Mail-Adresse ist bereits vergeben. Bitte geben Sie eine andere  ein oder melden Sie sich mit dieser E-Mail-Adresse an. ";1
+"account data";emailNotAvailable;"Ihre E-mail Adresse ist bereits vergeben";1
+"account data";fax;"Ihr Zeichen / Ihre Bestellnr.:";1
+"account data";firm;Firma;1
+"account data";firmext;Firmenzusatz;1
+"account data";firstName;Vorname;1
+"account data";firstNameNotNumeric;"Der Vorname darf keine Zahl enthalten.";1
+"account data";formToFast;"Entschuldigung, Sie sind etwas zu schnell!";1
+"account data";homepage;Homepage;1
+"account data";lastName;Nachname;1
+"account data";lastNameNotNumeric;"Der Nachname darf keine Zahlen enthalten.";1
+"account data";mobile;Mobiltelefon;1
+"account data";mr;Herr;1
+"account data";mrs;Frau;1
+"account data";newsletter;Newsletter;1
+"account data";newsletterInfo;", wenn Sie über aktuelle Angebote in unserem Shop informiert werden möchten.";1
+"account data";newsletterSubscribe;"Newsletter abonnieren (Abmeldung jederzeit möglich)";1
+"account data";noDnsEmail;"Ihrer E-Mail Adresse konnte kein DNS-Eintrag zugeordnet werden.";1
+"account data";orders;"Meine Bestellungen";1
+"account data";password;Passwort;1
+"account data";passwordRepeat;"Passwort (Wdh.)";1
+"account data";passwordsMustBeEqual;"Die von Ihnen eingegebenen Passwörter müssen übereinstimmen.";1
+"account data";pleasyAccept;"Bitte bestätigen";1
+"account data";plz;PLZ;1
+"account data";privacyAccepted;"Datenschutzbestimmungen zur Kenntnis genommen";1
+"account data";read;lesen;1
+"account data";receiverEmail;"E-Mail Empfänger";1
+"account data";receiverName;"Name Empfänger";1
+"account data";referrer;"Wie sind Sie zu uns gekommen?";1
+"account data";salutation;Anrede;1
+"account data";sendCustomerData;"Kundendaten abschicken";1
+"account data";senderEmail;"E-Mail Absender";1
+"account data";senderName;"Name Absender";1
+"account data";shippingAdress;Lieferadresse;1
+"account data";shippingAdressDesc;"Falls die Lieferadresse von der Rechnungsadresse abweicht, bitte angeben";1
+"account data";shippingAdressEqualBillingAdress;"Lieferadresse entspricht der Rechnungsadresse";1
+"account data";shippingAndPaymentOptions;"Versand- und Zahlungsart";1
+"account data";state;Bundesland;1
+"account data";street;Straße;1
+"account data";street2;Adresszusatz;1
+"account data";streetnumber;Hausnummer;1
+"account data";tel;Telefon;1
+"account data";title;Titel;1
+"account data";uploadVCard;"vCard hochladen";1
+"account data";useCredit;"Guthaben verrechnen";1
+"account data";ustid;USt-IdNr.;1
+"account data";wishlists;Wunschlisten;1
+"account data";www;WWW;1
+"account data";yourCreditIs;"Ihr Guthaben beträgt";1
+"account data";yourData;"Ihre Angaben";1
+"account data";yourDataDesc;"Felder mit einem * müssen ausgefüllt werden.";1
+"account data";yourShippingAdress;"Ihre Lieferadresse";1
+"account data";yourShippingAdressDesc;"Tragen Sie hier die Lieferadresse ein, falls diese von der Rechnungsadresse abweicht.";1
+"shipping payment";accountNo;Konto-Nr.;1
+"shipping payment";bankname;Kreditinstitut;1
+"shipping payment";bic;BIC;1
+"shipping payment";blz;BLZ;1
+"shipping payment";comment;Kommentar;1
+"shipping payment";completeOrder;"Bestellung abschliessen";1
+"shipping payment";confirmDataDesc;"Falls alle Angaben korrekt sind, können Sie die Bestellung abschliessen.<br>Sie erhalten eine Bestätigungs-E-Mail von uns.";1
+"shipping payment";creditcardNo;Kreditkartennummer;1
+"shipping payment";creditcardType;Kartentyp;1
+"shipping payment";cvv;CVV;1
+"shipping payment";iban;IBAN;1
+"shipping payment";orderComments;"Kommentar zur Bestellung";1
+"shipping payment";owner;Inhaber;1
+"shipping payment";paymentOptionCreditcardDesc;"Bitte geben Sie Ihre Kreditkartendaten ein.";1
+"shipping payment";paymentOptionDebitDesc;"Bitte geben Sie Ihre Bankdaten ein.";1
+"shipping payment";paymentOptionsDesc;"Bitte wählen Sie eine Zahlungsart aus:";1
+"shipping payment";readAndAccepted;"gelesen und akzeptiert";1
+"shipping payment";shippingNote_1;;0
+"shipping payment";shippingNote_2;;0
+"shipping payment";shippingOptionsDesc;"Bitte wählen Sie eine Versandart aus:";1
+"shipping payment";termsAndConditions;AGB;1
+"shipping payment";validity;Gültigkeit;1
+login;basket2PersMerge;"Wollen Sie den gespeicherten Warenkorb mit Ihrem aktuellen Warenkorb zusammenfassen?";1
+login;changePassword;"Passwort ändern";1
+login;changePasswordDesc;"Füllen Sie bitte das Formular aus, um Ihr Passwort zu ändern.";1
+login;changepasswordFilloutForm;"Bitte füllen Sie das Formular aus, um Ihr Passwort zu ändern.";1
+login;changepasswordPassesNotEqual;"Die Wiederholung des Passwort stimmte nicht mit dem gewünschten Passwort überein. Bitte füllen Sie das Formular erneut aus!";1
+login;changepasswordPassTooShort;"Ihr neues Passwort ist zu kurz. Bitte ein längeres neues Passwort eingeben!";1
+login;changepasswordSuccess;"Sie haben erfolgreich Ihr Passwort geändert!";1
+login;changepasswordWrongPass;"Ihr angegebenes, altes Passwort ist nicht korrekt. Bitte erneut eingeben!";1
+login;currentPassword;"Aktuelles Passwort";1
+login;dataEditSuccessful;"Daten erfolgreich aktualisiert.";1
+login;deleteAccount;"Kundenkonto löschen";1
+login;downloadInvoice;"Rechnung als .pdf";0
+login;editBillingAdressDesc;"Hier können Sie Ihre Daten aktualisieren.";1
+login;editData;"Rechnungsdaten ändern";1
+login;from;vom;1
+login;invoiceDownload;Rechnung;0
+login;kwkEmail;E-Mail;1
+login;kwkFirstName;Vorname;1
+login;kwkLastName;Nachname;1
+login;kwkName;"Werben Sie einen Freund";1
+login;kwkNameDesc;"Füllen Sie alle Felder aus";1
+login;kwkSend;Verschicken;1
+login;loginDesc;"Sie sind nicht angemeldet. Bitte geben Sie Ihre Daten ein, um sich anzumelden.";1
+login;loginTitle;"Mein Konto";1
+login;moneyOnAccount;Guthaben;1
+login;myAccountDesc;"Hier können Sie Ihre Adressdaten ändern, den Status Ihrer Bestellungen abfragen und Gutscheine weiterverschenken.";1
+login;newAccount;"Neues Kundenkonto erstellen";1
+login;newPassword;"Neues Passwort";1
+login;newPasswordRpt;"Neues Passwort wdh.";1
+login;notPayedYet;"noch kein Zahlungseingang";1
+login;notShippedYet;"noch nicht versendet";1
+login;orderDate;Bestelldatum;1
+login;orderDetails;"Bestelldetails zu";1
+login;orderNo;BestellNr.;1
+login;orderStatus;Status;1
+login;payedOn;"Zahlung eingegangen am";1
+login;paymentStatus;Bezahlstatus;1
+login;reallyDeleteAccount;"Möchten Sie wirklich Ihr Kundenkonto unwiderruflich löschen?";1
+login;sendVoucher;"Als Gutschein verschenken";1
+login;shippedOn;"Versendet am";1
+login;shippingAdresses;Lieferadresse;1
+login;shippingInfo;"Zusatzinformationen zum Versand";1
+login;shippingStatus;Versandstatus;1
+login;showOrder;"Bestellung anzeigen";1
+login;trackingId;"Tracking ID";1
+login;value;Bestellwert;1
+login;welcome;Willkommen;1
+login;wishlistAddAllToCart;"Alles in den Warenkorb";1
+login;wishlistAddedOn;"Hinzugefügt am";1
+login;wishlistAddNew;"Neuen Merkzettel anlegen";1
+login;wishlistaddToCart;"Zum Warenkorb hinzufügen";1
+login;wishlistComment;Kommentar;1
+login;wishlistDelAll;"Alles löschen";1
+login;wishlisteDelete;Löschen;1
+login;wishlistEmailCount;"Maximale E-Mail Empfänger";1
+login;wishlistEmails;"E-Mail Empfänger - getrennt durch Leerzeichen";1
+login;wishlistName;Name;1
+login;wishlistNavBack;zurück;1
+login;wishlistNoticePrivate;"Momentan ist Ihr Merkzettel nicht öffentlich";1
+login;wishlistNoticePublic;"Momentan ist Ihr Merkzettel öffentlich";1
+login;wishlistNotPrivat;"Merkzettel öffentlich machen";1
+login;wishlistPosCount;Anzahl;1
+login;wishlistPrivat;"Merkzettel Privat machen";1
+login;wishlistProduct;Artikel;1
+login;wishlistPublic;öffentlich;1
+login;wishlistremoveItem;"Artikel löschen";1
+login;wishlistRemoveSearch;"Suche lösen";1
+login;wishlistRename;"Merkzettel umbennenen";1
+login;wishlistSaveNew;erstellen;1
+login;wishlistSearch;"Artikelsuche auf Ihrem Merkzettel";1
+login;wishlistSearchBTN;Suchen;1
+login;wishlistSearchInfo;"Suchen Sie hier Artikel auf Ihrem Merkzettel.";1
+login;wishlistSend;"Merkzettel senden";1
+login;wishlistSetPrivate;"Privat machen";1
+login;wishlistSetPublic;"Öffentlich machen";1
+login;wishlistStandard;Aktiv;1
+login;wishlistUpdate;"Merkzettel aktualisieren";1
+login;wishlistURL;"Ihr Merkzettel ist erreichbar unter";1
+login;wishlistViaEmail;"Merkzettel per E-Mail versenden";1
+login;yourMoneyOnAccount;"Ihr aktuelles Guthaben";1
+login;yourOrderComment;"Ihr Kommentar zur Bestellung";1
+login;yourOrders;"Ihre Bestellungen";1
+login;yourWishlist;"Ihre gespeicherten Merkzettel";1
+custom;accountKdNr;KdNr:;0
+custom;addVatTaxText;"<p style=\"font-size: 12px;\">Alle Maßangaben in Millimeter, Gewichtsangaben in Gramm.<br>Für die fotografische Darstellung verwenden wir eine Artikelgröße sowie Studiolicht. Die Abbildungen, technischen Daten, Maße und Ausführungen sind unverbindlich. Wir behalten uns jederzeit Änderung ohne Ankündigung vor.<br>Die Nutzmaße sind definiert bzw. verstärkt dargestellt bzw. ergeben sich aus der Artikelbezeichnung. Weitere Maße dienen ausschließlich der Darstellungsunterstützung. Bei Zweckentfremdung bitten wir dies zu beachten.";0
+custom;agb_wrb_business;"Ich habe die <a href=""/Allgemeine-Geschaeftsbedingungen-fuer-gewerbliche-Kaeufer"" target=""_blank""> AGB/Kundeninformationen</a> des Anbieters gelesen und erkläre mit dem Absenden der Bestellung mein Einverständnis. Die <a href=""/Widerrufsbelehrung-fuer-gewerbliche-Kaeufer"" target=""_blank""> Widerrufsbelehrung</a> habe ich zur Kenntnis genommen.";0
+custom;agb_wrb_consumer;"Ich habe die <a href=""/AGB-und-Kundeninformationen-"" target=""_blank""> AGB/Kundeninformationen</a> des Anbieters gelesen und erkläre mit dem Absenden der Bestellung mein Einverständnis. Die <a href=""/Widerrufsrecht"" target=""_blank""> Widerrufsbelehrung</a> habe ich zur Kenntnis genommen. ";0
+custom;allPrices;"Alle Preise";0
+custom;alt_list_image;Produktbild;0
+custom;alt_list_technical_image;"technische Zeichnung";0
+custom;articleMatrixDiscount;%;0
+custom;articleMatrixDiscountHeadline;Staffelpreise;0
+custom;articleMatrixOrder;"Artikel bestellen";0
+custom;articleMatrixPrice;Preis;0
+custom;articleNr;ArtikelNr.;0
+custom;articleOrder;"Artikel bestellen";0
+custom;articlesInCategory;"Artikel in";0
+custom;article_cat_list_price_headline;"UNSER PREIS";0
+custom;article_label_new;NEU;0
+custom;article_label_sale;%;0
+custom;article_label_top;TOP;0
+custom;categories_filter_headline;"Filtern nach";0
+custom;categories_headline;Kategorien;0
+custom;couponInfo;"Zur Einlösung eines Gutscheines oder  Rabatts geben Sie bitte hier Ihren  Aktionscode ein und bestätigen diesen.";0
+custom;currency;€;0
+custom;datenblatt;Datenblatt;0
+custom;et360_lpa_or;oder;0
+custom;footerInformationContent;"Nach telefonischer Absprache unter<br /> 09241 - 8090266<br /><br />Norisstraße 4, 91257 Pegnitz<br /> <br />kein Verkauf vor Ort!";0
+custom;freeShipping;"Kostenloser Versand";0
+custom;from;ab;0
+custom;gewindekennung;"Gewindekennung Zoll <i class=\"fa fa-cog\" aria-hidden=\"true\"></i>";0
+custom;ihrZeichen;"Ihr Zeichen / Ihre Bestellnr.";0
+custom;informationHeadline;"Direkte Abholung";0
+custom;meinKonto;Konto;0
+custom;minimum_order_quantity;Mindestabnahme:;0
+custom;nextPage;"nächste Seite";0
+custom;onApplication;"Auf Anfrage";0
+custom;payments_and_shipping;"Zahlung & Versand";0
+custom;pdfFooterText;"* alle Preise netto exkl. gesetzliche MwSt.<br>HT CONNECT GmbH & Co. KG - Norisstraße 4 - 91257 Pegnitz - Tel.: 09241/8090266 - Mail: info@pvc-welt.de";0
+custom;pdfGenerator;"Datenblatt als PDF <i class=\\\"fa fa-file-pdf-o\\\" aria-hidden=\\\"true\\\"></i>";0
+custom;pdfImageInfo;"Alle Maßangaben in Millimeter, Gewichtsangaben in Gramm.<br>Für die fotografische Darstellung verwenden wir eine Artikelgröße sowie Studiolicht. Die Abbildungen, technischen Daten, Maße und Ausführungen sind unverbindlich. Wir behalten uns jederzeit Änderung ohne Ankündigung vor.  <br>Der Verwendungszweck des Artikels sowie die Nutzmaße sind klar definiert. Weitere Maße dienen ausschließlich der Darstellungsunterstützung. Bei Zweckentfremdung bitten wir dies zu beachten.";0
+custom;previousPage;"vorherige Seite";0
+custom;productNotInStock;"Wann wieder verfügbar?";0
+custom;s360-wunschzettel-name;"Mein Merkzettel";0
+custom;s360_account_exists;"Kundenkonto vorhanden?";0
+custom;s360_articledetail_articlenumber;Artikelnummer;0
+custom;s360_articledetail_customerratings;Bewertung(en);0
+custom;s360_articledetail_shortdescription;Kurzbeschreibung;0
+custom;s360_articledetail_tab_attributes;Merkmale;0
+custom;s360_articledetail_tab_description;Beschreibung;0
+custom;s360_articledetail_tab_downloads;Downloads;0
+custom;s360_articledetail_tab_ratings;Bewertung;0
+custom;s360_articledetail_tab_selection;Auswahl;0
+custom;s360_articledetail_tab_video;Video;0
+custom;s360_articledetail_tab_zubehoer;Zubehör;0
+custom;s360_articlelist_moredetails;"weitere Details";0
+custom;s360_article_nostandardprice;"nach Variation";0
+custom;s360_backtoshop;"Zurück zum Shop";0
+custom;s360_breadcrumb_text;"Sie befinden sich hier";0
+custom;s360_hide_company;"&nbsp;Als <span class=\"business-customer-reg\">Geschäftskunde</span> bestellen";0
+custom;s360_productrating_label_bad;schlecht;0
+custom;s360_productrating_label_good;"sehr gut";0
+custom;s360_productrating_ratingdate;"bewertet am";0
+custom;s360_slider_headline_neuheiten;NEUHEITEN;0
+custom;s360_startseite_headline_infoboxen;"Über PVC-Welt.de";0
+custom;s360_startseite_headline_seoblock;"Über PVC-Welt.de";0
+custom;s360_startseite_headline_themenwelten;Themenwelten;0
+custom;shippingWeightTotal;Gesamt-Versandgewicht;0
+custom;shipping_headline;Versandarten;0
+custom;speditionHeadline;Versandhinweis;0
+custom;speditionInfoText;"Dieser Artikel wird per Spedition ausgeliefert.";0
+custom;sperrgutInfoText;" Dieser Artikel wird als Sperrgut ausgeliefert. ";0
+custom;stp_headline;3D;0
+custom;toTheVariations;"Variante wählen";0
+custom;versandInfoText;"Dieser Artikel wird per Spedition bzw. als Sperrgut ausgeliefert.";0
+"forgot password";createNewPassword;"Neues Passwort beantragen";1
+"forgot password";forgotPasswordDesc;"Bitte geben Sie hier Ihre E-Mail-Adresse ein, mit der Sie sich registriert haben.";1
+"forgot password";newPasswortWasGenerated;"In wenigen Augenblicken erhalten Sie eine E-Mail mit weiteren Schritten zum Zurücksetzen Ihres Passworts.";1
+"forgot password";plz;PLZ;1
+contact;message;Nachricht;1
+contact;messageSent;"Ihre Nachricht wurde verschickt. Vielen Dank für Ihre Nachricht.";1
+contact;noSubjectAvailable;"Kein Betreff vorhanden";1
+contact;sendMessage;"Nachricht senden";1
+contact;subject;Betreff;1
+contact;youSentUsAMessageShortTimeBefore;"Sie haben uns vor kurzer Zeit bereits eine Nachricht geschickt. Bitte warten Sie einen Moment, bevor Sie uns erneut eine Nachricht schicken können.";1
+comparelist;addtocart;"In den Warenkorb";1
+comparelist;addtowishlist;"Auf die Wunschliste";1
+comparelist;back;"Zurück zum Shop";1
+comparelist;characteristics;Merkmale;1
+comparelist;compareList;"Artikel vergleichen";1
+comparelist;comparePrintThisPage;"Vergleichsliste drucken";1
+comparelist;description;Beschreibung;1
+comparelist;manufacturer;Hersteller;1
+comparelist;productNumber;Artikelnummer;1
+comparelist;productWeight;Artikelgewicht;1
+comparelist;shippingWeight;Versandgewicht;1
+comparelist;shortDescription;Kurzbeschreibung;1
+comparelist;variations;Variationen;1
+comparelist;weightUnit;Kg;1
+"product rating";allreadyWroteReview;"Sie haben bereits eine Bewertung zu diesem Produkt abgegeben.";1
+"product rating";allReviews;"Alle Bewertungen";1
+"product rating";averageProductRating;"Durchschnittliche Artikelbewertung";1
+"product rating";averageRatingFrom;"Durchschnittliche Bewertungen von";1
+"product rating";back;Zurück;1
+"product rating";comment;Kommentar;1
+"product rating";commentNote;"(Bitte klären Sie technische Fragen vor Bestellabschluss)";0
+"product rating";evaluatedWith;"bewertet mit";1
+"product rating";fiveStarsFTW;"5 Sterne = beste Bewertung";1
+"product rating";from;von;1
+"product rating";goButton;OK;1
+"product rating";headline;Überschrift;1
+"product rating";highestReviewFirst;"Höchste zuerst";1
+"product rating";isRatingHelpful;"Ist diese Bewertung hilfreich für Sie";1
+"product rating";latestReviewFirst;"Älteste zuerst";1
+"product rating";loginFirst;"Bitte melden Sie sich an, um eine Bewertung zu schreiben.";1
+"product rating";lowestReviewFirst;"Niedrigste zuerst";1
+"product rating";maxProduct1;"es liegen";1
+"product rating";maxProduct2;"Artikelbewertungen vor";1
+"product rating";maxProductNull;keine;1
+"product rating";moreProductRatings;"Weitere Artikelbewertungen ";1
+"product rating";nobody;Niemand;1
+"product rating";productAssess;"Artikel bewerten";1
+"product rating";productNotBuyed;"Sie können nur Bewertungen abgeben, wenn Sie den Artikel bereits gekauft haben.";1
+"product rating";productRating;Artikelbewertung;1
+"product rating";ratingHelpfulCount;"Kunden fanden die folgende Bewertung hilfreich";1
+"product rating";ratingHelpfulCountExt;"Kunde fand die folgende Bewertung hilfreich";1
+"product rating";recentReviewFirst;"Neueste zuerst";1
+"product rating";reviewsSortedBy;"Bewertungen sortieren nach";1
+"product rating";shareYourExperience;"Teilen Sie anderen Kunden Ihre Erfahrungen mit";1
+"product rating";shareYourRatingGuidelines;"Teilen Sie uns Ihre Meinung mit";1
+"product rating";starPlural;Sterne;1
+"product rating";starPluralEvaluated;Stars;1
+"product rating";starSingular;Stern;1
+"product rating";submitRating;"Bewertung abschicken";1
+"product rating";theMostUsefulRating;"Die hilfreichste Artikelbewertung";1
+"product rating";unusefulClassifiedReviewFirst;"Nicht hilfreich eingestufte zuerst";1
+"product rating";usefulClassifiedReviewFirst;"Hilfreich eingestufte zuerst";1
+"product rating";viewMoreRatingsInOtherLanguages;"Mehr Bewertungen in anderen Sprachen";1
+"product rating";wroteAt;"schrieb am";1
+newsletter;newsletter;Newsletter;1
+newsletter;newsletterdraftdate;"Abgesendet am";1
+newsletter;newsletterdraftsubject;Betreff;1
+newsletter;newsletteremail;E-Mail;1
+newsletter;newsletterfirstname;Vorname;1
+newsletter;newsletterhistoryback;zurück;1
+newsletter;newsletterHtml;"Inhalt HTML";1
+newsletter;newsletterlastname;Nachname;1
+newsletter;newsletterSendSubscribe;abonnieren;1
+newsletter;newsletterSendUnsubscribe;abmelden;1
+newsletter;newsletterSubscribe;"Newsletter abonnieren (Abmeldung jederzeit möglich)";1
+newsletter;newsletterSubscribeDesc;"Um sich für unseren Newsletter anzumelden, tragen Sie bitte hier Ihre E-Mail-Adresse ein und klicken anschließend auf \"abonnieren\".";1
+newsletter;newslettertitle;Anrede;1
+newsletter;newslettertitle1;Frau;1
+newsletter;newslettertitle2;Herr;1
+newsletter;newsletterUnsubscribe;"Newsletter abmelden";1
+newsletter;newsletterUnsubscribeDesc;"Zum Abmelden des Newsletters tragen Sie bitte Ihre E-Mail-Adresse im unten stehenden Feld ein. Klicken Sie anschließend auf \"abmelden\".";1
+newsletter;unsubscribeAnytime;"Abmeldung jederzeit möglich";1
+news;april;April;1
+news;august;August;1
+news;december;Dezember;1
+news;february;Februar;1
+news;january;Januar;1
+news;july;Juli;1
+news;june;Juni;1
+news;march;März;1
+news;may;Mai;1
+news;monthOverview;"News Monatsübersicht";1
+news;moreLink;"mehr ...";1
+news;news;News;1
+news;newsCat;Newskategorie;1
+news;newsCategorie;"Alle Kategorien";1
+news;newsCatOverview;"Newskategorie Übersicht";1
+news;newsCats;Newskategorien;1
+news;newsComment;Kommentar;1
+news;newsCommentAdd;"Kommentar eingeben";1
+news;newsComments;Kommentare;1
+news;newsCommentSave;speichern;1
+news;newsDateFilter;"Alle Monate";1
+news;newsDesc;;1
+news;newsEmail;E-Mail;1
+news;newsLogin;"Bitte melden Sie sich an, um einen Kommentar zu schreiben.";1
+news;newsLoginNow;"Jetzt anmelden";1
+news;newsMetaDesc;"Neuigkeiten und Aktuelles zu unserem Sortiment und unserem Onlineshop";1
+news;newsMonthOverview;"News Monatsübersicht";1
+news;newsName;Name;1
+news;newsNaviBack;Vorherige;1
+news;newsNaviFrom;von;1
+news;newsNaviNext;Nächste;1
+news;newsPerSite;"Anzahl pro Seite";1
+news;newsRestricted;"Dieser Beitrag unterliegt Beschr&auml;nkungen.";1
+news;newsSort;Sortierung;1
+news;newsSortCommentsASC;"Kommentare 1...10";1
+news;newsSortCommentsDESC;"Kommentare 10...1";1
+news;newsSortDateASC;"Neueste zuletzt";1
+news;newsSortDateDESC;"Neueste zuerst";1
+news;newsSortHeadlineASC;"Überschrift A...Z";1
+news;newsSortHeadlineDESC;"Überschrift Z...A";1
+news;noNewsArchiv;"Leider befinden sich noch keine News im Archiv";1
+news;november;November;1
+news;october;Oktober;1
+news;overview;"News Übersicht";1
+news;readComments;"Kommentar(e) lesen/hinzufügen";1
+news;september;September;1
+umfrage;umfrage;Umfrage;1
+umfrage;umfrageBack;Zurück;1
+umfrage;umfrageNext;Weiter;1
+umfrage;umfrageQ;Frage;1
+umfrage;umfrageQNext;"Nächste Frage";1
+umfrage;umfrageQPage;Seite;1
+umfrage;umfrageQRequired;"Erforderliche Angabe";1
+umfrage;umfrageQs;Fragen;1
+umfrage;umfrageSubmit;"Umfrage absenden";1
+UOS;uosCity;Ort;1
+UOS;uosCompany;Firma;1
+UOS;uosCountry;Land;1
+UOS;uosEmail;E-Mail;1
+UOS;uosExtra;Adresszusatz;1
+UOS;uosFirstname;Vorname;1
+UOS;uosLastname;Nachname;1
+UOS;uosNameTitle;Anrede;1
+UOS;uosStreet;Strasse;1
+UOS;uosStreetNumber;Hausnummer;1
+UOS;uosTitle;Titel;1
+UOS;uosZip;Postleitzahl;1
+strength;medium;mittel;1
+strength;strong;stark;1
+strength;stronger;"top secret";1
+strength;veryWeak;"zu kurz";1
+strength;weak;schwach;1
+breadcrumb;account;"Mein Konto";1
+breadcrumb;basket;Warenkorb;1
+breadcrumb;bewertung;Bewertung;1
+breadcrumb;checkout;Bestellvorgang;1
+breadcrumb;contact;Kontakt;1
+breadcrumb;forgotpassword;"Passwort vergessen";1
+breadcrumb;login;Login;1
+breadcrumb;maintainance;Wartung;1
+breadcrumb;news;News;1
+breadcrumb;newskat;Newskategorie;1
+breadcrumb;newsletter;Newsletter;1
+breadcrumb;newsmonat;Newsmonat;1
+breadcrumb;pagenotfound;"Seite nicht gefunden";1
+breadcrumb;register;Registrieren;1
+breadcrumb;search;Suche;1
+breadcrumb;startpage;Startseite;1
+breadcrumb;umfrage;Umfrage;1
+breadcrumb;umfragen;Umfragen;1
+breadcrumb;wishlist;Wunschliste;1
+breadcrumb;youarehere;"Sie sind hier";1
+basket;noShippingCosts;"Versand frei";1
+basket;noShippingCostsAt;"Noch %s und wir versenden kostenfrei mit %s %s";1
+basket;noShippingCostsAtExtended;"innerhalb von %s";1
+basket;noShippingCostsReached;"Ihre Bestellung ist ohne Versandkosten mit %s %s";1
+basket;orderExpandInventory;"Folgende Artikel sind in der gew&auml;hlten Menge nicht verf&uuml;gbar und die Lieferung k&ouml;nnte sich aufgrund dessen verz&ouml;gern: %s";1
+basket;plus;zzgl.;1
+basket;shipping;Versand;1
+basket;shippingNote;"<br><br> <p style=""font-size: 14px;""> Die Standard - Paket - <u><a href=""Liefer-und-Versandkosten"" target=""_blank"">Versandkosten</a></u> für Deutschland betragen unter 100 EUR Warenwert pauschal  4,90 EUR brutto. Die <u><a href=""Liefer-und-Versandkosten"" target=""_blank"">Versandkosten</a></u> für andere Versandarten, zusätzliche Services oder für andere Lieferländer passen sich im Bestellvorgang entsprechen der Auswahl an.</p>";0
+order;openPartialShipped;"Offene Teilauslieferungen";1
+order;packageTracking;Sendungsverfolgung;1
+order;partialShipped;Teilauslieferung;1
+order;partialShippedCount;Anzahl;1
+order;partialShippedDate;"Ausgeliefert am";1
+order;partialShippedPosition;Position;1
+order;shipped;Versendet;1
+order;shippingOrder;Lieferschein;1
+order;statusCancelled;Storno;1
+order;statusPaid;bezahlt;1
+order;statusPartialShipped;teilversendet;1
+order;statusPending;offen;1
+order;statusProcessing;"in Bearbeitung";1
+order;statusShipped;versendet;1
+characters;min;"Zeichen mindestens";1
+messages;artikelVariBoxEmpty;"Fehler: Bitte geben Sie mindestens eine Artikelmenge in der Variationsbox ein.";1
+messages;basketAdded;"Dieser Artikel befindet sich nun in Ihrem Warenkorb.";1
+messages;basketAjaxAdded;"Der Artikel %s wurde in Ihren Warenkorb gelegt. (%dx)";1
+messages;basketAllAdded;"Die ausgewählten Artikel wurden Ihrem Warenkorb hinzugefügt.";1
+messages;bewertungBewadd;"Vielen Dank, Ihre Bewertung wurde hinzugefügt.";1
+messages;bewertungBewaddacitvate;"Ihre Bewertung wurde eingetragen und muss nun vom Administrator freigeschaltet werden.";1
+messages;bewertungBewaddCredits;"Ihre Bewertung wurde eingetragen und Ihnen wurde %s â‚¬ auf Ihr Kundenkonto gutgeschrieben.";1
+messages;bewertungHilfadd;"Ihre Meinung zu dieser Bewertung wurde eingetragen.";1
+messages;bewertungHilfchange;"Ihre Meinung zu dieser Bewertung wurde geändert.";1
+messages;chooseVariations;"Dieses Produkt hat Variationen. Wählen Sie bitte die gewünschte Variation aus.";1
+messages;comparelistProductadded;"Ihr ausgewählter Artikel wurde auf die Vergleichsliste hinzugefügt.";1
+messages;comparelistProductexists;"Ihr ausgewählter Artikel wurde bereits der Vergleichsliste hinzugefügt.";1
+messages;emailSeccessfullySend;"Ihr Merkzettel wurde erfolgreich versendet.";1
+messages;fillOutNotification;"Bitte füllen Sie alle notwendigen Felder der Verfügbarkeitsanfrage aus!";1
+messages;fillOutQuestion;"Bitte füllen Sie alle notwendigen Felder aus!";1
+messages;hasMbm;"hat eine Mindestbestellmenge";1
+messages;kwkAdd;"Ihre Einladung wurde erfolgreich an %s gesendet.";1
+messages;loginWishlist;"Bitte melden Sie sich an, um dem Merkzettel Artikel hinzufügen zu können.";1
+messages;maxTagsExceeded;"Entschuldigung, Sie haben bereits die maximale Anzahl an Tags in den letzten 24 Stunden hinzugefügt.";1
+messages;newscommentAdd;"Ihr Kommentar wurde erfolgreich gespeichert.";1
+messages;newscommentAddactivate;"Ihr Kommentar wurde erfolgreich gespeichert und muss nun vom Administrator freigeschaltet werden.";1
+messages;newsletterActive;"Ihre E-Mail-Adresse wurde erfolgreich für unseren Newsletter freigeschaltet.";1
+messages;newsletterAdd;"Vielen Dank, Ihre Daten haben wir erhalten. Wir haben Ihnen eine E-Mail mit einem Freischaltcode zugeschickt. Bitte klicken Sie auf diesen Link in der E-Mail, um Ihre Anmeldung zum Newsletter erfolgreich abzuschliessen.";1
+messages;newsletterDelete;"Sie wurden erfolgreich aus unserem Newsletterverteiler ausgetragen.";1
+messages;newsletterNomailAdd;"Vielen Dank, Sie wurden in den Newsletterversand eingetragen.";1
+messages;noEmail;"Bitte tragen Sie mindestens eine gültige E-Mail-Adresse ein.";1
+messages;noProductWishlist;"Die folgenden Artikel auf Ihrem Merkzettel sind nicht mehr in unserem Sortiment verfügbar: ";1
+messages;notificationNotPossible;"Sie haben erst kürzlich eine Benachrichtigungsanfrage abgeschickt. Bitte warten Sie etwas, um eine neue Benachrichtigungsanfrage zu versenden.";1
+messages;novalidEmail;"An die folgenden E-Mail-Adressen konnte keine E-Mail geschickt werden: ";1
+messages;nowlidWishlist;"Der Merkzettel mit der ID \'%s\' ist entweder nicht mehr öffentlich oder wurde gelöscht.";1
+messages;pleaseLogin;"Bitte melden Sie sich an, um in unserem Shop einkaufen zu können.";1
+messages;pleaseLoginToAddTags;"Bitte melden Sie sich an, um Produkttags hinzufügen zu können.";1
+messages;pollAdd;"Vielen Dank für die Teilnahme an unserer Umfrage.";1
+messages;pollCoupon;"Vielen Dank für die Teilnahme an unserer Umfrage. Für Ihre nächste Bestellung steht Ihnen der folgende Kuponcode zur Verfügung: %s.";1
+messages;pollCredit;"Vielen Dank für die Teilnahme an unserer Umfrage. Ihnen wurde %s Guthaben gutgeschrieben.";1
+messages;pollError;"Bei der Auswertung ist ein Fehler aufgetreten.";1
+messages;pollExtrapoint;"Vielen Dank für die Teilnahme an unserer Umfrage. Ihnen wurden %s Bonuspunkte gutgeschrieben.";1
+messages;preorderNotPossible;"Vorbestellung dieses Produkts ist nicht möglich.";1
+messages;quantityNotAvailable;"Ihre gewünschte Menge dieses Produkts ist nicht verfügbar. Bitte geben Sie eine kleinere Menge an.";1
+messages;quantityNotAvailableVar;"Ihre gewünschte Menge dieses Produkts in der gewählten Variation ist nicht verfügbar. Bitte geben Sie eine kleinere Menge an oder wählen Sie eine andere Variation aus.";1
+messages;questionNotPossible;"Sie haben erst kürzlich eine Produktanfrage abgeschickt. Bitte warten Sie etwas, um eine neue Produktanfrage zu versenden.";1
+messages;recommentQuestionNotPossible;"Sie haben erst kürzlich einen Artikelempfehlung versendet. Bitte warten Sie etwas, um eine neue Empfehlung zu versenden.";1
+messages;tagAccepted;"Ihr Tag wurde hinzugefügt.";1
+messages;tagAcceptedWaitCheck;"Ihr Tag wurde hinzugefügt und wird vom Administrator geprüft.";1
+messages;tagArtikelEmpty;"Bitte geben Sie einen Namen für das Tag ein.";1
+messages;thankYouForComment;"Vielen Dank für Ihre Bewertung.";1
+messages;thankYouForNotificationSubscription;"Vielen Dank. Wir werden Sie umgehend benachrichtigen, sobald das Produkt wieder verfügbar ist.";1
+messages;thankYouForQuestion;"Vielen Dank für Ihre Produktanfrage.";1
+messages;thankYouForRecommend;"Vielen Dank für die Weiterempfehlung.";1
+messages;wishlistAdd;"Ihr Merkzettel wurde erfolgreich gespeichert.";1
+messages;wishlistDelAll;"Alle Artikel auf Ihrer Merkzettel wurden gelöscht.";1
+messages;wishlistDelete;"Ihr Merkzettel wurde gelöscht.";1
+messages;wishlistProductadded;"Ihr ausgewählter Artikel wurde zum Merkzettel hinzugefügt.";1
+messages;wishlistSetPrivate;"Ihr Merkzettel ist nun privat.";1
+messages;wishlistSetPublic;"Ihr Merkzettel ist nun öffentlich.";1
+messages;wishlistStandard;"Ein anderer Merkzettel wurde aktiviert.";1
+messages;wishlistUpdate;"Ihr Merkzettel wurde aktualisiert.";1
+messages;wkMaxorderlimit;"Ihre Bestellmenge für diesen Artikel ist leider zu hoch.";1
+messages;wkOnrequest;"Artikelpreis auf Anfrage.";1
+messages;wkPurchaseintervall;"Ihre Bestellmenge für diesen Artikel muss ein Vielfaches vom Abnahmeintervall sein.";1
+messages;wkUnsalable;"Dieser Artikel ist unverkäuflich.";1
+messages;yourQuantity;"Ihre gewünschte Menge betrug ";1
+errorMessages;bewertungBewexist;"Sie haben bereits eine Bewertung zu diesem Artikel geschrieben. ";1
+errorMessages;bewertungBewnotbought;"Sie können nur Bewertungen für Artikel abgeben, die Sie bei uns  gekauft haben.";1
+errorMessages;bewertungWrongdata;"Bitte füllen Sie alle erforderlichen Felder der Bewertung aus.";1
+errorMessages;compareMaxlimit;"Entschuldigung, Ihre Vergleichsliste hat die maximale Anzahl an Artikeln erreicht. Bitte entfernen Sie Artikel von der Vergleichsliste, um neue Artikel hinzufügen zu können. ";1
+errorMessages;freegiftsMinimum;"Der Gratisartikel-Mindestwarenwert ist nicht erreicht.";1
+errorMessages;freegiftsNogifts;"Aktuell stehen keine Gratisgeschenke zur Verfügung.";1
+errorMessages;freegiftsNostock;"Das Gratisgeschenk ist leider ausverkauft.";1
+errorMessages;kwkAlreadyreg;"Fehler: Die E-Mail %s wird bereits verwendet.";1
+errorMessages;kwkEmailblocked;"Fehler: Die E-Mail ist geblockt.";1
+errorMessages;kwkWrongdata;"Fehler: Bitte geben Sie gültige Daten ein.";1
+errorMessages;missingParamShippingDetermination;"Fehler: Bitte f&uuml;llen Sie die Eingaben f&uuml;r ein Land und eine Postleitzahl korrekt aus.";1
+errorMessages;newscommentAlreadywritten;"Fehler: Sie haben breits die maximale Anzahl an Kommentaren zu diesem Newsartikel erreicht.";1
+errorMessages;newscommentLongtext;"Fehler: Es sind maxmimal 1000 Zeichen für den Kommentartext zugelassen. Ihr Kommentar hat mehr als 1000 Zeichen.";1
+errorMessages;newscommentMissingnameemail;"Fehler: Bitte geben Sie einen Namen sowie eine E-Mail-Adresse ein.";1
+errorMessages;newscommentMissingtext;"Fehler: Bitte geben Sie einen Text ein.";1
+errorMessages;newsletterCaptcha;"Fehler: Bitte beachten Sie das Captcha.";1
+errorMessages;newsletterExists;"Fehler: Ihre E-Mail-Adresse ist bereits vorhanden.";1
+errorMessages;newsletterNoactive;"Fehler: Ihr Freischaltcode wurde nicht gefunden.";1
+errorMessages;newsletterNocode;"Fehler: Ihr Löschcode konnte nicht in der Datenbank gefunden werden.";1
+errorMessages;newsletterNoexists;"Fehler: Ihre E-Mail-Adresse ist nicht in der Datenbank vorhanden.";1
+errorMessages;newsletterNoname;"Fehler: Bitte geben Sie einen Vor- und Nachnamen ein.";1
+errorMessages;newsletterWrongemail;"Entschuldigung, Ihre E-Mail-Adresse ist nicht im richtigen Format.";1
+errorMessages;noCookieDesc;"Zur Nutzung unserer Seite müssen Sie im Browser Cookies aktivieren.<br />Versuchen Sie es dann noch einmal auf unserer <a href=\"index.php\">Startseite</a>.";1
+errorMessages;noCookieHeader;"Bitte Cookies aktivieren";1
+errorMessages;noMediaFile;"Es stehen keine Mediendateien zur Verfügung.";1
+errorMessages;pollAlreadydid;"Entschuldigung, Sie haben bereits an dieser Umfrage teilgenommen.";1
+errorMessages;pollNopoll;"Aktuell stehen keine Umfragen zur Verfügung.";1
+errorMessages;pollPleaselogin;"Sie müssen angemeldet sein, um an einer Umfrage teilnehmen zu können.";1
+errorMessages;pollRequired;"Bitte füllen Sie alle notwendigen Fragen aus.";1
+errorMessages;productquestionPleaseLogin;"Entschuldigung, Sie müssen angemeldet sein, um eine Frage zu versenden.";1
+errorMessages;uos1;"Parameter fehlt oder hat ein falsches Format: %s";1
+errorMessages;uos2;"Der Parameter hat ein falsches Format: %s";1
+errorMessages;uos3;"Der Parameter hat ein ungültiges Format: %s";1
+redirect;news;News;1
+redirect;poll;Umfrage;1
+redirect;recommend;"Artikel Weiterempfehlen";1
+redirect;review;Bewertung;1
+redirect;rma;Warenrücksendung;1
+redirect;tag;Tag;1
+redirect;wishlist;Wunschliste;1
+media;sliderNext;Weiter;1
+media;sliderPrev;Zurück;1
+media;tabMisc;Medien;1
+media;tabMusic;Musik;1
+media;tabPdf;PDF;1
+media;tabPicture;Bilder;1
+media;tabUrl;Links;1
+media;tabVideo;Videos;1
+paymentMethods;clickandbuy2hsError;"Beim zweiten Handshake mit ClickandBuy ist folgender Fehler aufgetreten: %s.";1
+paymentMethods;eosError;"Bei der Kommunikation mit EOS ist ein Fehler aufgetreten. M&ouml;glicherweise ist Ihr Account von EOS noch nicht freigeschaltet oder Ihre H&auml;ndlerID bzw. Ihr H&auml;ndlercode sind nicht korrekt. Falls das nicht der Fall ist, wenden Sie sich bitte mit folgendem Fehler an die Shop-Entwickler: %s";1
+paymentMethods;eosHttpError;"Es konnte keine Verbindung zum Server von EOS hergestellt werden";1
+paymentMethods;eosText;"Bezahlen Sie Ihre Bestellung %s von %s";1
+paymentMethods;errorMailBody;"In Ihrem Shop %s ist bei Bestellung %s beim Initialisieren des Bezahlvorgangs mit der Zahlungsart %s folgender Fehler aufgetreten: %s.";1
+paymentMethods;errorMailSubject;"Fehler in Ihrem Shop %s";1
+paymentMethods;errorText;"Beim Initialisieren des Bezahlvorgangs ist ein Fehler aufgetreten. Der Shopbetreiber wurde benachrichtigt und wird sich mit Ihnen in Verbindung setzen.";1
+paymentMethods;heidelpayError;"Bei der Kommunikation mit HeidelPay ist ein Fehler aufgetreten. M&ouml;glicherweise ist Ihr Account von HeidelPay noch nicht freigeschaltet. Falls das nicht der Fall ist, wenden Sie sich bitte mit folgendem Fehler an die Shop-Entwickler: %s";1
+paymentMethods;heidelpayHttpError;"Es konnte keine Verbindung zum Server von HeidelPay hergestellt werden";1
+paymentMethods;heidelpayText;"Bezahlen Sie Ihre Bestellung %s von %s";1
+paymentMethods;iclearError;"Bei der Kommunikation mit iClear ist ein Fehler aufgetreten. M&ouml;glicherweise ist Ihr Account von iClear noch nicht freigeschaltet. Falls das nicht der Fall ist, wenden Sie sich bitte mit folgendem Fehler an die Shop-Entwickler: %s";1
+paymentMethods;moneybookersQcError;"Bei der Kommunikation mit MoneyBookers ist ein Fehler aufgetreten. M&ouml;glicherweise ist Ihr Account von MoneyBookers noch nicht freigeschaltet. Falls das nicht der Fall ist, wenden Sie sich bitte mit folgendem Fehler an die Shop-Entwickler: %s";1
+paymentMethods;moneybookersQcHttpError;"Es konnte keine Verbindung zum Server von MoneyBookers hergestellt werden";1
+paymentMethods;moneybookersQcText;"Bezahlen Sie Ihre Bestellung %s von %s";1
+paymentMethods;paymentPartnerError;"Bei der Kommunikation mit PaymentPartner ist ein Fehler aufgetreten. M&ouml;glicherweise ist Ihr Account von PaymentPartner noch nicht freigeschaltet. Falls das nicht der Fall ist, wenden Sie sich bitte mit folgendem Fehler an die Shop-Entwickler: %s";1
+paymentMethods;paymentPartnerHttpError;"Es konnte keine Verbindung zum Server von PaymentPartner hergestellt werden";1
+paymentMethods;paymentPartnerText;"Bezahlen Sie Ihre Bestellung %s von %s";1
+paymentMethods;paypalError;"Bei der Kommunikation mit PayPal ist ein Fehler aufgetreten. M&ouml;glicherweise ist Ihr Account von PayPal noch nicht freigeschaltet. Falls das nicht der Fall ist, wenden Sie sich bitte mit folgendem Fehler an die Shop-Entwickler: %s";1
+paymentMethods;paypalHttpError;"Es konnte keine Verbindung zum Server von PayPal hergestellt werden";1
+paymentMethods;paypalText;"Bezahlen Sie Ihre Bestellung %s von %s";1
+paymentMethods;saferpayHttpError;"Es konnte keine Verbindung zum Server von SaferPay hergestellt werden. Antwort: ";1
+paymentMethods;saferpayText;"Bezahlen Sie Ihre Bestellung %s von %s";1
+paymentMethods;safetypayCreateTransaction;"Transaktion erstellen";1
+paymentMethods;safetypaySelectBank;"Bitte Bank w&auml;hlen";1
+paymentMethods;safetypaySelectCurrency;"Bitte W&auml;hrung w&auml;hlen";1
+paymentMethods;safetypayTotalSum;"Gesamtsumme Brutto";1
+paymentMethods;safetypayTotalSumOwnCurrency;"Betrag in Ihrer W&auml;hrung";1
+paymentMethods;wirecardText;"Bezahlen Sie Ihre Bestellung %s von %s";1
+rma;rma;Warenrücksendung;1
+rma;rma_artikelwahl;"Zur Artikelauswahl";1
+rma;rma_auswahl;Auswahl;1
+rma;rma_back;Zurück;1
+rma;rma_comment_choose;"- Bitte wählen Sie einen Grund -";1
+rma;rma_created;Erstellt;1
+rma;rma_error;Fehler;1
+rma;rma_error_alreadysend;"Sie haben bereits zu einigen ausgewählten Artikeln eine RMA abgesendet";1
+rma;rma_error_noarticle;"Bitte markieren Sie mindestens einen Artikel";1
+rma;rma_error_required;"Bitte füllen Sie alle Pflichtfelder aus";1
+rma;rma_error_validquantity;"Vergewissern Sie sich, dass Sie eine Anzahl angegeben haben und diese nicht die bestellte Menge überschreitet";1
+rma;rma_gekennzeichnet;"Bereits als Warenrücksendung gekennzeichnet";1
+rma;rma_go;Go;1
+rma;rma_info_success;"Warenrücksendung mit Nummer %s wurde erfolgreich gespeichert";1
+rma;rma_login;"Bitte loggen Sie sich ein, um eine Warenrücksendung durchzuführen.";1
+rma;rma_month;Monate;1
+rma;rma_nolicence;"Es wurde keine gültige Lizenz für dieses Modul gefunden";1
+rma;rma_number;"RMA Nummer";1
+rma;rma_ordertime;"Bestellungen der letzten";1
+rma;rma_print;Drucken;1
+rma;rma_products;Artikel;1
+rma;rma_quantity;Anzahl;1
+rma;rma_reason;"Grund der Rücksendung";1
+rma;rma_required;Pflichtfelder;1
+rma;rma_ruecksenden;"Warenrücksendung abschicken";1
+rma;rma_status;Status;1
+rma;rma_success_msg_1;"Vielen Dank das Sie unsere Warenrücksendung nutzen.<br /><br />Im Folgenden finden Sie eine Übersicht über Ihre zur Rücksendung ausgewählten Artikel.";1
+rma;rma_success_msg_2;"Bitte drucken Sie diese aus und legen Sie ihrem Rücksendepaket bei.<br /><br />Sobald wir Ihre Rücksendung verarbeitet haben, benachrichtigen wir Sie per E-Mail über die Erstattung (sofern zutreffend).<br /><br />Vielen Dank für Ihren Einkauf bei";1
+productDownloads;downloadDescription;Beschreibung;1
+productDownloads;downloadFileType;Dateiformat;1
+productDownloads;downloadName;Name;1
+productDownloads;downloadPreview;Vorschau;1
+productDownloads;downloadSection;Downloads;1

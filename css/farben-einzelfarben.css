@@ -1,13 +1,84 @@
-/* Color A1 */
-
-/* Alt */
-
+/* Color-A1 */
 .color-A1 {
-    color: rgb(0, 50, 100)
+  color: rgb(0, 50, 100);
 }
 
-/* Neu */
-
+/* Color-A2 */
 .color-A1 {
-    color: rgb(92, 157, 221)
+  color: rgb(0, 50, 100);
+}
+
+/* Color-A3 */
+.color-A3 {
+  color: rgb(92, 157, 221);
+}
+
+/* Color-A4 */
+.color-A3 {
+  color: rgb(229, 229, 229);
+}
+
+/* Color-B1 */
+.color-A3 {
+  color: rgb(255, 255, 255);
+}
+
+/* Color-B2 */
+.color-A3 {
+  color: rgb(226, 237, 249);
+}
+
+/* Color-B3 */
+.color-A3 {
+  color: rgb(229, 229, 229);
+}
+
+/* Color-B4 */
+.color-A3 {
+  color: rgb(130, 130, 130);
+}
+
+/* Color-B5 */
+.color-A3 {
+  color: rgb(0, 50, 100);
+}
+
+/* Color-B6 */
+.color-A3 {
+  color: rgb(228, 75, 13);
+}
+
+/* Color-B7 */
+.color-A3 {
+  color: rgb(228, 75, 13);
+}
+
+/* Color-B8 */
+.color-A3 {
+  color: rgb(249, 176, 21);
+}
+
+/* Color-B9 */
+.color-A3 {
+  color: rgb(0, 0, 0);
+}
+
+/* Color-B10 */
+.color-A3 {
+  color: rgb(0, 50, 100);
+}
+
+/* Color-B10 */
+.color-A3 {
+  color: rgb(0, 50, 100);
+}
+
+/* Halbtransparentes Overlay */
+.color-A3 {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+/* Tabellen-Rahmen (initial transparent) */
+.color-A3 {
+  color: rgba(255, 255, 255, 0);
 }

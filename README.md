@@ -187,14 +187,16 @@ Neuer Online-Shop für HT-CONNECT übernommen von dem Test Repository
 - Backup Farben Einzelfarben + Farbgruppen unter css/
 - Backup der E-Mail Vorlage für die Rechnung aus der WAWI
 
-## ht-connect.de-v-0.1.5 - 2020-05-08
+## ht-connect.de-v-0.1.5 - 2020-05-14
 
 ### Changelog:
 
 - E-Mail Vorlage WAWI Rechnung überarbeitet
-
-### ToDo:
-
-- Installation, Konfiguration, Dokumentation und Testen des Cookiebot Plugins (.htaccess Zugriff hierfür kurzzeitig deaktiveren und Crawling starten)
-- Weitere fehlerhafte Plugins überprüfen und Lizenzen kaufen: NETZdingeDE Google Codes -> wird benötigt für korrekte Cookiebot Einbindung
-- Lieferzeitangaben im KD Backend nach einer Bestellung entfernen siehe https://www.pvc-welt.de/jtl.php?bestellung=509690
+- Kategorie KLemm Kupplung für Schlauch https://www.pvc-welt.de/Klemm-Kupplung-fuer-Schlauch sowie Artikel P-990 https://www.pvc-welt.de/PP-Klemm-Kupplung-fuer-Schlauch-Klemme-x-Aussengewinde , P-991 https://www.pvc-welt.de/PP-Klemm-Kupplung-fuer-Schlauch-Klemme-x-Ueberwurf_1 und P-992 https://www.pvc-welt.de/PP-Klemm-Winkel-90-fuer-Schlauch-Klemme-x-Ueberwurf Bild unter T:\x-Herbert\02_Projekte\03_Produkte-Landingpages-SEO\31_Artikel-S-002-S-003-Bildskalierung\02_Grafiken wie bei Artikel S-002 und S-003 austauschen in klemm-kupplung-fuer-schlauch.html max width von 500px auf 370px geändert
+- Backup der head.html aus Global easyTemplate360 und Reaktivierung des JS für Cookiebot
+- Installation, Konfiguration, Dokumentation und Testen des Cookiebot Plugins (.htaccess Zugriff hierfür kurzzeitig deaktivert und Crawling gestartet)
+- Cookiebot Einrichtung mit nach Scan abgeschlossen und .htaccess Zugriff wieder reaktiviert. Scanbericht siehe unter https://manage.cookiebot.com/de/cookies
+- Aktualisierte AGB in E-Mail Vorlage Bestellbestätigung geändert unter https://www.pvc-welt.de/admin/emailvorlagen.php
+- Sprachvariablen Anpassung von agb_wrb_business und agb_wrb_consumer und korrekte Verlinkung der Widerrufsbelehrungen
+- Bug behoben: Keine Dropdown Menü Anzeige: Cookiebot script Einbindung aus head.html aus Global easyTemplate360 wieder entfernt
+- FAQ: Neuer Text für Bestellung/Artikel Verfügbarkeit

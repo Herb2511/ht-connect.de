@@ -1,3 +1,6 @@
 /.htpasswd
 /.htaccess.back
 /.htaccess2020.back
+/img/**/*
+*.jpg
+/stage.html

@@ -200,3 +200,14 @@ Neuer Online-Shop für HT-CONNECT übernommen von dem Test Repository
 - Sprachvariablen Anpassung von agb_wrb_business und agb_wrb_consumer und korrekte Verlinkung der Widerrufsbelehrungen
 - Bug behoben: Keine Dropdown Menü Anzeige: Cookiebot script Einbindung aus head.html aus Global easyTemplate360 wieder entfernt
 - FAQ: Neuer Text für Bestellung/Artikel Verfügbarkeit
+
+## ht-connect.de-v-0.1.6 - 2020-05-15
+
+### Changelog:
+
+- Backup von Artikel A-706 https://www.ht-connect.de/PVC-U-Flanschsatz-incl-Dichtung-und-Schrauben-verzinkt-Klebemuffe in a-706.html
+- Infobereich über Flanscharten auf Basis von https://www.pvcfittingsonline.com/resource-center/all-about-that-flange/ auf Kategorie Seite unter https://www.ht-connect.de/PVC-U-Bundbuchse-Flansch-und-Zubehoer eingebaut
+- Bildbearbeitung von zwei neuen Artikelbildern unter T:\x-Herbert\02_Projekte\03_Produkte-Landingpages-SEO\29_Bildretusche\bearbeitet
+- Neuer Kategorie Header unter https://www.pvc-welt.de/PVC-U-Muffen-Klebemuffe-Gewindemuffe-Nippel gespeichert unter /img/ und T:\x-Herbert\02_Projekte\03_Produkte-Landingpages-SEO\32_Kategorie-Header-PVC-U-Muffen-Klebemuffe-Gewindemuffe-Nippel und Upload auf dem FTP unter /bilder/produkte/klein/
+- img Ordner in gitignore Datei hinzugefügt
+- Copyright/Urheberrecht: Bildnachweise für alle Bilder auf ht-connect.de im Impressum unter impressum.html angepasst

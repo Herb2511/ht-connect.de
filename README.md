@@ -211,3 +211,37 @@ Neuer Online-Shop für HT-CONNECT übernommen von dem Test Repository
 - Neuer Kategorie Header unter https://www.pvc-welt.de/PVC-U-Muffen-Klebemuffe-Gewindemuffe-Nippel gespeichert unter /img/ und T:\x-Herbert\02_Projekte\03_Produkte-Landingpages-SEO\32_Kategorie-Header-PVC-U-Muffen-Klebemuffe-Gewindemuffe-Nippel und Upload auf dem FTP unter /bilder/produkte/klein/
 - img Ordner in gitignore Datei hinzugefügt
 - Copyright/Urheberrecht: Bildnachweise für alle Bilder auf ht-connect.de im Impressum unter impressum.html angepasst
+
+## ht-connect.de-v-0.1.7 - 2020-05-29
+
+### Changelog:
+
+- Anpassungen der Schreibweise von internen Links unter impressum.html
+- Korrekte mailto-Verlinkung an datenschutz@ht-connect.de unter impressum.html
+- CSS-Korrektur: schwarze Outline bei Link Klasse .no-text-decoration:focus über html-plain-stylesheets.html entfernt
+- Entfernen der Leeren Linkgruppe Vorteile unter eigenen Seiten
+- Vorteile Text Anpassung und Verlinkung: GRATISVERSAND AB 50€ unter html-plain-usp-verkuerzt.html
+- Versandkostenanpassung unter versandkosten.html und Einbau des Icons für Überlänge live unter https://www.ht-connect.de/versandkosten#gratisversand-ab-100-euro
+- Artikelbilder für A-407 und A-407X überarbeitet, abgedunkelt und auf WAWI und FTP-Server ausgetauscht
+- Solution 360 Shipping Timer Bumb-Animation geändert in Fade und Animation läuft nur einmal durch
+- BM Suche und eigene Artikelsuche nur über zwei Suchfelder möglich, da externe Suche nicht angesprochen werden kann
+- Bildbearbeitung von acht neuen Artikelbildern unter T:\x-Herbert\02_Projekte\03_Produkte-Landingpages-SEO\29_Bildretusche\bearbeitet
+- Alternative Version angelegt: Logoeinbau bei H1 Startseite "Logo-" finden Sie das passenden Produkt für Ihr Projekt unter text-block-trennlinie.html
+
+- **WAWI E-Mail Template Rechnung**
+- E-Mail Template für Rechnung von https://www.wawi-dl.de/JTL-Wawi-Email-Vorlagen-HTML-Design-01 Kauf, Installation und Test
+- Einbindung des Logopfades (ht-access Schutz für die Bildverlinkung vom FTP-Server kurzzeitig deaktivieren) unter rechnung-htc-2020.html
+- Font-Import von Fira Sans und Verwendung für alle Schriftklassen im CSS über @import url('https://fonts.googleapis.com/css2?family=Fira+Sans&display=swap');
+- Style-, Layout- und Farbkorrekturen für HTC CI
+- Textformatierung ohne HTML inklusive Variablen für E-Mail Templates übernehmen (ansonsten wird für E-Mail Clients ohne HTML-Unterstützung kein Inhalt angezeigt)
+- Workflow für Rechnungserstellung in der WAWI für ht-connect.de mit Andreas Lübbehusen/Waldemar Willer abgeklärt
+- Variablen für E-Mail und Webseitenkontakt direkt in das Template gecodet
+- Variable {{ Vorgang.Firma.Homepage }} in den Artikel Links der Rechnung ersetzt durch den absoluten URL-Pfad
+- Test: Grafiken können als eigene Variable im Template über dem head definiert und verlinkt und somit im Content platziert werden
+
+- **JTL Backend E-Mail Template Bestellbestätigung**
+- FTP-Upload der neuen Bestellstatus Grafiken unter /bilder/intern/status-bestellung
+- Keine Übernahme des WAWI Templates im Backend möglich, da keine Syntax oder Variablen erkannt und Grafiken angezeigt werden können
+
+- **Sonstiges**
+- Anlegen des Ordners gitignore für temporäre Dateien

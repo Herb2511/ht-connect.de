@@ -1,0 +1,318 @@
+{% comment -%}
+JTL-Software Template für E-Mail "Rechnung (Text-Format)", Stand: 20140317
+--------------------------------------------------------------------------------------------------------------
+Sie können das Template über folgende Variablen steuern:
+--------------------------------------------------------------------------------------------------------------
+{% endcomment -%}
+{% assign KonfigurationsKomponentenAnzeigen = true %}{% comment %}Gibt an, ob Komponenten eines Konfigurationsartikels
+aufgelistet werden sollen.{% endcomment -%}
+{% assign StücklistenKomponentenAnzeigen = false %}{% comment %}Gibt an, ob Komponenten eines Stücklistenartikels
+aufgelistet werden sollen.{% endcomment -%}
+{% assign NurAbweichendeLieferadresse = false %}{% comment %}Gibt an, ob die Lieferadresse nur ausgegeben wird, wenn
+diese von der Rechnungsadresse abweicht.{% endcomment -%}
+{% assign IncludeArtikelnummern = false %}{% comment %}Gibt an, ob die Artikelnummern ausgegeben werden{% endcomment -%}
+{% assign IncludeEinzelpreise = false %}{% comment %}Gibt an, ob die Einzelpreise ausgegeben werden{% endcomment -%}
+{% assign NettopreiseAusKundengruppe = false %}{% comment %}Gibt an, ob die Nettopreisanzeige von der Kundengruppe und
+nicht von den globalen Einstellungen gesteuert wird.{% endcomment -%}
+{% comment -%}
+--------------------------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------------------------
+Unterhalb dieses Bereiches sollten nur erfahrene Anwender Änderungen vornehmen. Bei Fragen
+steht Ihnen unser Supportforum unter http://forum.jtl-software.de/formulardesigner-editor-open-beta-phase/
+zur Verfügung. Gerne helfen Ihnen auch unsere Servicepartner weiter. Einen qualifizierten Service-Partner
+finden Sie unter http://www.jtl-software.de/Servicepartner.
+--------------------------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------------------------
+{% endcomment -%}
+{% assign NettoPreiseBenutzen = false -%}
+{% if NettopreiseAusKundengruppe == true and Vorgang.Kunde.IstNettopreisKunde -%}
+{% assign NettoPreiseBenutzen = true -%}
+{% endif -%}
+{% if NettopreiseAusKundengruppe == false and Vorgabe.NettoPreiseBenutzen == true -%}
+{% assign NettoPreiseBenutzen = true -%}
+{% endif -%}
+{{ Vorgang.Firma.Name }} Rechnung #{{ Vorgang.Belegnummer }}
+_____________________________________________________________________________________
+
+{% if Vorgang.Auftrag.Rechnungsadresse.Anrede != empty -%}
+{% case Vorgang.Auftrag.Rechnungsadresse.Anrede -%}
+{% when 'Herr' -%}
+Sehr geehrter Herr\
+{% when 'Frau' -%}
+Sehr geehrte Frau\
+{% else -%}
+Sehr geehrte(r) {{ Vorgang.Auftrag.Rechnungsadresse.Anrede }}\
+{% endcase -%}
+{% if Vorgang.Auftrag.Rechnungsadresse.Titel != empty %} {{ Vorgang.Auftrag.Rechnungsadresse.Titel }}{% endif %}
+{{ Vorgang.Auftrag.Rechnungsadresse.Name }},
+{% else -%}
+Sehr geehrte Damen und Herren,
+{% endif -%}
+
+vielen Dank für Ihren Auftrag vom {{ Vorgang.Erstelldatum | Datum: 'D' }}. Ihr Auftrag wurde bearbeitet und wird nun
+versendet.
+Eine Änderung oder Zusatz ist jetzt weder durch Sie noch durch unser Servicepersonal mehr möglich.
+
+Einzelheiten zum Auftrag
+------------------------
+
+Rechnungsadresse:
+{% if Vorgang.Auftrag.Rechnungsadresse.Firma != empty -%}
+{{ Vorgang.Auftrag.Rechnungsadresse.Firma }}
+{% endif -%}
+{% if Vorgang.Auftrag.Rechnungsadresse.Firmenzusatz != empty -%}
+{{ Vorgang.Auftrag.Rechnungsadresse.Firmenzusatz }}
+{% endif -%}
+{% if Vorgang.Auftrag.Rechnungsadresse.Anrede != empty -%}
+{{ Vorgang.Auftrag.Rechnungsadresse.Anrede }} \
+{% endif -%}
+{% if Vorgang.Auftrag.Rechnungsadresse.Titel != empty -%}
+{{ Vorgang.Auftrag.Rechnungsadresse.Titel }} \
+{% else -%}
+{{ Vorgang.Auftrag.Rechnungsadresse.Vorname }} \
+{% endif -%}
+{% if Vorgang.Auftrag.Rechnungsadresse.Name != empty -%}
+{{ Vorgang.Auftrag.Rechnungsadresse.Name }} \
+{% endif %}
+{% if Vorgang.Auftrag.Rechnungsadresse.Adresszusatz != empty -%}
+{{ Vorgang.Auftrag.Rechnungsadresse.Adresszusatz }}
+{% endif -%}
+{{ Vorgang.Auftrag.Rechnungsadresse.Straße }}
+{{ Vorgang.Auftrag.Rechnungsadresse.PLZ }} {{ Vorgang.Auftrag.Rechnungsadresse.Ort }}
+{% if Vorgang.Auftrag.Rechnungsadresse.Landname != empty -%}
+{{ Vorgang.Auftrag.Rechnungsadresse.Landname }}
+{% endif -%}
+{% if Vorgang.Kunde.UStID > 0 -%}
+
+USt-IdNr.: {{Vorgang.Kunde.UStID }}
+{% endif -%}
+{% if Vorgang.Auftrag.AbweichendeAdressen == true or NurAbweichendeLieferadresse == false -%}
+
+Lieferung an:
+{% if Vorgang.Auftrag.Lieferadresse.Firma != empty -%}
+{{ Vorgang.Auftrag.Lieferadresse.Firma }}
+{% endif -%}
+{% if Vorgang.Auftrag.Lieferadresse.Firmenzusatz != empty -%}
+{{ Vorgang.Auftrag.Lieferadresse.Firmenzusatz }}
+{% endif -%}
+{% if Vorgang.Auftrag.Lieferadresse.Anrede != empty -%}
+{{ Vorgang.Auftrag.Lieferadresse.Anrede }} \
+{% endif -%}
+{% if Vorgang.Auftrag.Lieferadresse.Titel != empty -%}
+{{ Vorgang.Auftrag.Lieferadresse.Titel }} \
+{% else -%}
+{{ Vorgang.Auftrag.Lieferadresse.Vorname }} \
+{% endif -%}
+{% if Vorgang.Auftrag.Lieferadresse.Name != empty -%}
+{{ Vorgang.Auftrag.Lieferadresse.Name }}\
+{% endif %}
+{% if Vorgang.Auftrag.Lieferadresse.Adresszusatz != empty -%}
+{{ Vorgang.Auftrag.Lieferadresse.Adresszusatz }}
+{% endif -%}
+{{ Vorgang.Auftrag.Lieferadresse.Straße }}
+{{ Vorgang.Auftrag.Lieferadresse.PLZ }} {{ Vorgang.Auftrag.Lieferadresse.Ort }}
+{% if Vorgang.Auftrag.Lieferadresse.Landname != empty -%}
+{{ Vorgang.Auftrag.Lieferadresse.Landname }}
+{% endif -%}
+{% endif -%}
+
+{% if Vorgang.VersandartText != empty -%}
+{{ Vorgang.VersandartText }}
+{% endif -%}
+
+Positionen:
+{% assign versandposition = 0 -%}
+{% for position in Vorgang.Auftrag.Positionen -%}
+{% if position.IstVersandkostenPosition -%}
+{% assign versandart = position.Bezeichnung -%}
+{% if NettoPreiseBenutzen -%}
+{% assign versandkosten = position.NettopreisGesamt -%}
+{% else -%}
+{% assign versandkosten = position.BruttopreisGesamt -%}
+{% endif -%}
+{% elsif position.IstKonfiguratorKomponente -%}
+{% comment %}Konfigurations-Komponeten ignorieren{% endcomment -%}
+{% else -%}
+{% capture menge -%}{% if position.Artikel.IstTeilbar %}{{ position.Menge | Nummer : 'N2' }}{% else %}{{ position.Menge }}{% endif %}{% if position.Einheit != empty %}
+{{ Position.Einheit }}{% else %}x{% endif %} {{ position.Bezeichnung }}{% endcapture -%}
+{% capture preis -%}{% if NettoPreiseBenutzen %}{{ position.NettopreisGesamt | Nummer : 'C', Vorgang.Gebietsschema }}{% else %}{{ position.BruttopreisGesamt | Nummer : 'C', Vorgang.Gebietsschema }}{% endif %}{% endcapture -%}
+{{ menge | Truncate: 61 | Align: -61 }}{{Tabulator}}{{ preis | Truncate: 15 | Align: 15 }}
+{% if IncludeArtikelnummern == true -%}
+{% capture artnr %}Artikelnummer: {{ position.Artikelnummer }}{% endcapture -%}
+{{ artnr | Truncate: 61 }}
+{% endif -%}
+{% if IncludeEinzelpreise == true -%}
+{% capture ez %}Einzelpreis:
+{% if NettoPreiseBenutzen %}{{ position.NettopreisEinzel | Nummer : 'C', Vorgang.Gebietsschema }}{% else %}{{ position.BruttopreisEinzel | Nummer : 'C', Vorgang.Gebietsschema }}{% endif -%}{% endcapture -%}
+{{ ez | Truncate: 59 }}
+{% endif -%}
+{% for seriennummer in position.Seriennummern -%}
+{% capture kind %}Seriennummer: {{ seriennummer.Seriennummer }}{% if seriennummer.Kommentar1 != empty %}
+({{ seriennummer.Kommentar1 }}{% if seriennummer.Kommentar2 != empty %}
+{{ seriennummer.Kommentar2 }}{% endif %}){% endif %}{% endcapture -%}
+{{ kind | Truncate: 59 }}
+{% endfor -%}
+{% for variation in position.Variationen -%}
+{% capture kind %}{{ variation.Bezeichnung }}: {{ variation.Wert }}{% endcapture -%}
+{{ kind | Truncate: 59 }}
+{% endfor -%}
+{% if StücklistenKomponentenAnzeigen == true and position.Komponenten.size > 0 -%}
+{% for stkind in position.Komponenten -%}
+{% capture menge %}{{ stkind.Menge | Times: position.Menge }}{% endcapture -%}
+{% capture desc %}*
+{% if stkind.Artikel.IstTeilbar %}{{ menge | Nummer : 'N2' }}{% else %}{{ menge }}{% endif %}{% if stkind.Artikel.Einheit != empty %}
+{{ stkind.Artikel.Einheit }}{% else %}x{% endif %} {{ stkind.Artikel.Bezeichnung }}{% endcapture -%}
+{{ desc | Truncate: 59 }}
+{% endfor -%}
+{% endif -%}
+{% if KonfigurationsKomponentenAnzeigen == true and position.KonfiguratorKomponenten.size > 0 -%}
+{% for konfikind in position.KonfiguratorKomponenten -%}
+{% capture desc %}*
+{% if konfikind.Artikel.IstTeilbar %}{{ konfikind.Menge | Nummer : 'N2' }}{% else %}{{ konfikind.Menge }}{% endif %}{% if konfikind.Einheit != empty %}
+{{ konfikind.Einheit }}{% else %}x{% endif %} {{ konfikind.Bezeichnung }}{% endcapture -%}
+{% capture preis -%}{% if NettoPreiseBenutzen %}{{ konfikind.NettopreisGesamt | Nummer : 'C', Vorgang.Gebietsschema }}{% else %}{{ konfikind.BruttopreisGesamt | Nummer : 'C', Vorgang.Gebietsschema }}{% endif %}{% endcapture -%}
+{{ desc | Truncate: 59 | Align: -59 }}{{ Tabulator }}{{ preis | Truncate: 15 | Align: 15 }}
+{% for seriennummer in konfikind.Seriennummern -%}
+{% capture kind %}Seriennummer: {{ seriennummer.Seriennummer }}{% if seriennummer.Kommentar1 != empty %}
+({{ seriennummer.Kommentar1 }}{% if seriennummer.Kommentar2 != empty %}
+{{ seriennummer.Kommentar2 }}{% endif %}){% endif %}{% endcapture -%}
+{{ kind | Truncate: 57 }}
+{% endfor -%}
+{% if StücklistenKomponentenAnzeigen == true and konfikind.Komponenten.size > 0 -%}
+{% for stkind in konfikind.Komponenten -%}
+{% capture menge %}{{ stkind.Menge | Times: position.Menge }}{% endcapture -%}
+{% capture desc %}*
+{% if stkind.Artikel.IstTeilbar %}{{ menge | Nummer : 'N2' }}{% else %}{{ menge }}{% endif %}{% if stkind.Artikel.Einheit != empty %}&nbsp;{{ stkind.Artikel.Einheit }}{% else %}x{% endif %}
+{{ stkind.Artikel.Bezeichnung }}{% endcapture -%}
+{{ desc | Truncate: 57 }}
+{% endfor -%}
+{% endif -%}
+{% endfor -%}
+{% endif -%}
+{% endif -%}
+{% endfor -%}
+{% capture desc %}Verpackung und Versand{% if versandart != null %} ({{ versandart }}){% endif %}:{% endcapture -%}
+{% capture price %}{% if versandkosten != empty %}{{ versandkosten | Nummer : 'C', Vorgang.Gebietsschema }}{% else %}{{ 0 | Nummer: 'C' }}{% endif %}{%endcapture -%}
+{{ desc | Truncate: 61 | Align: 61 }}{{Tabulator}}{{ price | Truncate: 15 | Align: 15 }}
+{% if Vorgabe.MwStAusweisen -%}
+{{ ' ' | Align: 61 }}{{Tabulator}}---------------
+{% for summe in Vorgang.Auftrag.Summen -%}
+{% if summe.Brutto > 0 or Vorgang.Auftrag.Summen.size == 1 -%}
+{% capture desc %}Summe Netto ({{summe.MwStSatz | Nummer : 'N' }}%):{% endcapture -%}
+{% capture price %}{{ summe.Netto | Nummer : 'C', Vorgang.Gebietsschema }}{% endcapture -%}
+{{ desc | Truncate: 61 | Align: 61 }}{{Tabulator}}{{ price | Truncate: 15 | Align: 15 }}
+{% endif -%}
+{% unless Vorgang.Währung == Vorgang.Versandlandwährung -%}
+{% capture price %}({{ summe.Netto | DivideBy: Vorgang.Währungsfaktor | Times: Vorgang.Versandlandswährungsfaktor | Nummer : 'C', Vorgang.Versandlandsgebietsschema }}){% endcapture -%}
+{{ ' ' | Truncate: 61 | Align: 61 }}{{Tabulator}}{{ price | Truncate: 15 | Align: 15 }}
+{% endunless -%}
+{% endfor -%}
+{% for summe in Vorgang.Auftrag.Summen -%}
+{% if summe.Brutto > 0 or Vorgang.Auftrag.Summen.size == 1 -%}
+{% capture desc %}zzgl. USt. ({{summe.MwStSatz | Nummer : 'N' }}%):{% endcapture -%}
+{% capture price %}{{ summe.MwSt | Nummer:'C' }}{% endcapture -%}
+{{ desc | Truncate: 61 | Align: 61 }}{{Tabulator}}{{ price | Truncate: 15 | Align: 15 }}
+{% endif -%}
+{% unless Vorgang.Währung == Vorgang.Versandlandwährung -%}
+{% capture price %}({{ summe.MwSt | DivideBy: Vorgang.Währungsfaktor | Times: Vorgang.Versandlandswährungsfaktor | Nummer : 'C', Vorgang.Versandlandsgebietsschema }}){% endcapture -%}
+{{ ' ' | Truncate: 61 | Align: 61 }}{{Tabulator}}{{ price | Truncate: 15 | Align: 15 }}
+{% endunless -%}
+{% endfor -%}
+{% endif -%}
+{{ ' ' | Align: 61 }}{{Tabulator}}===============
+{{ 'Gesamtsumme:' | Truncate: 61 | Align: 61}}{{ Tabulator }}{{ Vorgang.Auftrag.Positionen.BruttopreisGesamt05 | Nummer : 'C', Vorgang.Gebietsschema | Truncate: 15 | Align: 15 }}
+{% unless Vorgang.Währung == Vorgang.Versandlandwährung -%}
+{% capture price %}({{ Vorgang.Auftrag.Positionen.BruttopreisGesamt05 | DivideBy: Vorgang.Währungsfaktor | Times: Vorgang.Versandlandswährungsfaktor | Nummer : 'C', Vorgang.Versandlandsgebietsschema }}){% endcapture -%}
+{{ ' ' | Truncate: 61 | Align: 61 }}{{Tabulator}}{{ price | Truncate: 15 | Align: 15 }}
+{% endunless -%}
+{{ ' ' | Align: 61 }}{{Tabulator}}===============
+
+{% unless Vorgang.Währung == Vorgang.Versandlandwährung -%}
+Umrechnungskurs: {{ 1.0 | Nummer : 'C', Vorgang.Gebietsschema }} entspricht
+{{ 1.0 | DivideBy: Vorgang.Währungsfaktor | Times: Vorgang.Versandlandswährungsfaktor | Nummer : 'C', Vorgang.Versandlandsgebietsschema }}
+
+{% endunless -%}
+{% if Vorgang.Auftrag.Rechnungskauftext == empty -%}
+Zahlung:
+{% assign zahlungen = false -%}
+{% for zahlung in Vorgang.Zahlungen -%}
+{% assign zahlungen = true -%}
+{% capture desc %}Zahlung ({{ zahlung.Zahlungsweise }}) vom {{ zahlung.Zahlungsdatum | Datum: 'd' }}:{% endcapture -%}
+{% capture price %}{{ zahlung.Betrag | Nummer: 'C', Vorgang.Gebietsschema }}{% endcapture -%}
+{{ desc | Truncate: 61 | Align: 61 }}{{Tabulator}}{{ price | Truncate: 15 | Align: 15 }}
+{% endfor -%}
+{% if zahlungen == true -%}
+{% capture desc %}offener Betrag:{% endcapture -%}
+{% capture price %}{{ Vorgang.Auftrag.OffenerBetrag | Nummer: 'C', Vorgang.Gebietsschema }}{% endcapture -%}
+{{ ' ' | Align: 61 }}{{Tabulator}}===============
+{{ desc | Truncate: 61 | Align: 61 }}{{Tabulator}}{{ price | Truncate: 15 | Align: 15 }}
+{% endif -%}
+{% else -%}
+{{ Vorgang.Auftrag.Rechnungskauftext }}
+{% endif -%}
+{% if Vorgang.Auftrag.IstBezahlt == false and Vorgang.Zahlungsziel > 0 -%}
+{{ Vorgang.ZahlungszielText }}
+{% endif -%}
+
+{% if Vorgang.Auftrag.IstUStFreiNichtEU == true -%}
+{{ Vorgabe.TexteUStFrei }}
+{% endif -%}
+{% if Vorgang.Auftrag.IstIGL == true -%}
+{{ Vorgabe.TexteIGL }}
+{% endif -%}
+{% if Vorgang.Auftrag.IstReverseCharge == true -%}
+{{ Vorgabe.Texte.ReverseCharge }}
+{% endif -%}
+{% if Vorgang.Auftrag.Anmerkung != empty -%}
+{{ Vorgang.Auftrag.Anmerkung }}
+{% endif -%}
+{% if Vorgang.Text != empty -%}
+{{ Vorgang.Text }}
+{% endif -%}
+{% if Vorgang.KundenText != empty -%}
+{{ Vorgang.KundenText }}
+{% endif -%}
+
+
+Mit freundlichen Grüßen
+
+Ihr Team von
+{{ Vorgang.Firma.Name }}
+
+---
+{% if Vorgang.Firma.Homepage != empty %}
+Besuchen Sie auf unserer Homepage unter https://www.ht-connect.de.
+
+{% endif -%}
+{{ Vorgang.Firma.Name }}
+{% if Vorgang.Firma.Unternehmer != empty -%}
+{{ Vorgang.Firma.Unternehmer }}
+{% endif -%}
+{{ Vorgang.Firma.Straße }}
+{{ Vorgang.Firma.PLZ }} {{ Vorgang.Firma.Ort }}
+{% if Vorgang.Firma.Landname != empty -%}
+{{ Vorgang.Firma.Landname }}
+{% endif -%}
+Tel: {{ Vorgang.Firma.Telefon }}
+{% if Vorgang.Firma.Fax != empty -%}
+Fax: {{ Vorgang.Firma.Fax }}
+{% endif -%}
+{% if Vorgang.Firma.UstID != empty -%}
+USt-IdNr.: {{ Vorgang.Firma.UstID }}
+{% endif -%}
+{% if Vorgang.Firma.Steuernummer != empty -%}
+St.Nr.: {{ Vorgang.Firma.Steuernummer }}
+{% endif -%}
+{% if Vorgang.Firma.GläubigerID != empty -%}
+Gläubiger-IdNr.: {{ Vorgang.Firma.GläubigerID }}
+{% endif %}
+
+{% if Vorgang.Auftrag.Rechnungskauftext == empty -%}
+Bankverbindung:
+{{ Vorgang.Firma.Bankverbindung.Kontoinhaber  }}
+Bank: {{ Vorgang.Firma.Bankverbindung.Bank }}
+BIC: {{ Vorgang.Firma.Bankverbindung.BIC }}
+IBAN: {{ Vorgang.Firma.Bankverbindung.IBAN }}
+{% endif -%}

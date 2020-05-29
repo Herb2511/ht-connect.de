@@ -1,0 +1,1681 @@
+{% comment -%}
+WaWi-DL Template für E-Mail "Rechnung (HTML-Format)", Stand: 20151014
+--------------------------------------------------------------------------------------------------------------
+Sie können das Template über folgende Variablen steuern:
+--------------------------------------------------------------------------------------------------------------
+{% endcomment -%}
+{% assign FirmenLogoUrl = 'https://www.ht-connect.de/bilder/intern/shoplogo/ht-connect-logo-145x75.png' %}{% comment %}Link
+zum
+Firmenlogo (600px breit), z.B:
+https://www.ht-connect.de/bilder/intern/shoplogo/ht-connect-logo-600x337.png{% endcomment -%}
+{% assign TwitterProfileUrl= '' %}{% comment %}Link zum Twitter-Profil, z.B:
+https://twitter.com/JTLSoftware{% endcomment -%}
+{% assign FacebookProfileUrl= '' %}{% comment %}Link zum Facebook-Profil, z.B:
+https://www.facebook.com/JTLSoftware{% endcomment -%}
+{% assign GoogleProfileUrl= '' %}{% comment %}Link zum Google+-Profil, z.B:
+https://plus.google.com/109750496801379835262{% endcomment -%}
+{% assign UsePositionImages= true  %}{% comment %}Gibt an, ob Bilder der Position eingefügt werden sollen. Bitte
+beachten Sie: Diese Bilder werden nicht von allen E-Mail-Clients angezeigt.{% endcomment -%}
+{% assign KonfigurationsKomponentenAnzeigen = true %}{% comment %}Gibt an, ob Komponenten eines
+Konfigurationsartikels
+aufgelistet werden sollen.{% endcomment -%}
+{% assign StücklistenKomponentenAnzeigen = false %}{% comment %}Gibt an, ob Komponenten eines
+Stücklistenartikels
+aufgelistet werden sollen.{% endcomment -%}
+{% assign NurAbweichendeLieferadresse = false %}{% comment %}Gibt an, ob die Lieferadresse nur ausgegeben wird,
+wenn
+diese von der Rechnungsadresse abweicht.{% endcomment -%}
+{% assign IncludeArtikelnummern = true  %}{% comment %}Gibt an, ob die Artikelnummern ausgegeben
+werden{% endcomment -%}
+{% assign IncludeEinzelpreise = true  %}{% comment %}Gibt an, ob die Einzelpreise ausgegeben
+werden{% endcomment -%}
+{% assign NettopreiseAusKundengruppe = false %}{% comment %}Gibt an, ob die Nettopreisanzeige von der
+Kundengruppe und
+nicht von den globalen Einstellungen gesteuert wird.{% endcomment -%}
+{% comment -%}
+--------------------------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------------------------
+{% endcomment -%}
+{% assign NettoPreiseBenutzen = false -%}
+{% if NettopreiseAusKundengruppe == true and Vorgang.Kunde.IstNettopreisKunde -%}
+{% assign NettoPreiseBenutzen = true -%}
+{% endif -%}
+{% if NettopreiseAusKundengruppe == false and Vorgabe.NettoPreiseBenutzen == true -%}
+{% assign NettoPreiseBenutzen = true -%}
+{% endif -%}
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <!-- Lizenz für dieses Mailtemplate: CC BY-SA 3.0 -->
+    <!-- Quelle: https://github.com/mailchimp/Email-Blueprints, angepasst für JTL-Wawi -->
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>{{ Vorgang.Firma.Name }} - Rechnung {{ Vorgang.Belegnummer }} zum Auftrag
+        {{ Vorgang.Auftrag.Auftragsnummer }}</title>
+    <style type="text/css">
+        @import url('https://fonts.googleapis.com/css2?family=Fira+Sans&display=swap');
+
+        /* /\/\/\/\/\/\/\/\/ CLIENT-SPECIFIC STYLES /\/\/\/\/\/\/\/\/ */
+        #outlook a {
+            padding: 0;
+        }
+
+        /* Force Outlook to provide a "view in browser" message */
+        .ReadMsgBody {
+            width: 100%;
+        }
+
+        .ExternalClass {
+            width: 100%;
+        }
+
+        /* Force Hotmail to display emails at full width */
+        .ExternalClass,
+        .ExternalClass p,
+        .ExternalClass span,
+        .ExternalClass font,
+        .ExternalClass td,
+        .ExternalClass div {
+            line-height: 100%;
+        }
+
+        /* Force Hotmail to display normal line spacing */
+        body,
+        table,
+        td,
+        p,
+        a,
+        li,
+        blockquote {
+            -webkit-text-size-adjust: 100%;
+            -ms-text-size-adjust: 100%;
+        }
+
+        /* Prevent WebKit and Windows mobile changing default text sizes */
+        table,
+        td {
+            mso-table-lspace: 0pt;
+            mso-table-rspace: 0pt;
+        }
+
+        /* Remove spacing between tables in Outlook 2007 and up */
+        img {
+            -ms-interpolation-mode: bicubic;
+        }
+
+        /* Allow smoother rendering of resized image in Internet Explorer */
+
+        /* /\/\/\/\/\/\/\/\/ RESET STYLES /\/\/\/\/\/\/\/\/ */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Fira Sans', sans-serif;
+        }
+
+        img {
+            border: 0;
+            height: auto;
+            line-height: 100%;
+            outline: none;
+            text-decoration: none;
+        }
+
+        table {
+            border-collapse: collapse !important;
+            font-family: 'Fira Sans', sans-serif;
+        }
+
+        body,
+        #bodyTable,
+        #bodyCell {
+            height: 100% !important;
+            margin: 0;
+            padding: 0;
+            width: 100% !important;
+            font-family: 'Fira Sans', sans-serif;
+        }
+
+        /* /\/\/\/\/\/\/\/\/ TEMPLATE STYLES /\/\/\/\/\/\/\/\/ */
+
+        /* ========== Page Styles ========== */
+
+        #bodyCell {
+            padding: 20px;
+        }
+
+        #templateContainer {
+            width: 800px;
+        }
+
+        #templateLogoOutside {
+            width: 800px;
+        }
+
+        /**
+            * @tab Page
+            * @section background style
+            * @tip Set the background color and top border for your email. You may want to choose colors that match your company's branding.
+            * @theme page
+            */
+        body,
+        #bodyTable {
+            /*@editable*/
+            background-color: #DEE0E2;
+        }
+
+        /**
+            * @tab Page
+            * @section background style
+            * @tip Set the background color and top border for your email. You may want to choose colors that match your company's branding.
+            * @theme page
+            */
+        #bodyCell {
+            /*@editable border-top:4px solid #BBBBBB;*/
+        }
+
+        /**
+            * @tab Page
+            * @section email border
+            * @tip Set the border for your email.
+            */
+        #templateContainer {
+            /*@editable*/
+            border: 1px solid #BBBBBB;
+        }
+
+        /**
+            * @tab Page
+            * @section heading 1
+            * @tip Set the styling for all first-level headings in your emails. These should be the largest of your headings.
+            * @style heading 1
+            */
+        h1 {
+            /*@editable*/
+            color: #0088c3 !important;
+            display: block;
+            /*@editable*/
+            font-family: 'Fira Sans', sans-serif;
+            /*@editable*/
+            font-size: 24px;
+            /*@editable*/
+            font-style: normal;
+            /*@editable*/
+            font-weight: bold;
+            /*@editable*/
+            line-height: 100%;
+            /*@editable*/
+            letter-spacing: normal;
+            margin-top: 0;
+            margin-right: 0;
+            margin-bottom: 0;
+            margin-left: 0;
+            /*@editable*/
+            text-align: left;
+        }
+
+        /**
+            * @tab Page
+            * @section heading 2
+            * @tip Set the styling for all second-level headings in your emails.
+            * @style heading 2
+            */
+        h2 {
+            /*@editable*/
+            color: #003264 !important;
+            display: block;
+            /*@editable*/
+            font-family: 'Fira Sans', sans-serif;
+            /*@editable*/
+            font-size: 20px;
+            /*@editable*/
+            font-style: normal;
+            /*@editable*/
+            font-weight: bold;
+            /*@editable*/
+            line-height: 100%;
+            /*@editable*/
+            letter-spacing: normal;
+            margin-top: 0;
+            margin-right: 0;
+            margin-bottom: 10px;
+            margin-left: 0;
+            /*@editable*/
+            text-align: left;
+        }
+
+        /**
+            * @tab Page
+            * @section heading 3
+            * @tip Set the styling for all third-level headings in your emails.
+            * @style heading 3
+            */
+        h3 {
+            /*@editable*/
+            color: #003264 !important;
+            display: block;
+            /*@editable*/
+            font-family: 'Fira Sans', sans-serif;
+            /*@editable*/
+            font-size: 14px;
+            /*@editable*/
+            font-style: normal;
+            /*@editable*/
+            font-weight: bold;
+            /*@editable*/
+            line-height: 100%;
+            /*@editable*/
+            letter-spacing: normal;
+            margin-top: 0;
+            margin-right: 0;
+            margin-bottom: 10px;
+            margin-left: 0;
+            /*@editable*/
+            text-align: left;
+        }
+
+        /**
+            * @tab Page
+            * @section heading 4
+            * @tip Set the styling for all fourth-level headings in your emails. These should be the smallest of your headings.
+            * @style heading 4
+            */
+        h4 {
+            /*@editable*/
+            color: #003264 !important;
+            display: block;
+            /*@editable*/
+            font-family: 'Fira Sans', sans-serif;
+            /*@editable*/
+            font-size: 14px;
+            /*@editable*/
+            font-style: italic;
+            /*@editable*/
+            font-weight: normal;
+            /*@editable*/
+            line-height: 100%;
+            /*@editable*/
+            letter-spacing: normal;
+            margin-top: 0;
+            margin-right: 0;
+            margin-bottom: 10px;
+            margin-left: 0;
+            /*@editable*/
+            text-align: left;
+        }
+
+        /* ========== Header Styles ========== */
+
+        /**
+            * @tab Header
+            * @section preheader style
+            * @tip Set the background color and bottom border for your email's preheader area.
+            * @theme header
+            */
+        #templatePreheader {
+            /*@editable*/
+            background-color: #F4F4F4;
+            /*@editable*/
+            border-bottom: 1px solid #CCCCCC;
+        }
+
+        /**
+            * @tab Header
+            * @section preheader text
+            * @tip Set the styling for your email's preheader text. Choose a size and color that is easy to read.
+            */
+        .preheaderContent {
+            /*@editable*/
+            color: #808080;
+            /*@editable*/
+            font-family: 'Fira Sans', sans-serif;
+            /*@editable*/
+            font-size: 10px;
+            /*@editable*/
+            line-height: 125%;
+            /*@editable*/
+            text-align: left;
+        }
+
+        /**
+            * @tab Header
+            * @section preheader link
+            * @tip Set the styling for your email's preheader links. Choose a color that helps them stand out from your text.
+            */
+        .preheaderContent a:link,
+        .preheaderContent a:visited,
+        /* Yahoo! Mail Override */
+        .preheaderContent a .yshortcuts
+
+        /* Yahoo! Mail Override */
+            {
+            /*@editable*/
+            color: #606060;
+            /*@editable*/
+            font-weight: normal;
+            /*@editable*/
+            text-decoration: underline;
+        }
+
+        /**
+            * @tab Header
+            * @section header style
+            * @tip Set the background color and borders for your email's header area.
+            * @theme header
+            */
+        #templateHeader {
+            /*@editable*/
+            background-color: #F4F4F4;
+            /*@editable*/
+            border-top: 1px solid #FFFFFF;
+            /*@editable*/
+            border-bottom: 1px solid #CCCCCC;
+        }
+
+        #templateLogoOutside {
+            /*@editable*/
+            padding-top: 20px;
+            /*@editable*/
+            padding-right: 20px;
+            /*@editable*/
+            padding-bottom: 20px;
+            /*@editable*/
+            padding-left: 20px;
+        }
+
+        /**
+            * @tab Header
+            * @section header text
+            * @tip Set the styling for your email's header text. Choose a size and color that is easy to read.
+            */
+        .headerContent {
+            /*@editable*/
+            color: #505050;
+            /*@editable*/
+            font-family: 'Fira Sans', sans-serif;
+            /*@editable*/
+            font-size: 20px;
+            /*@editable*/
+            font-weight: bold;
+            /*@editable*/
+            line-height: 100%;
+            /*@editable*/
+            padding-top: 20px;
+            /*@editable*/
+            padding-right: 20px;
+            /*@editable*/
+            padding-bottom: 20px;
+            /*@editable*/
+            padding-left: 20px;
+            /*@editable*/
+            text-align: left;
+            /*@editable*/
+            vertical-align: middle;
+        }
+
+        .headerLogo {
+            /*@editable*/
+            text-align: center;
+        }
+
+        .headerSummary {
+            /*@editable*/
+            text-align: right;
+        }
+
+        /**
+            * @tab Header
+            * @section header link
+            * @tip Set the styling for your email's header links. Choose a color that helps them stand out from your text.
+            */
+        .headerContent a:link,
+        .headerContent a:visited,
+        /* Yahoo! Mail Override */
+        .headerContent a .yshortcuts
+
+        /* Yahoo! Mail Override */
+            {
+            /*@editable*/
+            color: #0099FF;
+            /*@editable*/
+            font-weight: normal;
+            /*@editable*/
+            text-decoration: underline;
+        }
+
+        .footerContent a:link,
+        .footerContent a:visited,
+        /* Yahoo! Mail Override */
+        .headerContent a .yshortcuts
+
+        /* Yahoo! Mail Override */
+            {
+            /*@editable*/
+            color: #0099FF;
+            /*@editable*/
+            font-weight: normal;
+            /*@editable*/
+            text-decoration: underline;
+        }
+
+        .PositionImage {
+            width: 50px;
+            height: 50px;
+            padding: 5px;
+        }
+
+        .PositionPrice,
+        .PositionQTY,
+        .SumPosPrice,
+        .PaymentsPrice {
+            /*@editable*/
+            vertical-align: top;
+            /*@editable*/
+            text-align: right;
+            /*@editable width: 10em; */
+            /*@editable*/
+            padding: 5px;
+            /*@editable*/
+            font-family: 'Fira Sans', sans-serif;
+        }
+
+        .SumPosDescription,
+        .PaymentsDescription {
+            /*@editable*/
+            text-align: right;
+            /*@editable*/
+            padding: 5px;
+            /*@editable*/
+            font-family: 'Fira Sans', sans-serif;
+        }
+
+        .Sum {
+            /*@editable*/
+            font-family: 'Fira Sans', sans-serif;
+            /*@editable*/
+            font-size: 12px;
+        }
+
+        .PositionProperties {
+            /*@editable*/
+            font-size: 80%;
+            border-collapse: collapse !important;
+            border-spacing: 50px 50px !important;
+            /*@editable*/
+            font-family: 'Fira Sans', sans-serif;
+        }
+
+        .PositionProperties .spacer div {
+            /*@editable*/
+            width: 1em;
+        }
+
+        .PositionProperties .name {
+            /*@editable*/
+            font-style: italic;
+            /*@editable*/
+            vertical-align: top;
+            /*@editable*/
+            font-family: 'Fira Sans', sans-serif;
+            white-space: nowrap;
+        }
+
+        .PositionProperties .content {
+            /*@editable*/
+            width: 100%;
+            /*@editable*/
+            font-family: 'Fira Sans', sans-serif;
+        }
+
+        .PositionChildren {
+            /*@editable*/
+            font-size: 80%;
+        }
+
+        .PositionChildren .spacer div {
+            /*@editable*/
+            width: 1em;
+        }
+
+        .PositionChildren .bullet {
+            /*@editable*/
+            vertical-align: top;
+        }
+
+        .PositionChildren .content {
+            /*@editable*/
+            width: 100%;
+            margin-left: 1em;
+        }
+
+        .PositionImage img {
+            padding: 5px;
+        }
+
+        #headerImage {
+            height: auto;
+            max-width: 600px;
+        }
+
+        /* ========== Body Styles ========== */
+
+        /**
+            * @tab Body
+            * @section body style
+            * @tip Set the background color and borders for your email's body area.
+            */
+        #templateBody {
+            /*@editable*/
+            background-color: #F4F4F4;
+            /*@editable*/
+            border-top: 1px solid #FFFFFF;
+            /*@editable*/
+            border-bottom: 1px solid #CCCCCC;
+            /*@editable*/
+            font-family: 'Fira Sans', sans-serif;
+        }
+
+        #templateBodyReference {
+            /*@editable*/
+            background-color: #003264;
+            /*@editable*/
+            border-bottom: 1px solid #CCCCCC;
+        }
+
+        /**
+            * @tab Body
+            * @section body text
+            * @tip Set the styling for your email's main content text. Choose a size and color that is easy to read.
+            * @theme main
+            */
+        .bodyContentReference {
+            /*@editable*/
+            color: #FFFFFF;
+            /*@editable*/
+            font-family: 'Fira Sans', sans-serif;
+            /*@editable*/
+            font-size: 24px;
+            /*@editable*/
+            font-weight: bold;
+            /*@editable*/
+            line-height: 150%;
+            /*@editable*/
+            text-align: left;
+            text-transform: uppercase;
+            padding-top: 20px;
+            padding-right: 20px;
+            padding-bottom: 25px;
+            padding-left: 20px;
+            text-shadow: 0px 0px 0 rgb(162, 162, 162), 1px 1px 0 rgb(135, 135, 135), 2px 2px 0 rgb(107, 107, 107), 3px 3px 0 rgb(80, 80, 80), 4px 4px 0 rgb(53, 53, 53), 5px 5px 4px rgba(0, 0, 0, 0.75), 5px 5px 1px rgba(0, 0, 0, 0.5), 0px 0px 4px rgba(0, 0, 0, .2);
+        }
+
+        .bodyContentTitle {
+            /*@editable*/
+            color: #003264 !important;
+            /*@editable*/
+            font-family: 'Fira Sans', sans-serif;
+            /*@editable*/
+            line-height: 150%;
+            /*@editable*/
+            font-size: 18px;
+            /*@editable*/
+            font-style: normal;
+            /*@editable*/
+            font-weight: bold;
+            padding-top: 25px;
+            padding-right: 20px;
+            padding-bottom: 0px;
+            padding-left: 20px;
+            /*@editable*/
+            text-align: left;
+        }
+
+        .bodyContent {
+            /*@editable*/
+            color: #424242;
+            /*@editable*/
+            font-family: 'Fira Sans', sans-serif;
+            /*@editable*/
+            font-size: 12px;
+            /*@editable*/
+            line-height: 150%;
+            padding-top: 5px;
+            padding-right: 20px;
+            padding-bottom: 20px;
+            padding-left: 20px;
+            /*@editable*/
+            text-align: left;
+        }
+
+        .bodyContentSalutation {
+            /*@editable*/
+            color: #424242;
+            /*@editable*/
+            font-family: 'Fira Sans', sans-serif;
+            /*@editable*/
+            font-size: 14px;
+            /*@editable*/
+            line-height: 100%;
+            padding-top: 25px;
+            padding-right: 20px;
+            padding-bottom: 20px;
+            padding-left: 20px;
+            /*@editable*/
+            text-align: left;
+        }
+
+        /**
+            * @tab Body
+            * @section body link
+            * @tip Set the styling for your email's main content links. Choose a color that helps them stand out from your text.
+            */
+        .bodyContent a:link,
+        .bodyContent a:visited,
+        /* Yahoo! Mail Override */
+        .bodyContent a .yshortcuts
+
+        /* Yahoo! Mail Override */
+            {
+            /*@editable*/
+            color: #0099FF !important;
+            /*@editable*/
+            font-weight: normal;
+            /*@editable*/
+            text-decoration: underline;
+        }
+
+        .bodyContent img {
+            display: inline;
+            height: auto;
+            max-width: 560px;
+        }
+
+        .bodyDataLeft,
+        .bodyDataRight {
+            /*@editable*/
+            background: #F9F9F9;
+            /*@editable*/
+            border: solid #CCCCCC 1.5pt;
+            /*@editable*/
+            font-family: 'Fira Sans', sans-serif;
+        }
+
+        .bodyDataLeftContent,
+        .bodyDataRightContent {
+            /*@editable*/
+            font-family: 'Fira Sans', sans-serif;
+            /*@editable*/
+            font-size: 12px;
+        }
+
+        .bodyData {
+            /*@editable*/
+            font-family: 'Fira Sans', sans-serif;
+            /*@editable*/
+            font-size: 12px;
+        }
+
+        .bodyDataOrder {
+            /*@editable*/
+            background: #F9F9F9;
+            /*@editable*/
+            border: solid #CCCCCC 1.5pt;
+            /*@editable*/
+            font-family: 'Fira Sans', sans-serif;
+            /*@editable*/
+            font-size: 12px;
+        }
+
+
+        .bodyPositions {
+            /*@editable*/
+            background: #F9F9F9;
+            /*@editable*/
+            border: solid #CCCCCC 1.5pt;
+            /*@editable*/
+            font-family: 'Fira Sans', sans-serif;
+            /*@editable*/
+            font-size: 12px;
+        }
+
+        .Payments,
+        .CustomNote {
+            /*@editable*/
+            font-size: 12px !important;
+            /*@editable*/
+            line-height: 125% !important;
+            /*@editable*/
+            font-family: 'Fira Sans', sans-serif;
+        }
+
+        /* ========== Footer Styles ========== */
+
+        /**
+            * @tab Footer
+            * @section footer style
+            * @tip Set the background color and borders for your email's footer area.
+            * @theme footer
+            */
+        #templateFooter {
+            /*@editable*/
+            background-color: #e2edf9;
+            /*@editable*/
+            border-top: 1px solid #FFFFFF;
+            /*@editable*/
+            font-family: 'Fira Sans', sans-serif;
+            ;
+        }
+
+        /**
+            * @tab Footer
+            * @section footer text
+            * @tip Set the styling for your email's footer text. Choose a size and color that is easy to read.
+            * @theme footer
+            */
+        .footerContent {
+            /*@editable*/
+            color: #003264;
+            /*@editable*/
+            font-family: 'Fira Sans', sans-serif;
+            /*@editable*/
+            font-size: 10px;
+            /*@editable*/
+            line-height: 150%;
+            padding-top: 20px;
+            padding-right: 10px;
+            padding-bottom: 15px;
+            padding-left: 10px;
+            /*@editable*/
+            text-align: left;
+        }
+
+        /**
+            * @tab Footer
+            * @section footer link
+            * @tip Set the styling for your email's footer links. Choose a color that helps them stand out from your text.
+            */
+        .footerContent a:link,
+        .footerContent a:visited,
+        /* Yahoo! Mail Override */
+        .footerContent a .yshortcuts,
+        .footerContent a span
+
+        /* Yahoo! Mail Override */
+            {
+            /*@editable*/
+            color: #003264 !important;
+            /*@editable*/
+            font-weight: normal;
+            /*@editable*/
+            text-decoration: underline;
+        }
+
+        /* /\/\/\/\/\/\/\/\/ MOBILE STYLES /\/\/\/\/\/\/\/\/ */
+
+        @media only screen and (max-width: 480px) {
+
+            /* /\/\/\/\/\/\/ CLIENT-SPECIFIC MOBILE STYLES /\/\/\/\/\/\/ */
+            body,
+            table,
+            td,
+            p,
+            a,
+            li,
+            blockquote {
+                -webkit-text-size-adjust: none !important;
+            }
+
+            /* Prevent Webkit platforms from changing default text sizes */
+            body {
+                width: 100% !important;
+                min-width: 100% !important;
+            }
+
+            /* Prevent iOS Mail from adding padding to the body */
+
+            /* /\/\/\/\/\/\/ MOBILE RESET STYLES /\/\/\/\/\/\/ */
+            #bodyCell {
+                padding: 5px !important;
+            }
+
+            /* /\/\/\/\/\/\/ MOBILE TEMPLATE STYLES /\/\/\/\/\/\/ */
+
+            /* ======== Page Styles ======== */
+
+            /**
+                * @tab Mobile Styles
+                * @section template width
+                * @tip Make the template fluid for portrait or landscape view adaptability. If a fluid layout doesn't work for you, set the width to 300px instead.
+                */
+            #templateContainer {
+                max-width: 600px !important;
+                /*@editable*/
+                width: 100% !important;
+            }
+
+            /**
+                * @tab Mobile Styles
+                * @section heading 1
+                * @tip Make the first-level headings larger in size for better readability on small screens.
+                */
+            h1 {
+                /*@editable*/
+                font-size: 24px !important;
+                /*@editable*/
+                line-height: 100% !important;
+            }
+
+            /**
+                * @tab Mobile Styles
+                * @section heading 2
+                * @tip Make the second-level headings larger in size for better readability on small screens.
+                */
+            h2 {
+                /*@editable*/
+                font-size: 20px !important;
+                /*@editable*/
+                line-height: 100% !important;
+            }
+
+            /**
+                * @tab Mobile Styles
+                * @section heading 3
+                * @tip Make the third-level headings larger in size for better readability on small screens.
+                */
+            h3 {
+                /*@editable*/
+                font-size: 18px !important;
+                /*@editable*/
+                line-height: 100% !important;
+            }
+
+            /**
+                * @tab Mobile Styles
+                * @section heading 4
+                * @tip Make the fourth-level headings larger in size for better readability on small screens.
+                */
+            h4 {
+                /*@editable*/
+                font-size: 16px !important;
+                /*@editable*/
+                line-height: 100% !important;
+            }
+
+            /* ======== Header Styles ======== */
+
+            #templatePreheader {
+                display: none !important;
+            }
+
+            /* Hide the template preheader to save space */
+
+            /**
+                * @tab Mobile Styles
+                * @section header image
+                * @tip Make the main header image fluid for portrait or landscape view adaptability, and set the image's original width as the max-width. If a fluid setting doesn't work, set the image width to half its original size instead.
+                */
+            #headerImage {
+                height: auto !important;
+                /*@editable*/
+                max-width: 600px !important;
+                /*@editable*/
+                width: 100% !important;
+            }
+
+            /**
+                * @tab Mobile Styles
+                * @section header text
+                * @tip Make the header content text larger in size for better readability on small screens. We recommend a font size of at least 16px.
+                */
+            .headerContent {
+                /*@editable*/
+                font-size: 20px !important;
+                /*@editable*/
+                line-height: 125% !important;
+            }
+
+            /**
+                * @tab Mobile Styles
+                * @section header text
+                * @tip Make the header content text larger in size for better readability on small screens. We recommend a font size of at least 16px.
+                */
+            .headerContentInfo {
+                /*@editable*/
+                font-size: 20px !important;
+                /*@editable*/
+                line-height: 125% !important;
+                text-align: right;
+            }
+
+            /* ======== Body Styles ======== */
+
+            /**
+                * @tab Mobile Styles
+                * @section body text
+                * @tip Make the body content text larger in size for better readability on small screens. We recommend a font size of at least 16px.
+                */
+            .bodyContent {
+                /*@editable*/
+                font-size: 18px !important;
+                /*@editable*/
+                line-height: 125% !important;
+                /*@editable*/
+                font-family: 'Fira Sans', sans-serif;
+            }
+
+            /* ======== Footer Styles ======== */
+
+            /**
+                * @tab Mobile Styles
+                * @section footer text
+                * @tip Make the body content text larger in size for better readability on small screens.
+                */
+            .footerContent {
+                /*@editable*/
+                font-size: 14px !important;
+                /*@editable*/
+                line-height: 115% !important;
+            }
+
+            .footerContent a {
+                display: block !important;
+            }
+
+            /* Place footer social and utility links on their own lines, for easier access */
+        }
+    </style>
+</head>
+
+<body leftmargin="0" marginwidth="0" topmargin="0" marginheight="0" offset="0">
+    <center>
+        <table align="center" border="0" cellpadding="0" cellspacing="0" height="100%" width="100%" id="bodyTable">
+            <tr>
+                <td align="center" valign="top" id="bodyCell">
+                    <!-- BEGIN TEMPLATE // -->
+                    <table border="0" cellpadding="0" cellspacing="0" id="templateLogoOutside">
+                        <tr>
+                            <td align="center" valign="top">
+                                <!-- BEGIN LOGO OUTSIDE // -->
+                                <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                                    <tr>
+                                        <td valign="top" class="headerLogo">
+                                            {% if FirmenLogoUrl != empty -%}
+                                            <img src="{{ FirmenLogoUrl }}" style="max-width:600px;" id="headerImage"
+                                                alt="HT-Connect.de" />
+                                            {% endif -%}
+                                        </td>
+                                    </tr>
+                                </table>
+                                <!-- // END LOGO OUTSIDE -->
+                            </td>
+                        </tr>
+                    </table>
+                    <table border="0" cellpadding="0" cellspacing="0" id="templateContainer">
+                        <tr>
+                            <td align="center" valign="top">
+                                <!-- BEGIN BODY // -->
+                                <table border="0" cellpadding="0" cellspacing="0" width="100%"
+                                    id="templateBodyReference">
+                                    <tr>
+                                        <td valign="top" class="bodyContentReference">
+                                            Rechnung
+                                        </td>
+                                    </tr>
+                                </table>
+                                <table border="0" cellpadding="0" cellspacing="0" width="100%" id="templateBody">
+                                    <tr>
+                                        <td valign="top" class="bodyContentSalutation">
+                                            <!-- BEGIN BODYTEXT // -->
+                                            {% if Vorgang.Auftrag.Rechnungsadresse.Anrede != empty -%}
+                                            {% case Vorgang.Auftrag.Rechnungsadresse.Anrede -%}
+                                            {% when 'Herr' -%}
+                                            Sehr geehrter Herr\
+                                            {% when 'Frau' -%}
+                                            Sehr geehrte Frau\
+                                            {% else -%}
+                                            Sehr geehrte(r) {{ Vorgang.Auftrag.Rechnungsadresse.Anrede }}\
+                                            {% endcase -%}
+                                            {% if Vorgang.Auftrag.Rechnungsadresse.Titel != empty %}
+                                            {{ Vorgang.Auftrag.Rechnungsadresse.Titel }}{% endif %}
+                                            {{ Vorgang.Auftrag.Rechnungsadresse.Name }},
+                                            {% else -%}
+                                            Sehr geehrte Damen und Herren,
+                                            {% endif -%}
+                                            <br /><br />
+                                            vielen Dank f&uuml;r Ihren Auftrag bei uns, Ihre Rechnung finden Sie
+                                            als PDF
+                                            im Anhang.
+                                            <!-- // END BODYTEXT -->
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td valign="top" class="bodyContentTitle">
+                                            Einzelheiten zu Ihrem Auftrag
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td valign="top" class="bodyContent">
+                                            <!-- BEGIN SUBHEADER // -->
+                                            <table border="0" cellpadding="15" cellspacing="0" class="bodyData">
+                                                <tr>
+                                                    <td valign="top" class="bodyDataOrder">
+                                                        <table cellspacing="0" cellpadding="0" class="bodyData">
+                                                            <tr>
+                                                                <td width="160px">
+                                                                    Rechnungsnummer:<br />
+                                                                </td>
+                                                                <td width="auto">
+                                                                    <b>{{ Vorgang.Belegnummer }}</b><br />
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td width="160px">
+                                                                    Rechnungsdatum:<br /><br />
+                                                                </td>
+                                                                <td width="auto">
+                                                                    <b>{{ Vorgang.Erstelldatum | Datum: 'D' }}</b><br /><br />
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td width="160px">
+                                                                    Auftragsnummer:<br />
+                                                                </td>
+                                                                <td width="auto">
+                                                                    <b>{{ Vorgang.Auftrag.Auftragsnummer }}</b><br />
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td width="160px">
+                                                                    Auftragsdatum:<br /><br />
+                                                                </td>
+                                                                <td width="auto">
+                                                                    <b>{{ Vorgang.Auftrag.Erstelldatum | Datum: 'D' }}</b><br /><br />
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td width="160px">
+                                                                    Kundennummer:<br />
+                                                                </td>
+                                                                <td width="auto">
+                                                                    <b>{{ Vorgang.Kunde.Kundennummer }}</b><br />
+                                                                </td>
+                                                            </tr>
+                                                        </table>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                            <br />
+                                            <br />
+                                            <table border="0" cellpadding="15" cellspacing="0" width="100%"
+                                                class="bodyData">
+                                                <tr>
+                                                    <td valign="top" class="bodyDataLeft" width="40%">
+                                                        <h3>Rechnungsadresse:</h3>
+                                                        <table cellspacing="0" cellpadding="0"
+                                                            class="bodyDataLeftContent">
+                                                            <tr>
+                                                                <td>
+                                                                    {% if Vorgang.Auftrag.Rechnungsadresse.Firma != empty %}{{ Vorgang.Auftrag.Rechnungsadresse.Firma }}<br />{% endif %}
+                                                                    {% if Vorgang.Auftrag.Rechnungsadresse.Firmenzusatz != empty %}{{ Vorgang.Auftrag.Rechnungsadresse.Firmenzusatz }}<br />{% endif %}
+                                                                    {% if Vorgang.Auftrag.Rechnungsadresse.Anrede != empty %}{{ Vorgang.Auftrag.Rechnungsadresse.Anrede }}
+                                                                    {% endif %}{% if Vorgang.Auftrag.Rechnungsadresse.Titel != empty %}{{ Vorgang.Auftrag.Rechnungsadresse.Titel }}{% else %}{{ Vorgang.Auftrag.Rechnungsadresse.Vorname }}{% endif %}
+                                                                    {%if Vorgang.Auftrag.Rechnungsadresse.Name != empty %}{{ Vorgang.Auftrag.Rechnungsadresse.Name }}{% endif %}<br />
+                                                                    {% if Vorgang.Auftrag.Rechnungsadresse.Adresszusatz != empty %}{{ Vorgang.Auftrag.Rechnungsadresse.Adresszusatz }}<br />{% endif %}
+                                                                    {{ Vorgang.Auftrag.Rechnungsadresse.Straße }}<br />
+                                                                    {{ Vorgang.Auftrag.Rechnungsadresse.PLZ }}
+                                                                    {{ Vorgang.Auftrag.Rechnungsadresse.Ort }}<br />
+                                                                    {% if Vorgang.Auftrag.Rechnungsadresse.Landname != empty %}{{ Vorgang.Auftrag.Rechnungsadresse.Landname }}<br />{% endif %}
+                                                                    {% if Vorgang.Kunde.UStID > 0 -%}
+                                                                    <br />
+                                                                    USt-IdNr.: {{Vorgang.Kunde.UStID }}<br />
+                                                                    {% endif -%}
+                                                                </td>
+                                                            </tr>
+                                                        </table>
+                                                    </td>
+                                                    <td valign="top"
+                                                        style="width: 5%; border-bottom: 0px; border-top: 0px;">
+                                                    </td>
+                                                    <td valign="top" class="bodyDataRight" width="40%">
+                                                        {% if Vorgang.Auftrag.AbweichendeAdressen == true or NurAbweichendeLieferadresse == false -%}
+                                                        <h3>Lieferadresse:</h3>
+                                                        {% endif -%}
+                                                        <table cellspacing="0" cellpadding="0"
+                                                            class="bodyDataRightContent">
+                                                            <tr>
+                                                                <td>
+                                                                    {% if Vorgang.Auftrag.AbweichendeAdressen == true or NurAbweichendeLieferadresse == false -%}
+                                                                    {% if Vorgang.Auftrag.Lieferadresse.Firma != empty %}{{ Vorgang.Auftrag.Lieferadresse.Firma }}<br />{% endif %}
+                                                                    {% if Vorgang.Auftrag.Lieferadresse.Firmenzusatz != empty %}{{ Vorgang.Auftrag.Lieferadresse.Firmenzusatz }}<br />{% endif %}
+                                                                    {% if Vorgang.Auftrag.Lieferadresse.Anrede != empty %}{{ Vorgang.Auftrag.Lieferadresse.Anrede }}
+                                                                    {% endif %}{% if Vorgang.Auftrag.Lieferadresse.Titel != empty %}{{ Vorgang.Auftrag.Lieferadresse.Titel }}{% else %}{{ Vorgang.Auftrag.Lieferadresse.Vorname }}{% endif %}
+                                                                    {%if Vorgang.Auftrag.Lieferadresse.Name != empty %}{{ Vorgang.Auftrag.Lieferadresse.Name }}{% endif %}<br />
+                                                                    {% if Vorgang.Auftrag.Lieferadresse.Adresszusatz != empty %}{{ Vorgang.Auftrag.Lieferadresse.Adresszusatz }}<br />{% endif %}
+                                                                    {{ Vorgang.Auftrag.Lieferadresse.Straße }}<br />
+                                                                    {{ Vorgang.Auftrag.Lieferadresse.PLZ }}
+                                                                    {{ Vorgang.Auftrag.Lieferadresse.Ort }}<br />
+                                                                    {% if Vorgang.Auftrag.Lieferadresse.Landname != empty %}{{ Vorgang.Auftrag.Lieferadresse.Landname }}<br />{% endif %}
+                                                                    {% endif -%}
+                                                                </td>
+                                                            </tr>
+                                                        </table>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                            <!-- END SUBHEADER // -->
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td valign="top" class="bodyContentTitle">
+                                            &Uuml;bersicht Ihrer Bestellung
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td valign="top" class="bodyContent">
+                                            <!-- BEGIN POSITIONS // -->
+                                            <table border="0" cellpadding="5" cellspacing="5" width="100%"
+                                                class="bodyPositions">
+                                                <tbody>
+                                                    {% assign versandposition = 0 -%}
+                                                    {% for position in Vorgang.Auftrag.Positionen -%}
+                                                    {% if position.IstVersandkostenPosition -%}
+                                                    {% assign versandart = position.Bezeichnung -%}
+                                                    {% if NettoPreiseBenutzen -%}
+                                                    {% assign versandkosten = position.NettopreisGesamt -%}
+                                                    {% else -%}
+                                                    {% assign versandkosten = position.BruttopreisGesamt -%}
+                                                    {% endif -%}
+                                                    {% elsif position.IstKonfiguratorKomponente -%}
+                                                    {% comment %}Konfigurations-Komponeten
+                                                    ignorieren{% endcomment -%}
+                                                    {% else %}
+                                                    <tr>
+                                                        <td class="PositionImage" style="width: 60px">
+                                                            {% if position.Bild != empty and UsePositionImages == true -%}
+                                                            <img style="width:50px;height:50px;align:left"
+                                                                src="data:image/jpeg;base64,{{ position.Bild | Resize: 50,50,'jpg' | Base64Encode }}"
+                                                                alt="Positionsbild" />
+                                                            {% endif -%}
+                                                        </td>
+                                                        <td class="PositionDescription">
+                                                            <b><a target="_blank"
+                                                                    href="https://www.ht-connect.de/navi.php?suchausdruck={{ position.Artikelnummer }}"
+                                                                    style="color:#0088c3;text-decoration: none;">{{ position.Bezeichnung }}</a></b><br />
+                                                            {% if IncludeArtikelnummern == true -%}
+                                                            <table border="0" cellpadding="0" cellspacing="0"
+                                                                width="100%" class="PositionProperties">
+                                                                <tbody>
+                                                                    <tr class="Artikelnummer">
+                                                                        <td class="spacer">
+                                                                            <div>&nbsp;</div>
+                                                                        </td>
+                                                                        <td class="name">
+                                                                            Artikelnummer:
+                                                                        </td>
+                                                                        <td class="content">
+                                                                            {{ position.Artikelnummer }}
+                                                                        </td>
+                                                                    </tr>
+                                                                </tbody>
+                                                            </table>
+                                                            {% endif -%}
+                                                            {% if IncludeEinzelpreise == true -%}
+                                                            <table border="0" cellpadding="0" cellspacing="0"
+                                                                width="100%" class="PositionProperties">
+                                                                <tbody>
+                                                                    <tr class="Einzelpreis">
+                                                                        <td class="spacer">
+                                                                            <div>&nbsp;</div>
+                                                                        </td>
+                                                                        <td class="name">
+                                                                            Einzelpreis:
+                                                                        </td>
+                                                                        <td class="content">
+                                                                            {% if NettoPreiseBenutzen %}{{ position.NettopreisEinzel | Nummer : 'C' | Replace: ' ','&nbsp;' }}{% else %}{{ position.BruttopreisEinzel | Nummer : 'C' | Replace: ' ','&nbsp;' }}{% endif %}
+                                                                        </td>
+                                                                    </tr>
+                                                                </tbody>
+                                                            </table>
+                                                            {% endif -%}
+                                                            {% if position.Variationen.size > 0 -%}
+                                                            <table border="0" cellpadding="0" cellspacing="0"
+                                                                width="100%" class="PositionProperties">
+                                                                <tbody>
+                                                                    {% for variation in position.Variationen -%}
+                                                                    <tr class="Variation">
+                                                                        <td class="spacer">
+                                                                            <div>&nbsp;</div>
+                                                                        </td>
+                                                                        <td class="name">
+                                                                            {{ variation.Bezeichnung }}:
+                                                                        </td>
+                                                                        <td class="content">
+                                                                            {{ variation.Wert }}
+                                                                        </td>
+                                                                    </tr>
+                                                                    {% endfor -%}
+                                                                </tbody>
+                                                            </table>
+                                                            {% endif -%}
+                                                            {% if position.Seriennummern.size > 0 -%}
+                                                            <table border="0" cellpadding="0" cellspacing="0"
+                                                                width="100%" class="PositionProperties">
+                                                                <tbody>
+                                                                    {% for seriennummer in position.Seriennummern -%}
+                                                                    <tr class="Seriennummer">
+                                                                        <td class="spacer">
+                                                                            <div>&nbsp;</div>
+                                                                        </td>
+                                                                        <td class="name">
+                                                                            Seriennummer:
+                                                                        </td>
+                                                                        <td class="content">
+                                                                            {{ seriennummer.Seriennummer }}{% if seriennummer.Kommentar1 != empty %}
+                                                                            ({{ seriennummer.Kommentar1 }}{% if seriennummer.Kommentar2 != empty %}
+                                                                            {{ seriennummer.Kommentar2 }}{% endif %}){% endif %}
+                                                                        </td>
+                                                                    </tr>
+                                                                    {% endfor -%}
+                                                                </tbody>
+                                                            </table>
+                                                            {% endif -%}
+                                                            {% if StücklistenKomponentenAnzeigen == true and position.Komponenten.size > 0 -%}
+                                                            <table border="0" cellpadding="0" cellspacing="0"
+                                                                width="100%" class="PositionChildren">
+                                                                <tbody>
+                                                                    {% for stkind in position.Komponenten -%}
+                                                                    {% capture menge %}{{ stkind.Menge | Times: position.Menge }}{% endcapture -%}
+                                                                    <tr class="Stuecklistenkomponente">
+                                                                        <td class="spacer">
+                                                                            <div>&nbsp;</div>
+                                                                        </td>
+                                                                        <td class="bullet">&bull;&nbsp;</td>
+                                                                        <td class="content">
+                                                                            <div>
+                                                                                {% if stkind.Artikel.IstTeilbar %}{{ menge | Nummer : 'N2' }}{% else %}{{ menge }}{% endif %}{% if stkind.Artikel.Einheit != empty %}&nbsp;{{ stkind.Artikel.Einheit }}{% else %}x{% endif %}
+                                                                                {{ stkind.Artikel.Bezeichnung }}
+                                                                            </div>
+                                                                        </td>
+                                                                    </tr>
+                                                                    {% endfor -%}
+                                                                </tbody>
+                                                            </table>
+                                                            {% endif -%}
+                                                            {% if KonfigurationsKomponentenAnzeigen == true and position.KonfiguratorKomponenten.size > 0 -%}
+                                                            <table border="0" cellpadding="0" cellspacing="0"
+                                                                width="100%" class="PositionChildren">
+                                                                <tbody>
+                                                                    {% for konfikind in position.KonfiguratorKomponenten -%}
+                                                                    <tr class="Konfiguratorkomponente">
+                                                                        <td class="spacer">
+                                                                            <div>&nbsp;</div>
+                                                                        </td>
+                                                                        <td class="bullet">&bull;&nbsp;</td>
+                                                                        <td class="content">
+                                                                            <div>
+                                                                                {% if konfikind.Artikel.IstTeilbar %}{{ konfikind.Menge | Nummer : 'N2' }}{% else %}{{ konfikind.Menge }}{% endif %}{% if konfikind.Einheit != empty %}&nbsp;{{ konfikind.Einheit }}{% else %}x{% endif %}
+                                                                                {{ konfikind.Bezeichnung }}
+                                                                                {% if konfikind.Seriennummern.size > 0 -%}
+                                                                                <table border="0" cellpadding="0"
+                                                                                    cellspacing="0" width="100%"
+                                                                                    class="PositionProperties">
+                                                                                    <tbody>
+                                                                                        {% for seriennummer in konfikind.Seriennummern -%}
+                                                                                        <tr class="Seriennummer">
+                                                                                            <td class="spacer">
+                                                                                                <div>&nbsp;
+                                                                                                </div>
+                                                                                            </td>
+                                                                                            <td class="name">
+                                                                                                Seriennummer:
+                                                                                            </td>
+                                                                                            <td class="content">
+                                                                                                {{ seriennummer.Seriennummer }}{% if seriennummer.Kommentar1 != empty %}
+                                                                                                ({{ seriennummer.Kommentar1 }}{% if seriennummer.Kommentar2 != empty %}
+                                                                                                {{ seriennummer.Kommentar2 }}{% endif %}){% endif %}
+                                                                                            </td>
+                                                                                        </tr>
+                                                                                        {% endfor -%}
+                                                                                    </tbody>
+                                                                                </table>
+                                                                                {% endif -%}
+                                                                                {% if StücklistenKomponentenAnzeigen == true and konfikind.Komponenten.size > 0 -%}
+                                                                                <table border="0" cellpadding="0"
+                                                                                    cellspacing="0" width="100%"
+                                                                                    class="PositionChildren">
+                                                                                    <tbody>
+                                                                                        {% for stkind in konfikind.Komponenten -%}
+                                                                                        {% capture menge %}{{ stkind.Menge | Times: konfikind.Menge }}{% endcapture -%}
+                                                                                        <tr
+                                                                                            class="Stuecklistenkomponente">
+                                                                                            <td class="spacer">
+                                                                                                <div>&nbsp;
+                                                                                                </div>
+                                                                                            </td>
+                                                                                            <td class="bullet">
+                                                                                                &bull;&nbsp;
+                                                                                            </td>
+                                                                                            <td class="content">
+                                                                                                <div>
+                                                                                                    {% if stkind.Artikel.IstTeilbar %}{{ menge | Nummer : 'N2' }}{% else %}{{ menge }}{% endif %}{% if stkind.Artikel.Einheit != empty %}&nbsp;{{ stkind.Artikel.Einheit }}{% else %}x{% endif %}
+                                                                                                    {{ stkind.Artikel.Bezeichnung }}
+                                                                                                </div>
+                                                                                            </td>
+                                                                                        </tr>
+                                                                                        {% endfor -%}
+                                                                                    </tbody>
+                                                                                </table>
+                                                                                {% endif -%}
+                                                                            </div>
+                                                                        </td>
+                                                                        <td class="PositionPrice">
+                                                                            {% if NettoPreiseBenutzen %}{{ konfikind.NettopreisEinzel | Nummer : 'C' | Replace: ' ','&nbsp;' }}{% else %}{{ konfikind.BruttopreisEinzel | Nummer : 'C' | Replace: ' ','&nbsp;' }}{% endif %}
+                                                                        </td>
+                                                                    </tr>
+                                                                    {% endfor -%}
+                                                                </tbody>
+                                                            </table>
+                                                            {% endif -%}
+
+                                                        </td>
+                                                        <td class="PositionQTY">
+                                                            {% if position.Artikel.IstTeilbar %}{{ position.Menge | Nummer : 'N2' }}{% else %}{{ position.Menge }}{% endif %}{% if position.Einheit != empty %}&nbsp;{{ Position.Einheit }}{% else %}x{% endif %}
+                                                        </td>
+                                                        <td class="PositionPrice">
+                                                            {% if NettoPreiseBenutzen %}{{ position.NettopreisGesamt | Nummer : 'C' | Replace: ' ','&nbsp;' }}{% else %}{{ position.BruttopreisGesamt | Nummer : 'C' | Replace: ' ','&nbsp;' }}{% endif %}
+                                                        </td>
+                                                    </tr>
+                                                    {% endif %}
+                                                    {% endfor -%}
+                                                </tbody>
+                                            </table>
+                                            <!-- END POSITIONS // -->
+                                            <!-- BEGIN SUMMEN // -->
+                                            <table border="0" cellpadding="5" cellspacing="0" class="Sum" align="right"
+                                                style="width: 300">
+                                                <tbody>
+                                                    <tr>
+                                                        <td valign="top" class="SumPosDescription"
+                                                            style="border-bottom: 1px solid black; width: 250;">
+                                                            Verpackung und Versand{% if versandart != null %}
+                                                            ({{ versandart }}){% endif %}:
+                                                        </td>
+                                                        <td valign="top" class="SumPosPrice"
+                                                            style="border-bottom: 1px solid black; width: 150;">
+                                                            {% if versandkosten != empty %}{{ versandkosten | Nummer : 'C' | Replace: ' ','&nbsp;' }}{% else %}{{ 0 | Nummer: 'C' | Replace: ' ','&nbsp;' }}{% endif %}
+                                                        </td>
+                                                    </tr>
+                                                    {% if Vorgabe.MwStAusweisen %}
+                                                    {% for summe in Vorgang.Auftrag.Summen -%}
+                                                    {% if summe.Brutto > 0 or Vorgang.Auftrag.Summen.size == 1 -%}
+                                                    <tr>
+                                                        <td valign="top" class="SumPosDescription" style="width: 250">
+                                                            Summe Netto ({{summe.MwStSatz | Nummer : 'N' }}%):
+                                                        </td>
+                                                        <td valign="top" class="SumPosPrice" style="width: 150">
+                                                            {{ summe.Netto | Nummer : 'C' | Replace: ' ','&nbsp;' }}
+                                                        </td>
+                                                    </tr>
+                                                    {% endif -%}
+                                                    {% endfor -%}
+                                                    {% for summe in Vorgang.Auftrag.Summen %}
+                                                    {% if summe.Brutto > 0 or Vorgang.Auftrag.Summen.size == 1 -%}
+                                                    <tr>
+                                                        <td valign="top" class="SumPosDescription" style="width: 250">
+                                                            zzgl. USt. ({{summe.MwStSatz | Nummer : 'N' }}%):
+                                                        </td>
+                                                        <td valign="top" class="SumPosPrice" style="width: 150">
+                                                            {{ summe.MwSt | Nummer:'C' | Replace: ' ','&nbsp;' }}
+                                                        </td>
+                                                    </tr>
+                                                    {% endif %}
+                                                    {% endfor %}
+                                                    {% endif %}
+                                                    <tr>
+                                                        <td valign="top" class="SumPosDescription"
+                                                            style="border-top: 2px solid black; width: 250;">
+                                                            <b>Gesamtsumme:</b>
+                                                        </td>
+                                                        <td valign="top" class="SumPosPrice"
+                                                            style="border-top: 2px solid black; width: 150;">
+                                                            <b>{{ Vorgang.Auftrag.Positionen.BruttopreisGesamt05 | Nummer : 'C' | Replace: ' ','&nbsp;' }}</b>
+                                                        </td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                            <!-- END SUMMEN // -->
+                                        </td>
+                                    </tr>
+                                    {% if Vorgang.Zahlungen.Size > 0 -%}
+                                    <tr>
+                                        <td valign="top" class="bodyContentTitle">
+                                            &Uuml;bersicht Ihrer Zahlungen
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <!-- BEGIN ZAHLUNGEN // -->
+                                        <td valign="top" class="bodyContent">
+                                            <table cellspacing="0" cellpadding="10" width="auto"
+                                                style="background:#F9F9F9; border:solid #CCCCCC 1.5pt;">
+                                                <tr>
+                                                    <td>
+                                                        <table border="0" cellpadding="0" cellspacing="0" width="100%"
+                                                            class="Payments">
+                                                            <tbody>
+                                                                {% assign zahlungen = false -%}
+                                                                {% for zahlung in Vorgang.Zahlungen -%}
+                                                                {% assign zahlungen = true -%}
+                                                                <tr>
+                                                                    <td valign="top" class="PaymentsDescription">
+                                                                        Zahlung ({{ zahlung.Zahlungsweise }})
+                                                                        vom
+                                                                        {{ zahlung.Zahlungsdatum | Datum: 'd' }}:
+                                                                    </td>
+                                                                    <td valign="top" class="PaymentsPrice">
+                                                                        {{ zahlung.Betrag | Nummer: 'C' | Replace: ' ','&nbsp;' }}
+                                                                    </td>
+                                                                </tr>
+                                                                {% endfor -%}
+                                                                {% if zahlungen == true and Vorgang.Auftrag.OffenerBetrag != 0 -%}
+                                                                <tr>
+                                                                    <td valign="top" class="PaymentsDescription"
+                                                                        style="border-top: 1px solid #CCC;color:#FF0000;">
+                                                                        <b>offener Betrag:</b>
+                                                                    </td>
+                                                                    <td valign="top" class="PaymentsPrice"
+                                                                        style="border-top: 1px solid #CCC;color:#FF0000;">
+                                                                        <b>{{ Vorgang.Auftrag.OffenerBetrag | Nummer: 'C' | Replace: ' ','&nbsp;' }}</b>
+                                                                    </td>
+                                                                </tr>
+                                                                {% endif -%}
+                                                            </tbody>
+                                                        </table>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                        <!-- END ZAHLUNGEN // -->
+                                    </tr>
+                                    {% endif -%}
+                                    {% if Vorgang.Auftrag.IstBezahlt == false and Vorgang.Zahlungsziel > 0 -%}
+                                    <tr>
+                                        <td valign="top" class="bodyContent">
+                                            {{ Vorgang.ZahlungszielText }}
+                                        </td>
+                                    </tr>
+                                    {% endif -%}
+                                    {% if Vorgang.Auftrag.IstUStFreiNichtEU == true or Vorgang.Auftrag.IstIGL == true or Vorgang.Auftrag.IstReverseCharge == true or Vorgang.Auftrag.Anmerkung != empty or Vorgang.Auftrag.Rechnungskauftext != empty or Vorgang.KundenText != empty -%}
+                                    <tr>
+                                        <td valign="top" class="bodyContentTitle">
+                                            Ihre Anmerkung zur Bestellung
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <!-- BEGIN ANMERKUNGEN // -->
+                                        <td valign="top" class="bodyContent">
+                                            <table cellspacing="0" cellpadding="10" width="auto"
+                                                style="background:#F9F9F9; border:solid #CCCCCC 1.5pt;">
+                                                <tr>
+                                                    <td>
+                                                        <table border="0" cellpadding="0" cellspacing="0" width="100%"
+                                                            class="CustomNote">
+                                                            <tbody>
+                                                                {% if Vorgang.Auftrag.IstUStFreiNichtEU == true -%}
+                                                                <tr>
+                                                                    <td valign="top" class="CustomNoteContent"
+                                                                        style="min-width:350px;padding-top:5px;padding-bottom:5px;">
+                                                                        {{ Vorgabe.TexteUStFrei }}
+                                                                    </td>
+                                                                </tr>
+                                                                {% endif -%}
+                                                                {% if Vorgang.Auftrag.IstIGL == true -%}
+                                                                <tr>
+                                                                    <td valign="top" class="CustomNoteContent"
+                                                                        style="min-width:350px;padding-top:5px;padding-bottom:5px;">
+                                                                        {{ Vorgabe.TexteIGL }}
+                                                                    </td>
+                                                                </tr>
+                                                                {% endif -%}
+                                                                {% if Vorgang.Auftrag.IstReverseCharge == true -%}
+                                                                <tr>
+                                                                    <td valign="top" class="CustomNoteContent"
+                                                                        style="min-width:350px;padding-top:5px;padding-bottom:5px;">
+                                                                        {{ Vorgabe.Texte.ReverseCharge }}
+                                                                    </td>
+                                                                </tr>
+                                                                {% endif -%}
+                                                                {% if Vorgang.Auftrag.Anmerkung != empty -%}
+                                                                <tr>
+                                                                    <td valign="top" class="CustomNoteContent"
+                                                                        style="min-width:350px;padding-top:5px;padding-bottom:5px;">
+                                                                        {{ Vorgang.Auftrag.Anmerkung }}
+                                                                    </td>
+                                                                </tr>
+                                                                {% endif -%}
+                                                                {% if Vorgang.Auftrag.Rechnungskauftext != empty -%}
+                                                                <tr>
+                                                                    <td valign="top" class="CustomNoteContent"
+                                                                        style="min-width:350px;padding-top:5px;padding-bottom:5px;">
+                                                                        {{ Vorgang.Auftrag.Rechnungskauftext }}
+                                                                    </td>
+                                                                </tr>
+                                                                {% endif -%}
+                                                                {% if Vorgang.KundenText != empty -%}
+                                                                <tr>
+                                                                    <td valign="top" class="CustomNoteContent"
+                                                                        style="min-width:350px;padding-top:5px;padding-bottom:5px;">
+                                                                        {{ Vorgang.KundenText }}
+                                                                    </td>
+                                                                </tr>
+                                                                {% endif -%}
+                                                            </tbody>
+                                                        </table>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                        <!-- END ANMERKUNGEN // -->
+                                    </tr>
+                                    {% endif -%}
+                                    <tr>
+                                        <td valign="top" class="bodyContent">
+                                            {% if Vorgang.Text != empty -%}
+                                            {{ Vorgang.Text }}<br />
+                                            {% endif -%}
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td valign="top" class="bodyContent">
+                                            {% if Vorgang.Firma.Homepage != empty %}Besuchen Sie uns auf unserer
+                                            Homepage unter <a target="_blank" href="https://www.ht-connect.de"
+                                                style="color:#0099FF;">www.ht-connect.de</a>.<br />{% endif %}
+                                            {% if TwitterProfileUrl != empty -%}
+                                            <a href="{{ TwitterProfileUrl }}">Folgen Sie uns auf
+                                                Twitter</a>&nbsp;&nbsp;&nbsp;
+                                            {% endif -%}
+                                            {% if FacebookProfileUrl != empty -%}
+                                            <a href="{{ FacebookProfileUrl }}">Besuchen Sie uns auf
+                                                Facebook</a>&nbsp;&nbsp;&nbsp;
+                                            {% endif -%}
+                                            {% if GoogleProfileUrl != empty -%}
+                                            <a href="{{ GoogleProfileUrl }}">Besuchen Sie uns auf
+                                                Google+</a>&nbsp;&nbsp;&nbsp;
+                                            {% endif -%}
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td valign="top" class="bodyContent">
+                                            Mit freundlichen Gr&uuml;&szlig;en<br /><br />
+                                            {% if Vorgang.Firma.Unternehmer != empty %}{{ Vorgang.Firma.Unternehmer }}{% else %}{{ Vorgang.Benutzer.Name }}{% endif %}<br />
+                                            {{ Vorgang.Firma.Name }}
+                                        </td>
+                                    </tr>
+                                </table>
+                                <!-- // END BODY -->
+                            </td>
+                        </tr>
+                        <tr>
+                            <td align="center" valign="top">
+                                <!-- BEGIN FOOTER // -->
+                                <table border="0" cellpadding="0" cellspacing="0" width="100%" id="templateFooter">
+                                    <tr>
+                                        <td valign="top" class="footerContent" style="padding-top:0;">
+                                            <table border="0" cellpadding="0" cellspacing="0" width="100%"
+                                                id="footerInfo">
+                                                <tr>
+                                                    <td valign="top" class="footerContent" width="30%">
+                                                        {{ Vorgang.Firma.Name }}<br />
+                                                        {% if Vorgang.Firma.Unternehmer != empty %}{{ Vorgang.Firma.Unternehmer }}<br />{% endif %}
+                                                        {{ Vorgang.Firma.Straße }}<br />
+                                                        {{ Vorgang.Firma.PLZ }} {{ Vorgang.Firma.Ort }}<br />
+                                                        {% if Vorgang.Firma.Landname != empty %}{{ Vorgang.Firma.Landname }}<br />{% endif %}
+                                                        <br />
+                                                        {% if Vorgang.Firma.UstID != empty %}USt-IdNr.:
+                                                        {{ Vorgang.Firma.UstID }}<br />{% endif %}
+                                                        {% if Vorgang.Firma.Steuernummer != empty %}St.Nr.:
+                                                        {{ Vorgang.Firma.Steuernummer }}<br />{% endif %}
+                                                        {% if Vorgang.Firma.GläubigerID != empty %}Gl&auml;ubiger-IdNr.:
+                                                        {{ Vorgang.Firma.GläubigerID }}<br />{% endif %}
+                                                    </td>
+                                                    <td valign="top" class="footerContent" width="40%">
+                                                        Telefon: {{ Vorgang.Firma.Telefon }}<br />
+                                                        {% if Vorgang.Firma.Fax != empty %}Telefax:
+                                                        {{ Vorgang.Firma.Fax }}<br />{% endif %}
+                                                        <br />
+                                                        E-Mail: <a href="mailto:info@ht-connect.de"
+                                                            style="color:#AAAAAA;">info@ht-connect.de</a><br />
+                                                        Internet: <a target="_blank" href="https://www.ht-connect.de"
+                                                            style="color:#AAAAAA;">www.ht-connect.de</a>
+                                                    </td>
+                                                    <td valign="top" class="footerContent" width="30%">
+                                                        {% if Vorgang.Auftrag.Rechnungskauftext != empty -%}
+                                                        <br />
+                                                        {% else %}
+                                                        {{ Vorgang.Firma.Bankverbindung.Bank }}<br />
+                                                        {{ Vorgang.Firma.Bankverbindung.Kontoinhaber }}<br />
+                                                        KTO:
+                                                        {{ Vorgang.Firma.Bankverbindung.Kontonummer }}<br />
+                                                        BLZ: {{ Vorgang.Firma.Bankverbindung.BLZ }}<br />
+                                                        <br />
+                                                        BIC: {{ Vorgang.Firma.Bankverbindung.BIC }}<br />
+                                                        IBAN: {{ Vorgang.Firma.Bankverbindung.IBAN }}
+                                                        {% endif -%}
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                    </tr>
+                                </table>
+                                <!-- // END FOOTER -->
+                            </td>
+                        </tr>
+                    </table>
+                    <!-- // END TEMPLATE -->
+                </td>
+            </tr>
+        </table>
+    </center>
+</body>
+
+</html>
